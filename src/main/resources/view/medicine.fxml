@@ -80,47 +80,47 @@
                   <Font name="Arial" size="14.0" />
                </font>
             </TextField>
-            <Label layoutX="9.0" layoutY="75.0" prefHeight="18.0" prefWidth="104.0" text="Medicine Name" textFill="#4b465c">
+            <Label layoutX="9.0" layoutY="78.0" prefHeight="18.0" prefWidth="104.0" text="Medicine Name" textFill="#4b465c">
                <font>
                   <Font name="Arial" size="14.0" />
                </font>
             </Label>
-            <TextField layoutX="6.0" layoutY="96.0" prefHeight="37.0" prefWidth="244.0" promptText="Amoxicillin 250mg" styleClass="custom-text-field" stylesheets="@../css/components-style.css">
+            <TextField layoutX="6.0" layoutY="99.0" prefHeight="37.0" prefWidth="244.0" promptText="Amoxicillin 250mg" styleClass="custom-text-field" stylesheets="@../css/components-style.css">
                <font>
                   <Font name="Arial" size="14.0" />
                </font>
             </TextField>
-            <Label layoutX="8.0" layoutY="141.0" prefHeight="18.0" prefWidth="77.0" text="Brand" textFill="#4b465c">
+            <Label layoutX="8.0" layoutY="147.0" prefHeight="18.0" prefWidth="77.0" text="Brand" textFill="#4b465c">
                <font>
                   <Font name="Arial" size="14.0" />
                </font>
             </Label>
-            <TextField layoutX="4.0" layoutY="162.0" prefHeight="37.0" prefWidth="200.0" promptText="Brand" styleClass="custom-text-field" stylesheets="@../css/components-style.css">
+            <TextField layoutX="4.0" layoutY="168.0" prefHeight="37.0" prefWidth="200.0" promptText="Brand" styleClass="custom-text-field" stylesheets="@../css/components-style.css">
                <font>
                   <Font name="Arial" size="14.0" />
                </font>
             </TextField>
-            <Label layoutX="8.0" layoutY="207.0" prefHeight="18.0" prefWidth="77.0" text="Category" textFill="#4b465c">
+            <Label layoutX="8.0" layoutY="216.0" prefHeight="18.0" prefWidth="77.0" text="Category" textFill="#4b465c">
                <font>
                   <Font name="Arial" size="14.0" />
                </font>
             </Label>
-            <TextField layoutX="4.0" layoutY="228.0" prefHeight="37.0" prefWidth="200.0" promptText="Sirup" styleClass="custom-text-field" stylesheets="@../css/components-style.css">
+            <TextField layoutX="4.0" layoutY="237.0" prefHeight="37.0" prefWidth="200.0" promptText="Sirup" styleClass="custom-text-field" stylesheets="@../css/components-style.css">
                <font>
                   <Font name="Arial" size="14.0" />
                </font>
             </TextField>
-            <Label layoutX="8.0" layoutY="273.0" prefHeight="18.0" prefWidth="77.0" text="Status" textFill="#4b465c">
+            <Label layoutX="8.0" layoutY="285.0" prefHeight="18.0" prefWidth="77.0" text="Status" textFill="#4b465c">
                <font>
                   <Font name="Arial" size="14.0" />
                </font>
             </Label>
-            <TextField layoutX="4.0" layoutY="294.0" prefHeight="37.0" prefWidth="244.0" promptText="active" styleClass="custom-text-field" stylesheets="@../css/components-style.css">
+            <TextField layoutX="4.0" layoutY="306.0" prefHeight="37.0" prefWidth="244.0" promptText="active" styleClass="custom-text-field" stylesheets="@../css/components-style.css">
                <font>
                   <Font name="Arial" size="14.0" />
                </font>
             </TextField>
-            <JFXButton layoutX="4.0" layoutY="461.0" prefHeight="27.0" prefWidth="244.0" styleClass="add-button" stylesheets="@../css/components-style.css" text="Add Supplier" textFill="#4b465c">
+            <JFXButton layoutX="4.0" layoutY="461.0" prefHeight="27.0" prefWidth="244.0" styleClass="add-button" stylesheets="@../css/components-style.css" text="Add Medicine" textFill="#4b465c">
                <font>
                   <Font name="Arial Bold" size="14.0" />
                </font>
@@ -143,7 +143,7 @@
                   <URL value="@../css/components-style.css" />
                </stylesheets>
             </JFXButton>
-            <JFXButton layoutX="209.0" layoutY="160.0" prefHeight="41.0" prefWidth="40.0" styleClass="icon-container" textFill="#4b465c">
+            <JFXButton layoutX="209.0" layoutY="166.0" prefHeight="41.0" prefWidth="40.0" styleClass="icon-container" textFill="#4b465c">
                <font>
                   <Font name="Arial Bold" size="14.0" />
                </font>
@@ -152,12 +152,12 @@
                   <URL value="@../css/components-style.css" />
                </stylesheets>
             </JFXButton>
-            <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="217.0" layoutY="168.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="217.0" layoutY="174.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../icon/plus.png" />
                </image>
             </ImageView>
-            <JFXButton layoutX="209.0" layoutY="226.0" prefHeight="41.0" prefWidth="40.0" styleClass="icon-container" textFill="#4b465c">
+            <JFXButton layoutX="209.0" layoutY="235.0" prefHeight="41.0" prefWidth="40.0" styleClass="icon-container" textFill="#4b465c">
                <font>
                   <Font name="Arial Bold" size="14.0" />
                </font>
@@ -166,7 +166,7 @@
                   <URL value="@../css/components-style.css" />
                </stylesheets>
             </JFXButton>
-            <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="217.0" layoutY="234.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="217.0" layoutY="243.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../icon/plus.png" />
                </image>
