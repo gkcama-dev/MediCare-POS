@@ -83,7 +83,7 @@ public class DashboardController implements Initializable {
 
     @FXML
     void btnStockOnAction(ActionEvent event) {
-
+        setNode("/view/stock.fxml",btnStock);
     }
 
     @FXML

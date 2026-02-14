@@ -73,6 +73,19 @@
     -fx-effect: dropshadow(three-pass-box, rgba(115, 30, 240, 0.1), 10, 0, 0, 0);
 }
 
+.date-picker {
+    -fx-background-color: #F4F5FA;
+    -fx-background-radius: 25;
+    -fx-border-radius: 25;
+    -fx-padding: 10 10 10 10;
+    -fx-font-family: "Arial";
+    -fx-font-size: 12px;
+    -fx-text-fill: #4b465c;
+    -fx-border-width: 0;
+    -fx-background-insets: 0;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.05), 10, 0, 0, 5);
+}
+
 .add-button {
     -fx-background-color: #7aff12;
     -fx-background-radius: 25;
