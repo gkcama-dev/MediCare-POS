@@ -1,0 +1,58 @@
+/* Public and Sidebar styles */
+.stat-card {
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 15;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 10, 0, 0, 5);
+    -fx-transition: 0.3s;
+}
+
+.stat-card:hover {
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.15), 5, 0, 0, 2);
+    -fx-translate-y: 2;
+}
+
+.alert-card {
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 15;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 10, 0, 0, 5);
+}
+
+.sidebar-button{
+    /*-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 5, 0, 0, 2);*/
+    -fx-background-color: transparent;
+    -fx-text-fill: #2c3e50;
+    -fx-cursor: hand;
+}
+
+.sidebar-button:hover {
+    -fx-background-color: #af91f4;
+    -fx-text-fill: #731EF0;
+    -fx-effect: dropshadow(three-pass-box, rgba(148,100,238,0.3), 10, 0, 0, 5);
+}
+
+/*.sidebar-button:pressed, .sidebar-button:focused {*/
+/*    -fx-background-color: #9464ee;*/
+/*    -fx-text-fill: #731EF0;*/
+/*}*/
+
+.active {
+    -fx-background-color: #af91f4 !important; /* ලා දම් පැහැය */
+    -fx-text-fill: #731EF0 !important; /* තද දම් පැහැති අකුරු */
+    -fx-effect: dropshadow(three-pass-box, rgba(148,100,238,0.3), 10, 0, 0, 5);
+}
+
+.logout-button{
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 5, 0, 0, 2);
+}
+
+.logout-button:hover {
+    -fx-effect: dropshadow(three-pass-box, rgba(255, 36, 55, 0.3), 10, 0, 0, 5);
+}
+
+.rounded-white-pane {
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 15;
+    -fx-border-radius: 15;
+
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.05), 10, 0, 0, 4);
+}

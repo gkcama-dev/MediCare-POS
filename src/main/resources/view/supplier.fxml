@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import java.lang.String?>
+<?import java.net.URL?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="574.0" prefWidth="954.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.SupplierController">
+   <children>
+      <Label layoutX="57.0" layoutY="4.0" prefHeight="42.0" prefWidth="169.0" text="Supplier" textFill="#4b465c">
+         <font>
+            <Font name="Arial Bold" size="30.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="14.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../icon/supplierDashboard.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="19.0" layoutY="47.0" prefHeight="18.0" prefWidth="372.0" text="Keep track of your medicine providers and contact records." textFill="#4b465c">
+         <font>
+            <Font name="Arial" size="14.0" />
+         </font>
+      </Label>
+      <TableView layoutX="14.0" layoutY="116.0" prefHeight="453.0" prefWidth="670.0">
+        <columns>
+          <TableColumn prefWidth="45.599976539611816" text="ID" />
+          <TableColumn prefWidth="98.39999008178711" text="Company" />
+            <TableColumn prefWidth="117.60002136230469" text="Firstname" />
+            <TableColumn prefWidth="112.0" text="Lastname" />
+            <TableColumn prefWidth="99.20001220703125" text="Mobile" />
+            <TableColumn prefWidth="112.0" text="Email" />
+            <TableColumn prefWidth="112.7999267578125" text="Status" />
+        </columns>
+         <styleClass>
+            <String fx:value="table-row-cell" />
+            <String fx:value="table-cell" />
+            <String fx:value="table-view" />
+         </styleClass>
+         <stylesheets>
+            <URL value="@../css/style.css" />
+            <URL value="@../css/table-style.css" />
+         </stylesheets>
+      </TableView>
+      <JFXButton layoutX="574.0" layoutY="68.0" prefHeight="27.0" prefWidth="110.0" styleClass="search-button" text="Search" textFill="#4b465c">
+         <font>
+            <Font name="Arial Bold" size="14.0" />
+         </font>
+         <stylesheets>
+            <URL value="@../css/style.css" />
+            <URL value="@../css/components-style.css" />
+         </stylesheets>
+      </JFXButton>
+      <TextField layoutX="364.0" layoutY="69.0" prefHeight="36.0" prefWidth="206.0" promptText="Search Here" styleClass="search-field">
+         <font>
+            <Font name="Arial" size="14.0" />
+         </font>
+         <stylesheets>
+            <URL value="@../css/style.css" />
+            <URL value="@../css/components-style.css" />
+         </stylesheets>
+      </TextField>
+      <Pane layoutX="692.0" layoutY="11.0" prefHeight="559.0" prefWidth="254.0" style="-fx-background-color: #ffffff;" styleClass="rounded-white-pane" stylesheets="@../css/style.css">
+         <children>
+            <Label layoutX="10.0" layoutY="9.0" prefHeight="18.0" prefWidth="77.0" text="Supplier ID" textFill="#4b465c">
+               <font>
+                  <Font name="Arial" size="14.0" />
+               </font>
+            </Label>
+            <TextField layoutX="6.0" layoutY="30.0" prefHeight="37.0" prefWidth="244.0" promptText="#0001" styleClass="custom-text-field" stylesheets="@../css/components-style.css">
+               <font>
+                  <Font name="Arial" size="14.0" />
+               </font>
+            </TextField>
+            <Label layoutX="9.0" layoutY="75.0" prefHeight="18.0" prefWidth="77.0" text="Firstname" textFill="#4b465c">
+               <font>
+                  <Font name="Arial" size="14.0" />
+               </font>
+            </Label>
+            <TextField layoutX="6.0" layoutY="96.0" prefHeight="37.0" prefWidth="120.0" promptText="Geeth" styleClass="custom-text-field" stylesheets="@../css/components-style.css">
+               <font>
+                  <Font name="Arial" size="14.0" />
+               </font>
+            </TextField>
+            <Label layoutX="134.0" layoutY="75.0" prefHeight="18.0" prefWidth="77.0" text="Lastname" textFill="#4b465c">
+               <font>
+                  <Font name="Arial" size="14.0" />
+               </font>
+            </Label>
+            <TextField layoutX="128.0" layoutY="96.0" prefHeight="37.0" prefWidth="120.0" promptText="Kalhara" styleClass="custom-text-field" stylesheets="@../css/components-style.css">
+               <font>
+                  <Font name="Arial" size="14.0" />
+               </font>
+            </TextField>
+            <Label layoutX="8.0" layoutY="141.0" prefHeight="18.0" prefWidth="77.0" text="Company" textFill="#4b465c">
+               <font>
+                  <Font name="Arial" size="14.0" />
+               </font>
+            </Label>
+            <TextField layoutX="4.0" layoutY="162.0" prefHeight="37.0" prefWidth="244.0" promptText="Sample Company" styleClass="custom-text-field" stylesheets="@../css/components-style.css">
+               <font>
+                  <Font name="Arial" size="14.0" />
+               </font>
+            </TextField>
+            <Label layoutX="8.0" layoutY="207.0" prefHeight="18.0" prefWidth="77.0" text="Mobile" textFill="#4b465c">
+               <font>
+                  <Font name="Arial" size="14.0" />
+               </font>
+            </Label>
+            <TextField layoutX="4.0" layoutY="228.0" prefHeight="37.0" prefWidth="244.0" promptText="070xxxxxxx" styleClass="custom-text-field" stylesheets="@../css/components-style.css">
+               <font>
+                  <Font name="Arial" size="14.0" />
+               </font>
+            </TextField>
+            <Label layoutX="8.0" layoutY="273.0" prefHeight="18.0" prefWidth="77.0" text="Email" textFill="#4b465c">
+               <font>
+                  <Font name="Arial" size="14.0" />
+               </font>
+            </Label>
+            <TextField layoutX="4.0" layoutY="294.0" prefHeight="37.0" prefWidth="244.0" promptText="example@gmail.com" styleClass="custom-text-field" stylesheets="@../css/components-style.css">
+               <font>
+                  <Font name="Arial" size="14.0" />
+               </font>
+            </TextField>
+            <Label layoutX="8.0" layoutY="339.0" prefHeight="18.0" prefWidth="77.0" text="Status" textFill="#4b465c">
+               <font>
+                  <Font name="Arial" size="14.0" />
+               </font>
+            </Label>
+            <TextField layoutX="4.0" layoutY="360.0" prefHeight="37.0" prefWidth="244.0" promptText="active" styleClass="custom-text-field" stylesheets="@../css/components-style.css">
+               <font>
+                  <Font name="Arial" size="14.0" />
+               </font>
+            </TextField>
+            <JFXButton layoutX="4.0" layoutY="461.0" prefHeight="27.0" prefWidth="244.0" styleClass="add-button" stylesheets="@../css/components-style.css" text="Add Supplier" textFill="#4b465c">
+               <font>
+                  <Font name="Arial Bold" size="14.0" />
+               </font>
+            </JFXButton>
+            <JFXButton layoutX="5.0" layoutY="510.0" prefHeight="27.0" prefWidth="120.0" styleClass="update-button" text="Update" textFill="#4b465c">
+               <font>
+                  <Font name="Arial Bold" size="14.0" />
+               </font>
+               <stylesheets>
+                  <URL value="@../css/style.css" />
+                  <URL value="@../css/components-style.css" />
+               </stylesheets>
+            </JFXButton>
+            <JFXButton layoutX="128.0" layoutY="510.0" prefHeight="27.0" prefWidth="120.0" styleClass="clear-button" text="Clear" textFill="#4b465c">
+               <font>
+                  <Font name="Arial Bold" size="14.0" />
+               </font>
+               <stylesheets>
+                  <URL value="@../css/style.css" />
+                  <URL value="@../css/components-style.css" />
+               </stylesheets>
+            </JFXButton>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
