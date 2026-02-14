@@ -78,7 +78,7 @@ public class DashboardController implements Initializable {
 
     @FXML
     void btnMedicineOnAction(ActionEvent event) {
-
+         setNode("/view/medicine.fxml",btnMedicine);
     }
 
     @FXML
