@@ -87,7 +87,7 @@
 }
 
 .add-button {
-    -fx-background-color: #7aff12;
+    -fx-background-color: #2fdd70;
     -fx-background-radius: 25;
     -fx-text-fill: #ffffff;
     -fx-font-weight: bold;
@@ -98,13 +98,13 @@
 }
 
 .add-button:hover {
-    -fx-background-color: #80e240;
+    -fx-background-color: #25d366;
     -fx-effect: dropshadow(three-pass-box, rgba(115, 30, 240, 0.4), 12, 0, 0, 5);
     -fx-translate-y: -1;
 }
 
 .update-button {
-    -fx-background-color: #FFB400;
+    -fx-background-color: #ffc227;
     -fx-background-radius: 25;
     -fx-text-fill: #ffffff;
     -fx-font-weight: bold;
@@ -121,7 +121,7 @@
 }
 
 .clear-button {
-    -fx-background-color: #686565;
+    -fx-background-color: #7c7b7b;
     -fx-background-radius: 25;
     -fx-text-fill: #ffffff;
     -fx-font-weight: bold;
@@ -132,7 +132,7 @@
 }
 
 .clear-button:hover {
-    -fx-background-color: #7c7b7b;
+    -fx-background-color: #686565;
     -fx-effect: dropshadow(three-pass-box, rgba(115, 30, 240, 0.4), 12, 0, 0, 5);
     -fx-translate-y: -1;
 }

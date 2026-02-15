@@ -143,7 +143,7 @@
                   <URL value="@../css/components-style.css" />
                </stylesheets>
             </JFXButton>
-            <JFXButton layoutX="210.0" layoutY="169.0" prefHeight="35.0" prefWidth="35.0" styleClass="icon-container" textFill="#4b465c">
+            <JFXButton fx:id="btnBrand" layoutX="210.0" layoutY="169.0" onAction="#btnBrandOnAction" prefHeight="35.0" prefWidth="35.0" styleClass="icon-container" textFill="#4b465c">
                <font>
                   <Font name="Arial Bold" size="14.0" />
                </font>
@@ -152,12 +152,12 @@
                   <URL value="@../css/components-style.css" />
                </stylesheets>
             </JFXButton>
-            <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="218.0" layoutY="177.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="218.0" layoutY="177.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../icon/plus.png" />
                </image>
             </ImageView>
-            <JFXButton layoutX="210.0" layoutY="238.0" prefHeight="35.0" prefWidth="35.0" styleClass="icon-container" textFill="#4b465c">
+            <JFXButton fx:id="btnCategory" layoutX="210.0" layoutY="238.0" onAction="#btnCategoryOnAction" prefHeight="35.0" prefWidth="35.0" styleClass="icon-container" textFill="#4b465c">
                <font>
                   <Font name="Arial Bold" size="14.0" />
                </font>
@@ -166,7 +166,7 @@
                   <URL value="@../css/components-style.css" />
                </stylesheets>
             </JFXButton>
-            <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="218.0" layoutY="246.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="218.0" layoutY="246.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../icon/plus.png" />
                </image>
