@@ -140,7 +140,7 @@
                   <URL value="@../css/components-style.css" />
                </stylesheets>
             </JFXButton>
-            <JFXButton layoutX="209.0" layoutY="166.0" prefHeight="40.0" prefWidth="40.0" styleClass="icon-container" textFill="#4b465c">
+            <JFXButton layoutX="212.0" layoutY="169.0" prefHeight="35.0" prefWidth="35.0" styleClass="icon-container" textFill="#4b465c">
                <font>
                   <Font name="Arial Bold" size="14.0" />
                </font>
@@ -154,7 +154,7 @@
                   <Image url="@../icon/plus.png" />
                </image>
             </ImageView>
-            <JFXButton layoutX="209.0" layoutY="97.0" prefHeight="40.0" prefWidth="40.0" styleClass="icon-container" textFill="#4b465c">
+            <JFXButton layoutX="211.0" layoutY="100.0" prefHeight="35.0" prefWidth="35.0" styleClass="icon-container" textFill="#4b465c">
                <font>
                   <Font name="Arial Bold" size="14.0" />
                </font>
