@@ -34,7 +34,7 @@
         <columns>
           <TableColumn prefWidth="45.599976539611816" text="ID" />
           <TableColumn prefWidth="98.39999008178711" text="Name" />
-            <TableColumn prefWidth="117.60002136230469" text="Band" />
+            <TableColumn prefWidth="117.60002136230469" text="Brand" />
             <TableColumn prefWidth="112.0" text="Category" />
             <TableColumn prefWidth="99.20001220703125" text="Mobile" />
             <TableColumn prefWidth="112.0" text="Email" />
