@@ -152,7 +152,7 @@
                   <URL value="@../css/components-style.css" />
                </stylesheets>
             </JFXButton>
-            <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="215.0" layoutY="174.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="218.0" layoutY="177.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../icon/plus.png" />
                </image>
@@ -166,7 +166,7 @@
                   <URL value="@../css/components-style.css" />
                </stylesheets>
             </JFXButton>
-            <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="215.0" layoutY="243.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="218.0" layoutY="246.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../icon/plus.png" />
                </image>
