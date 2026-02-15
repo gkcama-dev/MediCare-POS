@@ -4,6 +4,7 @@
 <?import java.lang.String?>
 <?import java.net.URL?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
@@ -15,7 +16,7 @@
 
 <AnchorPane prefHeight="574.0" prefWidth="954.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.UserController">
    <children>
-      <Label layoutX="57.0" layoutY="4.0" prefHeight="42.0" prefWidth="331.0" text="Supplier Management" textFill="#731ef0">
+      <Label layoutX="57.0" layoutY="4.0" prefHeight="42.0" prefWidth="331.0" text="User Management" textFill="#731ef0">
          <font>
             <Font name="Arial Bold" size="30.0" />
          </font>
@@ -25,20 +26,18 @@
             <Image url="@../icon/supplierDashboard.png" />
          </image>
       </ImageView>
-      <Label layoutX="19.0" layoutY="47.0" prefHeight="18.0" prefWidth="372.0" text="Keep track of your medicine providers and contact records." textFill="#4b465c">
+      <Label layoutX="19.0" layoutY="47.0" prefHeight="18.0" prefWidth="394.0" text="Manage system users, access levels, and security credentials." textFill="#4b465c">
          <font>
             <Font name="Arial" size="14.0" />
          </font>
       </Label>
       <TableView layoutX="14.0" layoutY="116.0" prefHeight="453.0" prefWidth="670.0">
         <columns>
-          <TableColumn prefWidth="45.599976539611816" text="ID" />
-          <TableColumn prefWidth="98.39999008178711" text="Company" />
-            <TableColumn prefWidth="117.60002136230469" text="Firstname" />
-            <TableColumn prefWidth="112.0" text="Lastname" />
-            <TableColumn prefWidth="99.20001220703125" text="Mobile" />
-            <TableColumn prefWidth="112.0" text="Email" />
-            <TableColumn prefWidth="112.7999267578125" text="Status" />
+          <TableColumn prefWidth="71.20000839233398" text="ID" />
+          <TableColumn prefWidth="157.60000610351562" text="Username" />
+            <TableColumn prefWidth="179.1999969482422" text="Password" />
+            <TableColumn prefWidth="134.4000244140625" text="Role" />
+            <TableColumn prefWidth="103.20001220703125" text="Status" />
         </columns>
          <styleClass>
             <String fx:value="table-row-cell" />
@@ -70,7 +69,7 @@
       </TextField>
       <Pane layoutX="692.0" layoutY="11.0" prefHeight="559.0" prefWidth="254.0" style="-fx-background-color: #ffffff;" styleClass="rounded-white-pane" stylesheets="@../css/style.css">
          <children>
-            <Label layoutX="10.0" layoutY="9.0" prefHeight="18.0" prefWidth="77.0" text="Supplier ID" textFill="#4b465c">
+            <Label layoutX="10.0" layoutY="9.0" prefHeight="18.0" prefWidth="77.0" text="User ID" textFill="#4b465c">
                <font>
                   <Font name="Arial" size="14.0" />
                </font>
@@ -80,67 +79,42 @@
                   <Font name="Arial" size="14.0" />
                </font>
             </TextField>
-            <Label layoutX="9.0" layoutY="78.0" prefHeight="18.0" prefWidth="77.0" text="Firstname" textFill="#4b465c">
+            <Label layoutX="9.0" layoutY="78.0" prefHeight="18.0" prefWidth="77.0" text="Username" textFill="#4b465c">
                <font>
                   <Font name="Arial" size="14.0" />
                </font>
             </Label>
-            <TextField layoutX="6.0" layoutY="99.0" prefHeight="37.0" prefWidth="120.0" promptText="Geeth" styleClass="custom-text-field" stylesheets="@../css/components-style.css">
+            <TextField layoutX="6.0" layoutY="99.0" prefHeight="37.0" prefWidth="244.0" promptText="Geeth" styleClass="custom-text-field" stylesheets="@../css/components-style.css">
                <font>
                   <Font name="Arial" size="14.0" />
                </font>
             </TextField>
-            <Label layoutX="134.0" layoutY="78.0" prefHeight="18.0" prefWidth="77.0" text="Lastname" textFill="#4b465c">
+            <Label layoutX="8.0" layoutY="147.0" prefHeight="18.0" prefWidth="77.0" text="Password" textFill="#4b465c">
                <font>
                   <Font name="Arial" size="14.0" />
                </font>
             </Label>
-            <TextField layoutX="128.0" layoutY="99.0" prefHeight="37.0" prefWidth="120.0" promptText="Kalhara" styleClass="custom-text-field" stylesheets="@../css/components-style.css">
-               <font>
-                  <Font name="Arial" size="14.0" />
-               </font>
-            </TextField>
-            <Label layoutX="8.0" layoutY="147.0" prefHeight="18.0" prefWidth="77.0" text="Company" textFill="#4b465c">
+            <Label layoutX="8.0" layoutY="216.0" prefHeight="18.0" prefWidth="77.0" text="Role" textFill="#4b465c">
                <font>
                   <Font name="Arial" size="14.0" />
                </font>
             </Label>
-            <TextField layoutX="4.0" layoutY="168.0" prefHeight="37.0" prefWidth="244.0" promptText="Sample Company" styleClass="custom-text-field" stylesheets="@../css/components-style.css">
+            <TextField layoutX="4.0" layoutY="237.0" prefHeight="37.0" prefWidth="244.0" promptText="Admin" styleClass="custom-text-field" stylesheets="@../css/components-style.css">
                <font>
                   <Font name="Arial" size="14.0" />
                </font>
             </TextField>
-            <Label layoutX="8.0" layoutY="216.0" prefHeight="18.0" prefWidth="77.0" text="Mobile" textFill="#4b465c">
+            <Label layoutX="8.0" layoutY="285.0" prefHeight="18.0" prefWidth="77.0" text="Status" textFill="#4b465c">
                <font>
                   <Font name="Arial" size="14.0" />
                </font>
             </Label>
-            <TextField layoutX="4.0" layoutY="237.0" prefHeight="37.0" prefWidth="244.0" promptText="070xxxxxxx" styleClass="custom-text-field" stylesheets="@../css/components-style.css">
+            <TextField layoutX="4.0" layoutY="306.0" prefHeight="37.0" prefWidth="244.0" promptText="active" styleClass="custom-text-field" stylesheets="@../css/components-style.css">
                <font>
                   <Font name="Arial" size="14.0" />
                </font>
             </TextField>
-            <Label layoutX="8.0" layoutY="285.0" prefHeight="18.0" prefWidth="77.0" text="Email" textFill="#4b465c">
-               <font>
-                  <Font name="Arial" size="14.0" />
-               </font>
-            </Label>
-            <TextField layoutX="4.0" layoutY="306.0" prefHeight="37.0" prefWidth="244.0" promptText="example@gmail.com" styleClass="custom-text-field" stylesheets="@../css/components-style.css">
-               <font>
-                  <Font name="Arial" size="14.0" />
-               </font>
-            </TextField>
-            <Label layoutX="8.0" layoutY="354.0" prefHeight="18.0" prefWidth="77.0" text="Status" textFill="#4b465c">
-               <font>
-                  <Font name="Arial" size="14.0" />
-               </font>
-            </Label>
-            <TextField layoutX="4.0" layoutY="375.0" prefHeight="37.0" prefWidth="244.0" promptText="active" styleClass="custom-text-field" stylesheets="@../css/components-style.css">
-               <font>
-                  <Font name="Arial" size="14.0" />
-               </font>
-            </TextField>
-            <JFXButton layoutX="4.0" layoutY="461.0" prefHeight="27.0" prefWidth="244.0" styleClass="add-button" stylesheets="@../css/components-style.css" text="Add Supplier" textFill="#4b465c">
+            <JFXButton layoutX="4.0" layoutY="461.0" prefHeight="27.0" prefWidth="244.0" styleClass="add-button" stylesheets="@../css/components-style.css" text="Add User" textFill="#4b465c">
                <font>
                   <Font name="Arial Bold" size="14.0" />
                </font>
@@ -163,6 +137,7 @@
                   <URL value="@../css/components-style.css" />
                </stylesheets>
             </JFXButton>
+            <PasswordField layoutX="5.0" layoutY="168.0" prefHeight="37.0" prefWidth="244.0" promptText="xxxxxx" styleClass="custom-text-field" stylesheets="@../css/components-style.css" />
          </children>
       </Pane>
    </children>

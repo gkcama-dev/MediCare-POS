@@ -88,13 +88,12 @@ public class DashboardController implements Initializable {
 
     @FXML
     void btnSupplierOnAction(ActionEvent event) {
-
         setNode("/view/supplier.fxml",btnSupplier);
     }
 
     @FXML
     void btnUserOnAction(ActionEvent event) {
-
+         setNode("/view/user.fxml",btnUser);
     }
 
     private void setNode(String fxmlPath ,JFXButton selectedBtn) {
