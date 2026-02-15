@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="574.0" prefWidth="954.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.SupplierController">
+<AnchorPane prefHeight="574.0" prefWidth="954.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.UserController">
    <children>
       <Label layoutX="57.0" layoutY="4.0" prefHeight="42.0" prefWidth="331.0" text="Supplier Management" textFill="#731ef0">
          <font>

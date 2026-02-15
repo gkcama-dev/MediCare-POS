@@ -33,13 +33,14 @@
       </Label>
       <TableView layoutX="14.0" layoutY="116.0" prefHeight="390.0" prefWidth="670.0">
         <columns>
-          <TableColumn prefWidth="45.599976539611816" text="ID" />
-          <TableColumn prefWidth="98.39999008178711" text="Name" />
-            <TableColumn prefWidth="117.60002136230469" text="Band" />
-            <TableColumn prefWidth="112.0" text="Category" />
-            <TableColumn prefWidth="99.20001220703125" text="Mobile" />
-            <TableColumn prefWidth="112.0" text="Email" />
-            <TableColumn prefWidth="112.7999267578125" text="Status" />
+          <TableColumn prefWidth="42.39999008178711" text="ID" />
+          <TableColumn prefWidth="84.0" text="Supplier" />
+            <TableColumn prefWidth="87.20001220703125" text="Medicine" />
+            <TableColumn prefWidth="60.80000305175781" text="MFD" />
+            <TableColumn prefWidth="57.60003662109375" text="EXP" />
+            <TableColumn prefWidth="113.60003662109375" text="Buying Price" />
+            <TableColumn prefWidth="112.0" text="Selling Price" />
+            <TableColumn prefWidth="89.5999755859375" text="Quantity" />
         </columns>
          <styleClass>
             <String fx:value="table-row-cell" />
@@ -139,7 +140,7 @@
                   <URL value="@../css/components-style.css" />
                </stylesheets>
             </JFXButton>
-            <JFXButton layoutX="212.0" layoutY="166.0" prefHeight="41.0" prefWidth="40.0" styleClass="icon-container" textFill="#4b465c">
+            <JFXButton layoutX="209.0" layoutY="166.0" prefHeight="40.0" prefWidth="40.0" styleClass="icon-container" textFill="#4b465c">
                <font>
                   <Font name="Arial Bold" size="14.0" />
                </font>
@@ -148,12 +149,12 @@
                   <URL value="@../css/components-style.css" />
                </stylesheets>
             </JFXButton>
-            <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="220.0" layoutY="174.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="217.0" layoutY="174.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../icon/plus.png" />
                </image>
             </ImageView>
-            <JFXButton layoutX="212.0" layoutY="97.0" prefHeight="41.0" prefWidth="40.0" styleClass="icon-container" textFill="#4b465c">
+            <JFXButton layoutX="209.0" layoutY="97.0" prefHeight="40.0" prefWidth="40.0" styleClass="icon-container" textFill="#4b465c">
                <font>
                   <Font name="Arial Bold" size="14.0" />
                </font>
@@ -162,7 +163,7 @@
                   <URL value="@../css/components-style.css" />
                </stylesheets>
             </JFXButton>
-            <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="220.0" layoutY="105.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="217.0" layoutY="105.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../icon/plus.png" />
                </image>
