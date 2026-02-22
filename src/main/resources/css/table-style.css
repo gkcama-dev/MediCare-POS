@@ -10,14 +10,14 @@
 .table-view .column-header {
     -fx-background-color: #ffffff;
     -fx-border-color: #ffffff;
-    -fx-padding: 12;
+    -fx-padding: 8;
 }
 
 .table-view .column-header .label {
     -fx-text-fill: #495057;
     -fx-font-family: "Arial Rounded MT Bold";
     -fx-font-size: 14px;
-    -fx-alignment: CENTER_LEFT;
+    -fx-alignment: CENTER;
 }
 
 .table-view .column-header-background {
@@ -43,9 +43,9 @@
 }
 
 .table-cell {
-    -fx-padding: 12;
+    -fx-padding:2;
     -fx-text-fill: #2c3e50;
-    -fx-alignment: CENTER_LEFT;
+    -fx-alignment: CENTER;
     -fx-border-color: transparent;
 }
 

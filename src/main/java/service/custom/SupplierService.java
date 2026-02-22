@@ -9,13 +9,15 @@ import java.util.List;
 public interface SupplierService extends SuperService {
     boolean addSupplier(Supplier supplier) throws SQLException;
 
-    boolean updateSupplier(Supplier supplier) throws SQLException;
+    boolean updateSupplier(Supplier supplier) throws Exception;
 
     Supplier searchSupplier(String id) throws SQLException;
 
-    List<Supplier> getAllSupplier() throws SQLException;
+    List<Supplier> getAllSupplier() throws Exception;
 
     List<String> getAllSupplierId() throws SQLException;
 
     String generateNextSupplierId() throws Exception;
+
+    List<String> getSupplierStatus() throws Exception;
 }
