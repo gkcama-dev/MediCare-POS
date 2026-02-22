@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import java.lang.String?>
+<?import java.net.URL?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="574.0" prefWidth="954.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.adminController.AllStockController">
+   <children>
+      <Label layoutX="57.0" layoutY="4.0" prefHeight="42.0" prefWidth="331.0" text="All Stock" textFill="#731ef0">
+         <font>
+            <Font name="Arial Bold" size="30.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="14.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../icon/allStock2.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="19.0" layoutY="47.0" prefHeight="18.0" prefWidth="472.0" text="Monitor real-time stock levels, expiry dates, and availability." textFill="#4b465c">
+         <font>
+            <Font name="Arial" size="14.0" />
+         </font>
+      </Label>
+      <TableView layoutX="14.0" layoutY="116.0" prefHeight="406.0" prefWidth="930.0">
+        <columns>
+          <TableColumn prefWidth="85.59997177124023" text="ID" />
+          <TableColumn prefWidth="147.2000274658203" text="Supplier" />
+            <TableColumn prefWidth="168.79998779296875" text="Medicine" />
+            <TableColumn prefWidth="78.39996337890625" text="MFD" />
+            <TableColumn prefWidth="88.0" text="EXP" />
+            <TableColumn prefWidth="119.199951171875" text="Buying Price" />
+            <TableColumn prefWidth="117.5999755859375" text="Selling Price" />
+            <TableColumn prefWidth="117.5999755859375" text="Qty" />
+        </columns>
+         <styleClass>
+            <String fx:value="table-row-cell" />
+            <String fx:value="table-cell" />
+            <String fx:value="table-view" />
+         </styleClass>
+         <stylesheets>
+            <URL value="@../../css/style.css" />
+            <URL value="@../../css/table-style.css" />
+         </stylesheets>
+      </TableView>
+      <JFXButton layoutX="833.0" layoutY="68.0" prefHeight="27.0" prefWidth="110.0" styleClass="searchbar-clear-button" text="Clear" textFill="#4b465c">
+         <font>
+            <Font name="Arial Bold" size="14.0" />
+         </font>
+         <stylesheets>
+            <URL value="@../../css/style.css" />
+            <URL value="@../../css/components-style.css" />
+         </stylesheets>
+      </JFXButton>
+      <TextField layoutX="509.0" layoutY="69.0" prefHeight="36.0" prefWidth="206.0" promptText="Search Here" styleClass="search-field">
+         <font>
+            <Font name="Arial" size="14.0" />
+         </font>
+         <stylesheets>
+            <URL value="@../../css/style.css" />
+            <URL value="@../../css/components-style.css" />
+         </stylesheets>
+      </TextField>
+      <JFXButton layoutX="719.0" layoutY="68.0" prefHeight="27.0" prefWidth="110.0" styleClass="search-button" text="Search" textFill="#4b465c">
+         <font>
+            <Font name="Arial Bold" size="14.0" />
+         </font>
+         <stylesheets>
+            <URL value="@../../css/style.css" />
+            <URL value="@../../css/components-style.css" />
+         </stylesheets>
+      </JFXButton>
+      <JFXButton layoutX="718.0" layoutY="529.0" prefHeight="38.0" prefWidth="226.0" styleClass="update-button" text="Print" textFill="#4b465c">
+         <font>
+            <Font name="Arial Bold" size="14.0" />
+         </font>
+         <stylesheets>
+            <URL value="@../../css/style.css" />
+            <URL value="@../../css/components-style.css" />
+         </stylesheets>
+      </JFXButton>
+   </children>
+</AnchorPane>
