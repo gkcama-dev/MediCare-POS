@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import java.lang.String?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="651.0" prefWidth="1214.0" style="-fx-background-color: F4F5FA;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.adminController.DashboardController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="85.0" layoutX="-36.0" layoutY="-12.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="1250.0" />
+      <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="5.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../img/logo.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="74.0" layoutY="14.0" prefHeight="46.0" prefWidth="218.0" text="MediCare POS" textFill="#312f2f">
+         <font>
+            <Font name="Arial Bold" size="30.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="1151.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../icon/avatar.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="1068.0" layoutY="9.0" prefHeight="46.0" prefWidth="75.0" text="Admin" textAlignment="CENTER" textFill="#312f2f">
+         <font>
+            <Font name="Arial Bold" size="22.0" />
+         </font>
+      </Label>
+      <Label layoutX="1068.0" layoutY="28.0" prefHeight="46.0" prefWidth="91.0" text="Administrator" textAlignment="CENTER" textFill="#312f2f">
+         <font>
+            <Font name="Arial" size="12.0" />
+         </font></Label>
+      <Rectangle arcHeight="25.0" arcWidth="25.0" fill="WHITE" height="574.0" layoutX="-37.0" layoutY="72.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="297.0" />
+      <JFXButton fx:id="btnDashboard" layoutX="17.0" layoutY="101.0" onAction="#btnDashboardOnAction" prefHeight="40.0" prefWidth="225.0" style="-fx-background-color: F4F5FA; -fx-background-radius: 14;" stylesheets="@../../css/style.css" text="Dashboard" textFill="#731ef0">
+         <font>
+            <Font name="Arial Bold" size="18.0" />
+         </font>
+         <styleClass>
+            <String fx:value="sidebar-button" />
+            <String fx:value="active" />
+         </styleClass>
+      </JFXButton>
+      <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="26.0" layoutY="106.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../icon/dashboard.png" />
+         </image>
+      </ImageView>
+      <JFXButton fx:id="btnSupplier" layoutX="17.0" layoutY="184.0" onAction="#btnSupplierOnAction" prefHeight="40.0" prefWidth="225.0" style="-fx-background-color: F4F5FA; -fx-background-radius: 14;" styleClass="sidebar-button" stylesheets="@../../css/style.css" text="Supplier" textFill="#312f2f">
+         <font>
+            <Font name="Arial Bold" size="18.0" />
+         </font>
+      </JFXButton>
+      <Label layoutX="17.0" layoutY="142.0" prefHeight="46.0" prefWidth="91.0" text="FUNCTION" textAlignment="CENTER" textFill="#a8a8a8">
+         <font>
+            <Font name="Arial" size="15.0" />
+         </font>
+      </Label>
+      <JFXButton fx:id="btnMedicine" layoutX="17.0" layoutY="234.0" onAction="#btnMedicineOnAction" prefHeight="40.0" prefWidth="225.0" style="-fx-background-color: F4F5FA; -fx-background-radius: 14;" styleClass="sidebar-button" stylesheets="@../../css/style.css" text="Medicine" textFill="#312f2f">
+         <font>
+            <Font name="Arial Bold" size="18.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="btnStock" layoutX="17.0" layoutY="285.0" onAction="#btnStockOnAction" prefHeight="40.0" prefWidth="225.0" style="-fx-background-color: F4F5FA; -fx-background-radius: 14;" styleClass="sidebar-button" stylesheets="@../../css/style.css" text="Stock" textFill="#312f2f">
+         <font>
+            <Font name="Arial Bold" size="18.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="btnUser" layoutX="17.0" layoutY="335.0" onAction="#btnUserOnAction" prefHeight="40.0" prefWidth="225.0" style="-fx-background-color: F4F5FA; -fx-background-radius: 14;" styleClass="sidebar-button" stylesheets="@../../css/style.css" text="User" textFill="#312f2f">
+         <font>
+            <Font name="Arial Bold" size="18.0" />
+         </font>
+      </JFXButton>
+      <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="26.0" layoutY="189.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../icon/supplier.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="26.0" layoutY="239.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../icon/medicine.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="26.0" layoutY="290.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../icon/stock.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="26.0" layoutY="340.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../icon/user2.png" />
+         </image>
+      </ImageView>
+      <JFXButton fx:id="btnAllProducts" layoutX="17.0" layoutY="418.0" onAction="#btnAllProductsOnAction" prefHeight="40.0" prefWidth="225.0" style="-fx-background-color: F4F5FA; -fx-background-radius: 14;" styleClass="sidebar-button" stylesheets="@../../css/style.css" text="All Products" textFill="#312f2f">
+         <font>
+            <Font name="Arial Bold" size="18.0" />
+         </font>
+      </JFXButton>
+      <Label layoutX="17.0" layoutY="376.0" prefHeight="46.0" prefWidth="91.0" text="REPORTS" textAlignment="CENTER" textFill="#a8a8a8">
+         <font>
+            <Font name="Arial" size="15.0" />
+         </font>
+      </Label>
+      <JFXButton fx:id="btnAllStocks" layoutX="17.0" layoutY="468.0" onAction="#btnAllStockOnAction" prefHeight="40.0" prefWidth="225.0" style="-fx-background-color: F4F5FA; -fx-background-radius: 14;" styleClass="sidebar-button" stylesheets="@../../css/style.css" text="All Stock" textFill="#312f2f">
+         <font>
+            <Font name="Arial Bold" size="18.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="btnAllInvoice" layoutX="17.0" layoutY="519.0" onAction="#btnAllInvoiceOnAction" prefHeight="40.0" prefWidth="225.0" style="-fx-background-color: F4F5FA; -fx-background-radius: 14;" styleClass="sidebar-button" stylesheets="@../../css/style.css" text="All Invoice" textFill="#312f2f">
+         <font>
+            <Font name="Arial Bold" size="18.0" />
+         </font>
+      </JFXButton>
+      <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="26.0" layoutY="423.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../icon/allproducts.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="26.0" layoutY="473.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../icon/allstock.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="26.0" layoutY="524.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../icon/allinvoice.png" />
+         </image>
+      </ImageView>
+      <JFXButton layoutX="17.0" layoutY="590.0" onAction="#btnLogOutOnAction" prefHeight="40.0" prefWidth="225.0" style="-fx-background-color: F02C2F; -fx-background-radius: 14;" styleClass="logout-button" stylesheets="@../../css/style.css" text="Logout" textFill="WHITE">
+         <font>
+            <Font name="Arial Bold" size="18.0" />
+         </font>
+      </JFXButton>
+      <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="26.0" layoutY="595.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../icon/logout.png" />
+         </image>
+      </ImageView>
+      <AnchorPane fx:id="dashroot" layoutX="260.0" layoutY="73.0" prefHeight="574.0" prefWidth="954.0" style="-fx-background-color: F4F5FA;" />
+   </children>
+</AnchorPane>

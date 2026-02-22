@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import java.lang.String?>
+<?import java.net.URL?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="651.0" prefWidth="1214.0" style="-fx-background-color: F4F5FA;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.cashierController.InvoiceDashboardController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="85.0" layoutX="-36.0" layoutY="-12.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="1250.0" />
+      <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="5.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../img/logo.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="74.0" layoutY="14.0" prefHeight="46.0" prefWidth="218.0" text="MediCare POS" textFill="#312f2f">
+         <font>
+            <Font name="Arial Bold" size="30.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="1151.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../icon/avatar.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="1068.0" layoutY="9.0" prefHeight="46.0" prefWidth="75.0" text="Admin" textAlignment="CENTER" textFill="#312f2f">
+         <font>
+            <Font name="Arial Bold" size="22.0" />
+         </font>
+      </Label>
+      <Label layoutX="1068.0" layoutY="28.0" prefHeight="46.0" prefWidth="91.0" text="Administrator" textAlignment="CENTER" textFill="#312f2f">
+         <font>
+            <Font name="Arial" size="12.0" />
+         </font></Label>
+      <Rectangle arcHeight="25.0" arcWidth="25.0" fill="WHITE" height="574.0" layoutX="-37.0" layoutY="72.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="297.0" />
+      <JFXButton layoutX="11.0" layoutY="601.0" onAction="#btnLogOutOnAction" prefHeight="40.0" prefWidth="244.0" style="-fx-background-color: F02C2F; -fx-background-radius: 25;" styleClass="logout-button" stylesheets="@../../css/style.css" text="Logout" textFill="WHITE">
+         <font>
+            <Font name="Arial Bold" size="18.0" />
+         </font>
+      </JFXButton>
+      <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="26.0" layoutY="607.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../icon/logout.png" />
+         </image>
+      </ImageView>
+      <AnchorPane fx:id="dashroot" layoutX="260.0" layoutY="73.0" prefHeight="574.0" prefWidth="954.0" style="-fx-background-color: F4F5FA;">
+         <children>
+            <AnchorPane prefHeight="574.0" prefWidth="954.0">
+               <children>
+                  <Label layoutX="57.0" layoutY="4.0" prefHeight="42.0" prefWidth="335.0" text="Invoice Dashboard" textFill="#731ef0">
+                     <font>
+                        <Font name="Arial Bold" size="30.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="14.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../icon/allInvoice2.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="19.0" layoutY="47.0" prefHeight="18.0" prefWidth="417.0" text="Monitor sales trends, revenue, and daily billing activity at a glance." textFill="#4b465c">
+                     <font>
+                        <Font name="Arial" size="14.0" />
+                     </font>
+                  </Label>
+                  <TableView layoutX="11.0" layoutY="76.0" prefHeight="494.0" prefWidth="670.0">
+                     <columns>
+                        <TableColumn prefWidth="109.60000610351562" text="Stock ID" />
+                        <TableColumn prefWidth="96.0" text="Brand" />
+                        <TableColumn prefWidth="143.20001220703125" text="Medicine" />
+                        <TableColumn prefWidth="116.79998779296875" text="Price" />
+                        <TableColumn prefWidth="80.79998779296875" text="Qty" />
+                        <TableColumn prefWidth="100.7999267578125" text="Total" />
+                     </columns>
+                     <styleClass>
+                        <String fx:value="table-row-cell" />
+                        <String fx:value="table-cell" />
+                        <String fx:value="table-view" />
+                     </styleClass>
+                     <stylesheets>
+                        <URL value="@../../css/style.css" />
+                        <URL value="@../../css/table-style.css" />
+                     </stylesheets>
+                  </TableView>
+                  <Pane layoutX="692.0" layoutY="11.0" prefHeight="559.0" prefWidth="254.0" style="-fx-background-color: #ffffff;" styleClass="rounded-white-pane" stylesheets="@../../css/style.css">
+                     <children>
+                        <JFXComboBox layoutX="6.0" layoutY="173.0" prefHeight="38.0" prefWidth="244.0" promptText="cash" styleClass="custom-combo-box" stylesheets="@../../css/components-style.css" unFocusColor="#cfcaca" />
+                        <Label layoutX="10.0" layoutY="9.0" prefHeight="18.0" prefWidth="77.0" text="Total" textFill="#4b465c">
+                           <font>
+                              <Font name="Arial" size="14.0" />
+                           </font>
+                        </Label>
+                        <TextField layoutX="6.0" layoutY="31.0" prefHeight="37.0" prefWidth="244.0" promptText="00.00" stylesheets="@../../css/components-style.css">
+                           <font>
+                              <Font name="Arial" size="18.0" />
+                           </font>
+                           <styleClass>
+                              <String fx:value="number-text-filed" />
+                              <String fx:value="invoice-text-field" />
+                           </styleClass>
+                        </TextField>
+                        <Label layoutX="9.0" layoutY="80.0" prefHeight="18.0" prefWidth="104.0" text="Discount" textFill="#4b465c">
+                           <font>
+                              <Font name="Arial" size="14.0" />
+                           </font>
+                        </Label>
+                        <TextField layoutX="6.0" layoutY="102.0" prefHeight="37.0" prefWidth="244.0" promptText="0%" stylesheets="@../../css/components-style.css">
+                           <font>
+                              <Font name="Arial" size="14.0" />
+                           </font>
+                           <styleClass>
+                              <String fx:value="number-text-filed" />
+                              <String fx:value="invoice-text-field" />
+                           </styleClass>
+                        </TextField>
+                        <Label layoutX="8.0" layoutY="151.0" prefHeight="18.0" prefWidth="120.0" text="Payment Method" textFill="#4b465c">
+                           <font>
+                              <Font name="Arial" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="8.0" layoutY="222.0" prefHeight="18.0" prefWidth="77.0" text="Payement" textFill="#4b465c">
+                           <font>
+                              <Font name="Arial" size="14.0" />
+                           </font>
+                        </Label>
+                        <TextField layoutX="4.0" layoutY="244.0" prefHeight="37.0" prefWidth="244.0" promptText="00.00" stylesheets="@../../css/components-style.css">
+                           <font>
+                              <Font name="Arial" size="14.0" />
+                           </font>
+                           <styleClass>
+                              <String fx:value="number-text-filed" />
+                              <String fx:value="invoice-text-field" />
+                           </styleClass>
+                        </TextField>
+                        <Label layoutX="8.0" layoutY="293.0" prefHeight="18.0" prefWidth="77.0" text="Balance" textFill="#4b465c">
+                           <font>
+                              <Font name="Arial" size="14.0" />
+                           </font>
+                        </Label>
+                        <TextField layoutX="4.0" layoutY="315.0" prefHeight="37.0" prefWidth="244.0" promptText="00.00" stylesheets="@../../css/components-style.css">
+                           <font>
+                              <Font name="Arial" size="14.0" />
+                           </font>
+                           <styleClass>
+                              <String fx:value="number-text-filed" />
+                              <String fx:value="invoice-text-field" />
+                           </styleClass>
+                        </TextField>
+                        <JFXButton layoutX="6.0" layoutY="507.0" prefHeight="27.0" prefWidth="244.0" styleClass="add-button" stylesheets="@../../css/components-style.css" text="Add Medicine" textFill="#4b465c">
+                           <font>
+                              <Font name="Arial Bold" size="14.0" />
+                           </font>
+                        </JFXButton>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="218.0" layoutY="177.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../icon/plus.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+               </children>
+            </AnchorPane>
+         </children></AnchorPane>
+      <Label layoutX="8.0" layoutY="77.0" prefHeight="18.0" prefWidth="77.0" text="Invoice ID" textFill="#4b465c">
+         <font>
+            <Font name="Arial" size="14.0" />
+         </font>
+      </Label>
+      <TextField layoutX="8.0" layoutY="98.0" prefHeight="37.0" prefWidth="244.0" promptText="inv0303" styleClass="custom-text-field" stylesheets="@../../css/components-style.css">
+         <font>
+            <Font name="Arial" size="14.0" />
+         </font>
+      </TextField>
+      <Label layoutX="8.0" layoutY="149.0" prefHeight="18.0" prefWidth="119.0" text="Customer Mobile" textFill="#4b465c">
+         <font>
+            <Font name="Arial" size="14.0" />
+         </font>
+      </Label>
+      <TextField layoutX="8.0" layoutY="170.0" prefHeight="37.0" prefWidth="244.0" promptText="0702222222" styleClass="custom-text-field" stylesheets="@../../css/components-style.css">
+         <font>
+            <Font name="Arial" size="14.0" />
+         </font>
+      </TextField>
+      <Label layoutX="8.0" layoutY="219.0" prefHeight="18.0" prefWidth="119.0" text="Select Stock" textFill="#4b465c">
+         <font>
+            <Font name="Arial" size="14.0" />
+         </font>
+      </Label>
+      <TextField layoutX="8.0" layoutY="241.0" prefHeight="38.0" prefWidth="202.0" promptText="Stock ID" styleClass="custom-text-field" stylesheets="@../../css/components-style.css">
+         <font>
+            <Font name="Arial" size="14.0" />
+         </font>
+      </TextField>
+      <JFXButton fx:id="btnBrand" layoutX="216.0" layoutY="242.0" onAction="#btnBrandOnAction" prefHeight="35.0" prefWidth="35.0" styleClass="icon-container" textFill="#4b465c">
+         <font>
+            <Font name="Arial Bold" size="14.0" />
+         </font>
+         <stylesheets>
+            <URL value="@../../css/style.css" />
+            <URL value="@../../css/components-style.css" />
+         </stylesheets>
+      </JFXButton>
+      <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="224.0" layoutY="250.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../icon/plus.png" />
+         </image>
+      </ImageView>
+      <TextField layoutX="8.0" layoutY="289.0" prefHeight="38.0" prefWidth="244.0" promptText="Brand" styleClass="custom-text-field" stylesheets="@../../css/components-style.css">
+         <font>
+            <Font name="Arial" size="14.0" />
+         </font>
+      </TextField>
+      <TextField layoutX="8.0" layoutY="336.0" prefHeight="38.0" prefWidth="120.0" promptText="Price" styleClass="custom-text-field" stylesheets="@../../css/components-style.css">
+         <font>
+            <Font name="Arial" size="14.0" />
+         </font>
+      </TextField>
+      <TextField layoutX="131.0" layoutY="336.0" prefHeight="38.0" prefWidth="120.0" promptText="Available Qty" styleClass="custom-text-field" stylesheets="@../../css/components-style.css">
+         <font>
+            <Font name="Arial" size="14.0" />
+         </font>
+      </TextField>
+      <TextField layoutX="10.0" layoutY="396.0" prefHeight="38.0" prefWidth="244.0" promptText="Enter Qty" styleClass="custom-text-field" stylesheets="@../../css/components-style.css">
+         <font>
+            <Font name="Arial" size="14.0" />
+         </font>
+      </TextField>
+      <JFXButton layoutX="11.0" layoutY="444.0" prefHeight="27.0" prefWidth="244.0" styleClass="add-button" stylesheets="@../../css/components-style.css" text="Add Medicine" textFill="#4b465c">
+         <font>
+            <Font name="Arial Bold" size="14.0" />
+         </font>
+      </JFXButton>
+      <Label layoutX="103.0" layoutY="508.0" prefHeight="22.0" prefWidth="50.0" text="Total" textFill="#4b465c">
+         <font>
+            <Font name="Arial Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="112.0" layoutY="530.0" prefHeight="42.0" prefWidth="141.0" text="2000.00" textAlignment="RIGHT" textFill="#4b465c">
+         <font>
+            <Font name="Arial Bold" size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="54.0" layoutY="537.0" prefHeight="27.0" prefWidth="50.0" text="Rs :" textFill="#4b465c">
+         <font>
+            <Font name="Arial" size="23.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

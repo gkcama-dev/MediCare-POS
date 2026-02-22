@@ -52,6 +52,23 @@
     -fx-translate-y: -1;
 }
 
+.searchbar-clear-button {
+    -fx-background-color: #7c7b7b;
+    -fx-background-radius: 25;
+    -fx-text-fill: #ffffff;
+    -fx-font-weight: bold;
+    -fx-font-size: 12px;
+    -fx-padding: 10 25 10 25;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(three-pass-box, rgba(115, 30, 240, 0.3), 10, 0, 0, 4);
+}
+
+.searchbar-clear-button:hover {
+    -fx-background-color: #686565;
+    -fx-effect: dropshadow(three-pass-box, rgba(115, 30, 240, 0.4), 12, 0, 0, 5);
+    -fx-translate-y: -1;
+}
+
 .custom-text-field {
     -fx-background-color: #F4F5FA;
     -fx-background-radius: 15;
@@ -66,6 +83,90 @@
 }
 
 .custom-text-field:focused {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #731EF0;
+    -fx-border-width: 1;
+    -fx-border-radius: 15;
+    -fx-effect: dropshadow(three-pass-box, rgba(115, 30, 240, 0.1), 10, 0, 0, 0);
+}
+
+.custom-combo-box {
+    -fx-background-color: #F4F5FA;
+    -fx-background-radius: 15;
+    -fx-border-radius: 15;
+    -fx-padding: 0 5 0 10;
+    -fx-font-family: "Arial";
+    -fx-font-size: 14px;
+    -fx-text-fill: #4b465c;
+    -fx-border-width: 0;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.05), 10, 0, 0, 5);
+}
+
+.custom-combo-box:focused {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #731EF0;
+    -fx-border-width: 1;
+    -fx-border-radius: 15;
+    -fx-effect: dropshadow(three-pass-box, rgba(115, 30, 240, 0.1), 10, 0, 0, 0);
+}
+
+.custom-combo-box .label {
+    -fx-text-fill: #4b465c;
+}
+
+.custom-combo-box .list-view {
+    -fx-background-color: white;
+    -fx-background-radius: 10;
+    -fx-border-color: #f0f0f0;
+    -fx-border-radius: 10;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 15, 0, 0, 10);
+}
+
+.custom-combo-box .list-cell {
+    -fx-padding: 10 15;
+    -fx-background-color: transparent;
+    -fx-text-fill: #4b465c;
+}
+
+.custom-combo-box .list-cell:hover {
+    -fx-background-color: #731EF0;
+    -fx-text-fill: white;
+}
+
+
+.custom-combo-box .list-cell:selected {
+    -fx-background-color: #731EF0;
+    -fx-text-fill: white;
+}
+
+
+.custom-combo-box .arrow-button {
+    -fx-background-color: transparent;
+}
+
+.custom-combo-box .arrow {
+    -fx-background-color: #4b465c;
+}
+
+.number-text-filed{
+    -fx-alignment: CENTER-RIGHT;
+}
+
+.invoice-text-field {
+    -fx-background-color: #F4F5FA;
+    -fx-background-radius: 15;
+    -fx-border-radius: 15;
+    -fx-padding: 10 15 10 15;
+    -fx-text-fill: #4b465c;
+    -fx-border-width: 0;
+    -fx-background-insets: 0;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.05), 10, 0, 0, 5);
+    -fx-font-family: "Arial";
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+}
+
+.invoice-text-field:focused {
     -fx-background-color: #ffffff;
     -fx-border-color: #731EF0;
     -fx-border-width: 1;
