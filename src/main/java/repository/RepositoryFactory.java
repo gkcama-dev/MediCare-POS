@@ -1,5 +1,8 @@
 package repository;
 
+import repository.custom.impl.BrandRepositoryImpl;
+import repository.custom.impl.CategoryRepositoryImpl;
+import repository.custom.impl.ProductRepositoryImpl;
 import repository.custom.impl.SupplierRepositoryImpl;
 import util.RepositoryType;
 
@@ -16,6 +19,9 @@ public class RepositoryFactory {
     public <T extends SuperRepository>T getRepository(RepositoryType repositoryType){
         switch (repositoryType){
             case SUPPLIER:return (T) new SupplierRepositoryImpl();
+            case PRODUCT:return (T) new ProductRepositoryImpl();
+            case BRAND:return (T) new BrandRepositoryImpl();
+            case CATEGORY:return (T) new CategoryRepositoryImpl();
         }
         return null;
     }

@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="412.0" prefWidth="796.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.adminController.BrandController">
+<AnchorPane prefHeight="412.0" prefWidth="796.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.adminController.CategoryController">
    <children>
       <Label layoutX="57.0" layoutY="4.0" prefHeight="42.0" prefWidth="331.0" text="Category Management" textFill="#731ef0">
          <font>
@@ -30,10 +30,10 @@
             <Font name="Arial" size="14.0" />
          </font>
       </Label>
-      <TableView layoutX="14.0" layoutY="116.0" prefHeight="285.0" prefWidth="504.0">
+      <TableView fx:id="tblCategory" layoutX="14.0" layoutY="116.0" onMouseClicked="#tblCategoryOnMouseClicked" prefHeight="285.0" prefWidth="504.0">
         <columns>
-          <TableColumn prefWidth="215.19997787475586" text="ID" />
-          <TableColumn prefWidth="431.2000274658203" text="Category" />
+          <TableColumn fx:id="colId" prefWidth="215.19997787475586" text="ID" />
+          <TableColumn fx:id="colCategory" prefWidth="285.5999755859375" text="Category" />
         </columns>
          <styleClass>
             <String fx:value="table-row-cell" />
@@ -54,7 +54,7 @@
             <URL value="@../../css/components-style.css" />
          </stylesheets>
       </JFXButton>
-      <TextField layoutX="84.0" layoutY="69.0" prefHeight="36.0" prefWidth="206.0" promptText="Search Here" styleClass="search-field">
+      <TextField fx:id="txtSearch" layoutX="84.0" layoutY="69.0" prefHeight="36.0" prefWidth="206.0" promptText="Search Here" styleClass="search-field">
          <font>
             <Font name="Arial" size="14.0" />
          </font>
@@ -70,7 +70,7 @@
                   <Font name="Arial" size="14.0" />
                </font>
             </Label>
-            <TextField layoutX="6.0" layoutY="30.0" prefHeight="37.0" prefWidth="244.0" promptText="#0001" styleClass="custom-text-field" stylesheets="@../../css/components-style.css">
+            <TextField fx:id="txtId" layoutX="6.0" layoutY="30.0" prefHeight="37.0" prefWidth="244.0" promptText="#0001" styleClass="custom-text-field" stylesheets="@../../css/components-style.css">
                <font>
                   <Font name="Arial" size="14.0" />
                </font>
@@ -80,17 +80,17 @@
                   <Font name="Arial" size="14.0" />
                </font>
             </Label>
-            <TextField layoutX="6.0" layoutY="99.0" prefHeight="37.0" prefWidth="244.0" promptText="Geeth" styleClass="custom-text-field" stylesheets="@../../css/components-style.css">
+            <TextField fx:id="txtCategory" layoutX="6.0" layoutY="99.0" prefHeight="37.0" prefWidth="244.0" promptText="Geeth" styleClass="custom-text-field" stylesheets="@../../css/components-style.css">
                <font>
                   <Font name="Arial" size="14.0" />
                </font>
             </TextField>
-            <JFXButton layoutX="4.0" layoutY="286.0" prefHeight="27.0" prefWidth="244.0" styleClass="add-button" stylesheets="@../../css/components-style.css" text="Add Category" textFill="#4b465c">
+            <JFXButton layoutX="4.0" layoutY="286.0" onAction="#btnAddOnAction" prefHeight="27.0" prefWidth="244.0" styleClass="add-button" stylesheets="@../../css/components-style.css" text="Add Category" textFill="#4b465c">
                <font>
                   <Font name="Arial Bold" size="14.0" />
                </font>
             </JFXButton>
-            <JFXButton layoutX="5.0" layoutY="335.0" prefHeight="27.0" prefWidth="120.0" styleClass="update-button" text="Update" textFill="#4b465c">
+            <JFXButton layoutX="5.0" layoutY="335.0" onAction="#btnUpdateOnAction" prefHeight="27.0" prefWidth="120.0" styleClass="update-button" text="Update" textFill="#4b465c">
                <font>
                   <Font name="Arial Bold" size="14.0" />
                </font>
@@ -99,7 +99,7 @@
                   <URL value="@../../css/components-style.css" />
                </stylesheets>
             </JFXButton>
-            <JFXButton layoutX="128.0" layoutY="335.0" prefHeight="27.0" prefWidth="120.0" styleClass="clear-button" text="Clear" textFill="#4b465c">
+            <JFXButton layoutX="128.0" layoutY="335.0" onAction="#btnClearOnAction" prefHeight="27.0" prefWidth="120.0" styleClass="clear-button" text="Clear" textFill="#4b465c">
                <font>
                   <Font name="Arial Bold" size="14.0" />
                </font>

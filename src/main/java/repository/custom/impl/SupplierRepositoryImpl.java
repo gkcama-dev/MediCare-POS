@@ -32,12 +32,12 @@ public class SupplierRepositoryImpl implements SupplierRepository {
 
     @Override
     public boolean isDuplicateEmailOrMobile(String id, String email, String mobile) throws Exception {
-       ResultSet resultSet = CrudUtil.execute("SELECT COUNT(*) FROM supplier WHERE (email = ? OR mobile = ?) AND id != ? ",
-               email, mobile, id);
-       if (resultSet.next()) {
-           return resultSet.getInt(1)>0;
-       }
-       return false;
+        ResultSet resultSet = CrudUtil.execute("SELECT COUNT(*) FROM supplier WHERE (email = ? OR mobile = ?) AND (id != ? OR ? IS NULL)",
+                email, mobile, id, id);
+        if (resultSet.next()) {
+            return resultSet.getInt(1) > 0;
+        }
+        return false;
     }
 
     @Override
@@ -59,19 +59,19 @@ public class SupplierRepositoryImpl implements SupplierRepository {
 
     @Override
     public boolean update(Supplier supplier, int statusId) throws Exception {
-       try{
-           return CrudUtil.execute("UPDATE supplier SET first_name=?, last_name=?, company=?, mobile=?, email=?, status_id=? WHERE id=?",
-                   supplier.getFirstName(),
-                   supplier.getLastName(),
-                   supplier.getCompany(),
-                   supplier.getMobile(),
-                   supplier.getEmail(),
-                   statusId,
-                   supplier.getId()
-           );
-       }catch (Exception e){
-           throw new SQLException("Update Failed: " + e.getMessage());
-       }
+        try {
+            return CrudUtil.execute("UPDATE supplier SET first_name=?, last_name=?, company=?, mobile=?, email=?, status_id=? WHERE id=?",
+                    supplier.getFirstName(),
+                    supplier.getLastName(),
+                    supplier.getCompany(),
+                    supplier.getMobile(),
+                    supplier.getEmail(),
+                    statusId,
+                    supplier.getId()
+            );
+        } catch (Exception e) {
+            throw new SQLException("Update Failed: " + e.getMessage());
+        }
     }
 
     @Override
