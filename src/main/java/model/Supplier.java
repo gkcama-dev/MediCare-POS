@@ -10,11 +10,11 @@ import lombok.ToString;
 @NoArgsConstructor
 @ToString
 public class Supplier {
- private String id;
- private String firstName;
- private String lastName;
- private String company;
- private String email;
- private String mobile;
- private String status;
+    private String id;
+    private String firstName;
+    private String lastName;
+    private String company;
+    private String mobile;
+    private String email;
+    private String status;
 }

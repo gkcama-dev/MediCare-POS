@@ -34,12 +34,12 @@
       <TableView fx:id="tblSuppliers" layoutX="14.0" layoutY="116.0" prefHeight="453.0" prefWidth="670.0">
         <columns>
           <TableColumn fx:id="colId" prefWidth="45.599976539611816" text="ID" />
-          <TableColumn fx:id="colCompany" prefWidth="98.39999008178711" text="Company" />
-            <TableColumn fx:id="colFirstName" prefWidth="117.60002136230469" text="Firstname" />
-            <TableColumn fx:id="colLastName" prefWidth="112.0" text="Lastname" />
+          <TableColumn fx:id="colFirstName" prefWidth="98.39999008178711" text="Firstname" />
+            <TableColumn fx:id="colLastName" prefWidth="117.60002136230469" text="Lastname" />
+            <TableColumn fx:id="colCompany" prefWidth="112.0" text="Company" />
             <TableColumn fx:id="colMobile" prefWidth="99.20001220703125" text="Mobile" />
             <TableColumn fx:id="colEmail" prefWidth="112.0" text="Email" />
-            <TableColumn fx:id="colStatus" prefWidth="112.7999267578125" text="Status" />
+            <TableColumn fx:id="colStatus" prefWidth="79.199951171875" text="Status" />
         </columns>
          <styleClass>
             <String fx:value="table-row-cell" />
@@ -51,7 +51,7 @@
             <URL value="@../../css/table-style.css" />
          </stylesheets>
       </TableView>
-      <JFXButton fx:id="btnSearchOnAction" layoutX="460.0" layoutY="68.0" prefHeight="27.0" prefWidth="110.0" styleClass="search-button" text="Search" textFill="#4b465c">
+      <JFXButton layoutX="460.0" layoutY="68.0" onAction="#btnSearchOnAction" prefHeight="27.0" prefWidth="110.0" styleClass="search-button" text="Search" textFill="#4b465c">
          <font>
             <Font name="Arial Bold" size="14.0" />
          </font>
@@ -136,12 +136,12 @@
                   <Font name="Arial" size="14.0" />
                </font>
             </Label>
-            <JFXButton fx:id="btnAddOnAction" layoutX="4.0" layoutY="461.0" prefHeight="27.0" prefWidth="244.0" styleClass="add-button" stylesheets="@../../css/components-style.css" text="Add Supplier" textFill="#4b465c">
+            <JFXButton fx:id="btnAdd" layoutX="4.0" layoutY="461.0" onAction="#btnAddOnAction" prefHeight="27.0" prefWidth="244.0" styleClass="add-button" stylesheets="@../../css/components-style.css" text="Add Supplier" textFill="#4b465c">
                <font>
                   <Font name="Arial Bold" size="14.0" />
                </font>
             </JFXButton>
-            <JFXButton fx:id="btnUpdateOnAction" layoutX="5.0" layoutY="510.0" prefHeight="27.0" prefWidth="120.0" styleClass="update-button" text="Update" textFill="#4b465c">
+            <JFXButton layoutX="5.0" layoutY="510.0" onAction="#btnUpdateOnAction" prefHeight="27.0" prefWidth="120.0" styleClass="update-button" text="Update" textFill="#4b465c">
                <font>
                   <Font name="Arial Bold" size="14.0" />
                </font>
@@ -150,7 +150,7 @@
                   <URL value="@../../css/components-style.css" />
                </stylesheets>
             </JFXButton>
-            <JFXButton fx:id="btnClearOnAction" layoutX="128.0" layoutY="510.0" prefHeight="27.0" prefWidth="120.0" styleClass="clear-button" text="Clear" textFill="#4b465c">
+            <JFXButton layoutX="128.0" layoutY="510.0" onAction="#btnClearOnAction" prefHeight="27.0" prefWidth="120.0" styleClass="clear-button" text="Clear" textFill="#4b465c">
                <font>
                   <Font name="Arial Bold" size="14.0" />
                </font>
@@ -162,7 +162,7 @@
             <JFXComboBox fx:id="cmbStatus" layoutX="5.0" layoutY="376.0" prefHeight="38.0" prefWidth="244.0" promptText="active" styleClass="custom-combo-box" stylesheets="@../../css/components-style.css" unFocusColor="#cfcaca" />
          </children>
       </Pane>
-      <JFXButton fx:id="btnSearchClearOnAction" layoutX="573.0" layoutY="68.0" prefHeight="27.0" prefWidth="110.0" styleClass="searchbar-clear-button" text="Clear" textFill="#4b465c">
+      <JFXButton layoutX="573.0" layoutY="68.0" onAction="#btnSearchClearOnAction" prefHeight="27.0" prefWidth="110.0" styleClass="searchbar-clear-button" text="Clear" textFill="#4b465c">
          <font>
             <Font name="Arial Bold" size="14.0" />
          </font>
