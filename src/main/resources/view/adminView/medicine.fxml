@@ -31,15 +31,13 @@
             <Font name="Arial" size="14.0" />
          </font>
       </Label>
-      <TableView layoutX="14.0" layoutY="116.0" prefHeight="453.0" prefWidth="670.0">
+      <TableView fx:id="tblMedicine" layoutX="14.0" layoutY="116.0" prefHeight="453.0" prefWidth="670.0">
         <columns>
-          <TableColumn prefWidth="45.599976539611816" text="ID" />
-          <TableColumn prefWidth="98.39999008178711" text="Name" />
-            <TableColumn prefWidth="117.60002136230469" text="Brand" />
-            <TableColumn prefWidth="112.0" text="Category" />
-            <TableColumn prefWidth="99.20001220703125" text="Mobile" />
-            <TableColumn prefWidth="112.0" text="Email" />
-            <TableColumn prefWidth="112.7999267578125" text="Status" />
+          <TableColumn fx:id="colID" prefWidth="89.60000610351562" text="ID" />
+          <TableColumn fx:id="colName" prefWidth="143.20004272460938" text="Name" />
+            <TableColumn fx:id="colBrand" prefWidth="144.00001525878906" text="Brand" />
+            <TableColumn fx:id="colCategory" prefWidth="145.5999755859375" text="Category" />
+            <TableColumn fx:id="colStatus" prefWidth="147.199951171875" text="Status" />
         </columns>
          <styleClass>
             <String fx:value="table-row-cell" />
@@ -60,7 +58,7 @@
             <URL value="@../../css/components-style.css" />
          </stylesheets>
       </JFXButton>
-      <TextField layoutX="250.0" layoutY="69.0" prefHeight="36.0" prefWidth="206.0" promptText="Search Here" styleClass="search-field">
+      <TextField fx:id="txtSearch" layoutX="250.0" layoutY="69.0" prefHeight="36.0" prefWidth="206.0" promptText="Search Here" styleClass="search-field">
          <font>
             <Font name="Arial" size="14.0" />
          </font>
@@ -76,7 +74,7 @@
                   <Font name="Arial" size="14.0" />
                </font>
             </Label>
-            <TextField layoutX="6.0" layoutY="30.0" prefHeight="37.0" prefWidth="244.0" promptText="med0303" styleClass="custom-text-field" stylesheets="@../../css/components-style.css">
+            <TextField fx:id="txtId" layoutX="6.0" layoutY="30.0" prefHeight="37.0" prefWidth="244.0" promptText="med0303" styleClass="custom-text-field" stylesheets="@../../css/components-style.css">
                <font>
                   <Font name="Arial" size="14.0" />
                </font>
@@ -86,7 +84,7 @@
                   <Font name="Arial" size="14.0" />
                </font>
             </Label>
-            <TextField layoutX="6.0" layoutY="99.0" prefHeight="37.0" prefWidth="244.0" promptText="Amoxicillin 250mg" styleClass="custom-text-field" stylesheets="@../../css/components-style.css">
+            <TextField fx:id="txtName" layoutX="6.0" layoutY="99.0" prefHeight="37.0" prefWidth="244.0" promptText="Amoxicillin 250mg" styleClass="custom-text-field" stylesheets="@../../css/components-style.css">
                <font>
                   <Font name="Arial" size="14.0" />
                </font>
@@ -96,7 +94,7 @@
                   <Font name="Arial" size="14.0" />
                </font>
             </Label>
-            <TextField layoutX="4.0" layoutY="168.0" prefHeight="37.0" prefWidth="200.0" promptText="Brand" styleClass="custom-text-field" stylesheets="@../../css/components-style.css">
+            <TextField fx:id="txtBrand" layoutX="4.0" layoutY="168.0" prefHeight="37.0" prefWidth="200.0" promptText="Brand" styleClass="custom-text-field" stylesheets="@../../css/components-style.css">
                <font>
                   <Font name="Arial" size="14.0" />
                </font>
@@ -106,7 +104,7 @@
                   <Font name="Arial" size="14.0" />
                </font>
             </Label>
-            <TextField layoutX="4.0" layoutY="237.0" prefHeight="37.0" prefWidth="200.0" promptText="Sirup" styleClass="custom-text-field" stylesheets="@../../css/components-style.css">
+            <TextField fx:id="txtCategory" layoutX="4.0" layoutY="237.0" prefHeight="37.0" prefWidth="200.0" promptText="Sirup" styleClass="custom-text-field" stylesheets="@../../css/components-style.css">
                <font>
                   <Font name="Arial" size="14.0" />
                </font>
@@ -116,12 +114,12 @@
                   <Font name="Arial" size="14.0" />
                </font>
             </Label>
-            <JFXButton layoutX="4.0" layoutY="461.0" prefHeight="27.0" prefWidth="244.0" styleClass="add-button" stylesheets="@../../css/components-style.css" text="Add Medicine" textFill="#4b465c">
+            <JFXButton fx:id="btnAdd" layoutX="4.0" layoutY="461.0" onAction="#btnAddOnAction" prefHeight="27.0" prefWidth="244.0" styleClass="add-button" stylesheets="@../../css/components-style.css" text="Add Medicine" textFill="#4b465c">
                <font>
                   <Font name="Arial Bold" size="14.0" />
                </font>
             </JFXButton>
-            <JFXButton layoutX="3.0" layoutY="510.0" prefHeight="27.0" prefWidth="120.0" styleClass="update-button" text="Update" textFill="#4b465c">
+            <JFXButton layoutX="3.0" layoutY="510.0" onAction="#btnUpdateOnAction" prefHeight="27.0" prefWidth="120.0" styleClass="update-button" text="Update" textFill="#4b465c">
                <font>
                   <Font name="Arial Bold" size="14.0" />
                </font>
@@ -130,7 +128,7 @@
                   <URL value="@../../css/components-style.css" />
                </stylesheets>
             </JFXButton>
-            <JFXButton layoutX="128.0" layoutY="510.0" prefHeight="27.0" prefWidth="120.0" styleClass="clear-button" text="Clear" textFill="#4b465c">
+            <JFXButton layoutX="128.0" layoutY="510.0" onAction="#btnClearOnAction" prefHeight="27.0" prefWidth="120.0" styleClass="clear-button" text="Clear" textFill="#4b465c">
                <font>
                   <Font name="Arial Bold" size="14.0" />
                </font>
@@ -167,7 +165,7 @@
                   <Image url="@../../icon/plus.png" />
                </image>
             </ImageView>
-            <JFXComboBox layoutX="5.0" layoutY="305.0" prefHeight="38.0" prefWidth="244.0" promptText="active" styleClass="custom-combo-box" stylesheets="@../../css/components-style.css" unFocusColor="#cfcaca" />
+            <JFXComboBox fx:id="cmbStatus" layoutX="5.0" layoutY="305.0" prefHeight="38.0" prefWidth="244.0" promptText="active" styleClass="custom-combo-box" stylesheets="@../../css/components-style.css" unFocusColor="#cfcaca" />
          </children>
       </Pane>
       <JFXButton layoutX="573.0" layoutY="68.0" prefHeight="27.0" prefWidth="110.0" styleClass="searchbar-clear-button" text="Clear" textFill="#4b465c">

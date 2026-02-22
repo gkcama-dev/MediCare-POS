@@ -14,7 +14,12 @@ public class SupplierServiceImpl implements SupplierService {
     private final SupplierRepository supplierRepository = RepositoryFactory.getInstance().getRepository(RepositoryType.SUPPLIER);
 
     @Override
-    public boolean addSupplier(Supplier supplier) throws SQLException {
+    public boolean addSupplier(Supplier supplier) throws Exception {
+
+        if (supplierRepository.isDuplicateEmailOrMobile(null, supplier.getEmail(), supplier.getMobile())) {
+            throw new SQLException("Email or Mobile already exists in the system!");
+        }
+
         int statusId = supplier.getStatus().equalsIgnoreCase("Active") ? 1 : 2;
         return supplierRepository.create(supplier,statusId);
     }

@@ -7,7 +7,7 @@ import java.sql.SQLException;
 import java.util.List;
 
 public interface SupplierService extends SuperService {
-    boolean addSupplier(Supplier supplier) throws SQLException;
+    boolean addSupplier(Supplier supplier) throws Exception;
 
     boolean updateSupplier(Supplier supplier) throws Exception;
 

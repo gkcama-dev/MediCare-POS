@@ -197,6 +197,7 @@ public class SupplierController implements Initializable {
         tblSuppliers.getSelectionModel().clearSelection();
         setSupplierID();
         txtFirstName.requestFocus();
+        btnAdd.setDisable(false);
     }
 
     private boolean isDataNotChanged(SupplierTM tm) {
@@ -346,6 +347,9 @@ public class SupplierController implements Initializable {
                 new Alert(Alert.AlertType.ERROR, "Supplier Added Failed").show();
             }
         } catch (SQLException e) {
+            new Alert(Alert.AlertType.ERROR, "Database Error: " + e.getMessage()).show();
+            throw new RuntimeException(e);
+        } catch (Exception e) {
             new Alert(Alert.AlertType.ERROR, "Database Error: " + e.getMessage()).show();
             throw new RuntimeException(e);
         }

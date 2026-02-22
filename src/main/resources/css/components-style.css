@@ -249,3 +249,8 @@
     -fx-fit-width: 25;
     -fx-fit-height: 25;
 }
+
+.text-field:disabled, .text-field[editable="false"] {
+    -fx-opacity: 1.0;
+    -fx-text-fill: black;
+}
