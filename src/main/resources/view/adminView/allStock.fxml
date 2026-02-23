@@ -38,7 +38,7 @@
             <TableColumn prefWidth="88.0" text="EXP" />
             <TableColumn prefWidth="119.199951171875" text="Buying Price" />
             <TableColumn prefWidth="117.5999755859375" text="Selling Price" />
-            <TableColumn prefWidth="117.5999755859375" text="Qty" />
+            <TableColumn prefWidth="120.0" text="Qty" />
         </columns>
          <styleClass>
             <String fx:value="table-row-cell" />
@@ -77,7 +77,7 @@
             <URL value="@../../css/components-style.css" />
          </stylesheets>
       </JFXButton>
-      <JFXButton layoutX="718.0" layoutY="529.0" prefHeight="38.0" prefWidth="226.0" styleClass="update-button" text="Print" textFill="#4b465c">
+      <JFXButton layoutX="721.0" layoutY="529.0" prefHeight="38.0" prefWidth="226.0" styleClass="update-button" text="Print" textFill="#4b465c">
          <font>
             <Font name="Arial Bold" size="14.0" />
          </font>

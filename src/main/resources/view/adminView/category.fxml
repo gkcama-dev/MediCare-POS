@@ -45,16 +45,7 @@
             <URL value="@../../css/table-style.css" />
          </stylesheets>
       </TableView>
-      <JFXButton layoutX="294.0" layoutY="68.0" prefHeight="27.0" prefWidth="110.0" styleClass="search-button" text="Search" textFill="#4b465c">
-         <font>
-            <Font name="Arial Bold" size="14.0" />
-         </font>
-         <stylesheets>
-            <URL value="@../../css/style.css" />
-            <URL value="@../../css/components-style.css" />
-         </stylesheets>
-      </JFXButton>
-      <TextField fx:id="txtSearch" layoutX="84.0" layoutY="69.0" prefHeight="36.0" prefWidth="206.0" promptText="Search Here" styleClass="search-field">
+      <TextField fx:id="txtSearch" layoutX="310.0" layoutY="69.0" prefHeight="36.0" prefWidth="206.0" promptText="Search Here" styleClass="search-field">
          <font>
             <Font name="Arial" size="14.0" />
          </font>
@@ -70,7 +61,7 @@
                   <Font name="Arial" size="14.0" />
                </font>
             </Label>
-            <TextField fx:id="txtId" layoutX="6.0" layoutY="30.0" prefHeight="37.0" prefWidth="244.0" promptText="#0001" styleClass="custom-text-field" stylesheets="@../../css/components-style.css">
+            <TextField fx:id="txtId" layoutX="6.0" layoutY="30.0" prefHeight="37.0" prefWidth="244.0" promptText="#1" styleClass="custom-text-field" stylesheets="@../../css/components-style.css">
                <font>
                   <Font name="Arial" size="14.0" />
                </font>
@@ -80,17 +71,17 @@
                   <Font name="Arial" size="14.0" />
                </font>
             </Label>
-            <TextField fx:id="txtCategory" layoutX="6.0" layoutY="99.0" prefHeight="37.0" prefWidth="244.0" promptText="Geeth" styleClass="custom-text-field" stylesheets="@../../css/components-style.css">
+            <TextField fx:id="txtCategory" layoutX="6.0" layoutY="99.0" prefHeight="37.0" prefWidth="244.0" promptText="enter category name" styleClass="custom-text-field" stylesheets="@../../css/components-style.css">
                <font>
                   <Font name="Arial" size="14.0" />
                </font>
             </TextField>
-            <JFXButton fx:id="btnAdd" layoutX="4.0" layoutY="286.0" onAction="#btnAddOnAction" prefHeight="27.0" prefWidth="244.0" styleClass="add-button" stylesheets="@../../css/components-style.css" text="Add Category" textFill="#4b465c">
+            <JFXButton fx:id="btnAdd" layoutX="4.0" layoutY="295.0" onAction="#btnAddOnAction" prefHeight="27.0" prefWidth="244.0" styleClass="add-button" stylesheets="@../../css/components-style.css" text="Add Category" textFill="#4b465c">
                <font>
                   <Font name="Arial Bold" size="14.0" />
                </font>
             </JFXButton>
-            <JFXButton layoutX="5.0" layoutY="335.0" onAction="#btnUpdateOnAction" prefHeight="27.0" prefWidth="120.0" styleClass="update-button" text="Update" textFill="#4b465c">
+            <JFXButton layoutX="5.0" layoutY="344.0" onAction="#btnUpdateOnAction" prefHeight="27.0" prefWidth="120.0" styleClass="update-button" text="Update" textFill="#4b465c">
                <font>
                   <Font name="Arial Bold" size="14.0" />
                </font>
@@ -99,7 +90,7 @@
                   <URL value="@../../css/components-style.css" />
                </stylesheets>
             </JFXButton>
-            <JFXButton layoutX="128.0" layoutY="335.0" onAction="#btnClearOnAction" prefHeight="27.0" prefWidth="120.0" styleClass="clear-button" text="Clear" textFill="#4b465c">
+            <JFXButton layoutX="128.0" layoutY="344.0" onAction="#btnClearOnAction" prefHeight="27.0" prefWidth="120.0" styleClass="clear-button" text="Clear" textFill="#4b465c">
                <font>
                   <Font name="Arial Bold" size="14.0" />
                </font>
@@ -110,14 +101,5 @@
             </JFXButton>
          </children>
       </Pane>
-      <JFXButton layoutX="407.0" layoutY="68.0" prefHeight="27.0" prefWidth="110.0" styleClass="searchbar-clear-button" text="Clear" textFill="#4b465c">
-         <font>
-            <Font name="Arial Bold" size="14.0" />
-         </font>
-         <stylesheets>
-            <URL value="@../../css/style.css" />
-            <URL value="@../../css/components-style.css" />
-         </stylesheets>
-      </JFXButton>
    </children>
 </AnchorPane>

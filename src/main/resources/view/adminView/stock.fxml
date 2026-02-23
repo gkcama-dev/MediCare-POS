@@ -40,7 +40,7 @@
             <TableColumn prefWidth="57.60003662109375" text="EXP" />
             <TableColumn prefWidth="113.60003662109375" text="Buying Price" />
             <TableColumn prefWidth="112.0" text="Selling Price" />
-            <TableColumn prefWidth="89.5999755859375" text="Quantity" />
+            <TableColumn prefWidth="104.0" text="Quantity" />
         </columns>
          <styleClass>
             <String fx:value="table-row-cell" />
@@ -52,16 +52,7 @@
             <URL value="@../../css/table-style.css" />
          </stylesheets>
       </TableView>
-      <JFXButton layoutX="460.0" layoutY="68.0" prefHeight="27.0" prefWidth="110.0" styleClass="search-button" text="Search" textFill="#4b465c">
-         <font>
-            <Font name="Arial Bold" size="14.0" />
-         </font>
-         <stylesheets>
-            <URL value="@../../css/style.css" />
-            <URL value="@../../css/components-style.css" />
-         </stylesheets>
-      </JFXButton>
-      <TextField layoutX="250.0" layoutY="69.0" prefHeight="36.0" prefWidth="206.0" promptText="Search Here" styleClass="search-field">
+      <TextField layoutX="475.0" layoutY="69.0" prefHeight="36.0" prefWidth="206.0" promptText="Search Here" styleClass="search-field">
          <font>
             <Font name="Arial" size="14.0" />
          </font>
@@ -77,7 +68,7 @@
                   <Font name="Arial" size="14.0" />
                </font>
             </Label>
-            <TextField layoutX="5.0" layoutY="30.0" prefHeight="37.0" prefWidth="244.0" promptText="stk0303" styleClass="custom-text-field" stylesheets="@../../css/components-style.css">
+            <TextField layoutX="5.0" layoutY="30.0" prefHeight="37.0" prefWidth="244.0" promptText="s001" styleClass="custom-text-field" stylesheets="@../../css/components-style.css">
                <font>
                   <Font name="Arial" size="14.0" />
                </font>
@@ -87,7 +78,7 @@
                   <Font name="Arial" size="14.0" />
                </font>
             </Label>
-            <TextField layoutX="6.0" layoutY="99.0" prefHeight="37.0" prefWidth="200.0" promptText="sample" styleClass="custom-text-field" stylesheets="@../../css/components-style.css">
+            <TextField layoutX="6.0" layoutY="99.0" prefHeight="37.0" prefWidth="200.0" promptText="select supplier" styleClass="custom-text-field" stylesheets="@../../css/components-style.css">
                <font>
                   <Font name="Arial" size="14.0" />
                </font>
@@ -97,7 +88,7 @@
                   <Font name="Arial" size="14.0" />
                </font>
             </Label>
-            <TextField layoutX="4.0" layoutY="168.0" prefHeight="37.0" prefWidth="200.0" promptText="sample" styleClass="custom-text-field" stylesheets="@../../css/components-style.css">
+            <TextField layoutX="4.0" layoutY="168.0" prefHeight="37.0" prefWidth="200.0" promptText="select medicine" styleClass="custom-text-field" stylesheets="@../../css/components-style.css">
                <font>
                   <Font name="Arial" size="14.0" />
                </font>
@@ -112,7 +103,7 @@
                   <Font name="Arial" size="14.0" />
                </font>
             </Label>
-            <TextField layoutX="4.0" layoutY="306.0" prefHeight="37.0" prefWidth="120.0" promptText="sample" styleClass="custom-text-field" stylesheets="@../../css/components-style.css">
+            <TextField layoutX="4.0" layoutY="306.0" prefHeight="37.0" prefWidth="120.0" promptText="buying price" styleClass="custom-text-field" stylesheets="@../../css/components-style.css">
                <font>
                   <Font name="Arial" size="14.0" />
                </font>
@@ -178,7 +169,7 @@
                   <Font name="Arial" size="14.0" />
                </font>
             </Label>
-            <TextField layoutX="128.0" layoutY="306.0" prefHeight="37.0" prefWidth="120.0" promptText="sample" styleClass="custom-text-field" stylesheets="@../../css/components-style.css">
+            <TextField layoutX="128.0" layoutY="306.0" prefHeight="37.0" prefWidth="120.0" promptText="selling price" styleClass="custom-text-field" stylesheets="@../../css/components-style.css">
                <font>
                   <Font name="Arial" size="14.0" />
                </font>
@@ -188,7 +179,7 @@
                   <Font name="Arial" size="14.0" />
                </font>
             </Label>
-            <TextField layoutX="4.0" layoutY="377.0" prefHeight="37.0" prefWidth="244.0" promptText="20" styleClass="custom-text-field" stylesheets="@../../css/components-style.css">
+            <TextField layoutX="4.0" layoutY="377.0" prefHeight="37.0" prefWidth="244.0" promptText="enter quantity" styleClass="custom-text-field" stylesheets="@../../css/components-style.css">
                <font>
                   <Font name="Arial" size="14.0" />
                </font>
@@ -204,21 +195,12 @@
                   <Font name="Arial Bold" size="30.0" />
                </font>
             </Label>
-            <Label layoutX="511.0" layoutY="5.0" prefHeight="42.0" prefWidth="146.0" text="100000.00" textAlignment="RIGHT" textFill="#4b465c">
+            <Label layoutX="511.0" layoutY="5.0" prefHeight="42.0" prefWidth="146.0" text="        00.00" textAlignment="RIGHT" textFill="#4b465c">
                <font>
                   <Font name="Arial Bold" size="30.0" />
                </font>
             </Label>
          </children>
       </Pane>
-      <JFXButton layoutX="573.0" layoutY="68.0" prefHeight="27.0" prefWidth="110.0" styleClass="searchbar-clear-button" text="Clear" textFill="#4b465c">
-         <font>
-            <Font name="Arial Bold" size="14.0" />
-         </font>
-         <stylesheets>
-            <URL value="@../../css/style.css" />
-            <URL value="@../../css/components-style.css" />
-         </stylesheets>
-      </JFXButton>
    </children>
 </AnchorPane>

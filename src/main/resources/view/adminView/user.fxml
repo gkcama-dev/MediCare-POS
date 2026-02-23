@@ -38,7 +38,7 @@
           <TableColumn prefWidth="157.60000610351562" text="Username" />
             <TableColumn prefWidth="179.1999969482422" text="Password" />
             <TableColumn prefWidth="134.4000244140625" text="Role" />
-            <TableColumn prefWidth="103.20001220703125" text="Status" />
+            <TableColumn prefWidth="120.0" text="Status" />
         </columns>
          <styleClass>
             <String fx:value="table-row-cell" />
@@ -50,16 +50,7 @@
             <URL value="@../../css/table-style.css" />
          </stylesheets>
       </TableView>
-      <JFXButton layoutX="460.0" layoutY="68.0" prefHeight="27.0" prefWidth="110.0" styleClass="search-button" text="Search" textFill="#4b465c">
-         <font>
-            <Font name="Arial Bold" size="14.0" />
-         </font>
-         <stylesheets>
-            <URL value="@../../css/style.css" />
-            <URL value="@../../css/components-style.css" />
-         </stylesheets>
-      </JFXButton>
-      <TextField layoutX="249.0" layoutY="69.0" prefHeight="36.0" prefWidth="206.0" promptText="Search Here" styleClass="search-field">
+      <TextField layoutX="475.0" layoutY="69.0" prefHeight="36.0" prefWidth="206.0" promptText="Search Here" styleClass="search-field">
          <font>
             <Font name="Arial" size="14.0" />
          </font>
@@ -75,7 +66,7 @@
                   <Font name="Arial" size="14.0" />
                </font>
             </Label>
-            <TextField layoutX="6.0" layoutY="30.0" prefHeight="37.0" prefWidth="244.0" promptText="#0001" styleClass="custom-text-field" stylesheets="@../../css/components-style.css">
+            <TextField layoutX="6.0" layoutY="30.0" prefHeight="37.0" prefWidth="244.0" promptText="u001" styleClass="custom-text-field" stylesheets="@../../css/components-style.css">
                <font>
                   <Font name="Arial" size="14.0" />
                </font>
@@ -85,7 +76,7 @@
                   <Font name="Arial" size="14.0" />
                </font>
             </Label>
-            <TextField layoutX="6.0" layoutY="99.0" prefHeight="37.0" prefWidth="244.0" promptText="Geeth" styleClass="custom-text-field" stylesheets="@../../css/components-style.css">
+            <TextField layoutX="6.0" layoutY="99.0" prefHeight="37.0" prefWidth="244.0" promptText="enter username" styleClass="custom-text-field" stylesheets="@../../css/components-style.css">
                <font>
                   <Font name="Arial" size="14.0" />
                </font>
@@ -100,11 +91,6 @@
                   <Font name="Arial" size="14.0" />
                </font>
             </Label>
-            <TextField layoutX="4.0" layoutY="237.0" prefHeight="37.0" prefWidth="244.0" promptText="Admin" styleClass="custom-text-field" stylesheets="@../../css/components-style.css">
-               <font>
-                  <Font name="Arial" size="14.0" />
-               </font>
-            </TextField>
             <Label layoutX="8.0" layoutY="285.0" prefHeight="18.0" prefWidth="77.0" text="Status" textFill="#4b465c">
                <font>
                   <Font name="Arial" size="14.0" />
@@ -133,18 +119,10 @@
                   <URL value="@../../css/components-style.css" />
                </stylesheets>
             </JFXButton>
-            <PasswordField layoutX="5.0" layoutY="168.0" prefHeight="37.0" prefWidth="244.0" promptText="xxxxxx" styleClass="custom-text-field" stylesheets="@../../css/components-style.css" />
+            <PasswordField layoutX="5.0" layoutY="168.0" prefHeight="37.0" prefWidth="244.0" promptText="enter password" styleClass="custom-text-field" stylesheets="@../../css/components-style.css" />
             <JFXComboBox layoutX="6.0" layoutY="307.0" prefHeight="38.0" prefWidth="244.0" promptText="active" styleClass="custom-combo-box" stylesheets="@../../css/components-style.css" unFocusColor="#cfcaca" />
+            <JFXComboBox layoutX="6.0" layoutY="239.0" prefHeight="38.0" prefWidth="244.0" promptText="select role" styleClass="custom-combo-box" stylesheets="@../../css/components-style.css" unFocusColor="#cfcaca" />
          </children>
       </Pane>
-      <JFXButton layoutX="573.0" layoutY="68.0" prefHeight="27.0" prefWidth="110.0" styleClass="searchbar-clear-button" text="Clear" textFill="#4b465c">
-         <font>
-            <Font name="Arial Bold" size="14.0" />
-         </font>
-         <stylesheets>
-            <URL value="@../../css/style.css" />
-            <URL value="@../../css/components-style.css" />
-         </stylesheets>
-      </JFXButton>
    </children>
 </AnchorPane>
