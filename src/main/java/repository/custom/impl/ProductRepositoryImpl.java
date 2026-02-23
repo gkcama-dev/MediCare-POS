@@ -26,6 +26,11 @@ public class ProductRepositoryImpl implements ProductRepository {
     }
 
     @Override
+    public boolean create(Product product) throws SQLException {
+        return false;
+    }
+
+    @Override
     public boolean update(Product product, int statusId) throws Exception {
         return CrudUtil.execute("UPDATE product SET name = ?," +
                         " brand_id = (SELECT id FROM brand WHERE name = ?), " +
@@ -37,6 +42,11 @@ public class ProductRepositoryImpl implements ProductRepository {
                 statusId,
                 product.getCode()
         );
+    }
+
+    @Override
+    public boolean update(Product product) throws Exception {
+        return false;
     }
 
     @Override

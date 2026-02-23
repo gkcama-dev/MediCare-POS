@@ -58,6 +58,11 @@ public class SupplierRepositoryImpl implements SupplierRepository {
     }
 
     @Override
+    public boolean create(Supplier supplier) throws SQLException {
+        return false;
+    }
+
+    @Override
     public boolean update(Supplier supplier, int statusId) throws Exception {
         try {
             return CrudUtil.execute("UPDATE supplier SET first_name=?, last_name=?, company=?, mobile=?, email=?, status_id=? WHERE id=?",
@@ -72,6 +77,11 @@ public class SupplierRepositoryImpl implements SupplierRepository {
         } catch (Exception e) {
             throw new SQLException("Update Failed: " + e.getMessage());
         }
+    }
+
+    @Override
+    public boolean update(Supplier supplier) throws Exception {
+        return false;
     }
 
     @Override

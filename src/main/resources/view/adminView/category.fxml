@@ -85,7 +85,7 @@
                   <Font name="Arial" size="14.0" />
                </font>
             </TextField>
-            <JFXButton layoutX="4.0" layoutY="286.0" onAction="#btnAddOnAction" prefHeight="27.0" prefWidth="244.0" styleClass="add-button" stylesheets="@../../css/components-style.css" text="Add Category" textFill="#4b465c">
+            <JFXButton fx:id="btnAdd" layoutX="4.0" layoutY="286.0" onAction="#btnAddOnAction" prefHeight="27.0" prefWidth="244.0" styleClass="add-button" stylesheets="@../../css/components-style.css" text="Add Category" textFill="#4b465c">
                <font>
                   <Font name="Arial Bold" size="14.0" />
                </font>

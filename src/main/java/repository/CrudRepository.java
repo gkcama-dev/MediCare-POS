@@ -5,7 +5,9 @@ import java.util.List;
 
 public interface CrudRepository<T,ID> extends SuperRepository {
     boolean create(T t, int statusId)throws SQLException;
+    boolean create(T t) throws Exception;
     boolean update(T t,int statusId) throws Exception;
+    boolean update(T t) throws Exception;
     T getById(ID id)throws SQLException;
     List<T> getAll() throws Exception;
 }

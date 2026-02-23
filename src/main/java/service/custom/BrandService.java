@@ -15,4 +15,6 @@ public interface BrandService extends SuperService {
     Brand searchBrand(String id) throws SQLException;
 
     List<Brand> getAllBrand() throws Exception;
+
+    String getBrandId() throws Exception;
 }
