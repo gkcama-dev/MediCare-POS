@@ -18,12 +18,20 @@ public class BrandServiceImpl implements BrandService {
 
     @Override
     public boolean addBrand(Brand brand) throws Exception {
-        return false;
+
+        if(brandRepository.isDuplicateBrand(brand.getName())){
+            throw new Exception("Brand name '" + brand.getName() + "' already exists!");
+        }
+
+        return brandRepository.create(brand);
     }
 
     @Override
     public boolean updateBrand(Brand brand) throws Exception {
-        return false;
+        if(brandRepository.isDuplicateBrand(brand.getName())){
+            throw new Exception("Brand name '" + brand.getName() + "' already exists!");
+        }
+        return brandRepository.update(brand);
     }
 
     @Override
@@ -34,5 +42,10 @@ public class BrandServiceImpl implements BrandService {
     @Override
     public List<Brand> getAllBrand() throws Exception {
         return brandRepository.getAll();
+    }
+
+    @Override
+    public String getBrandId() throws Exception {
+        return brandRepository.getId();
     }
 }

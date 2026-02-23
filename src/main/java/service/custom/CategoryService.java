@@ -15,4 +15,6 @@ public interface CategoryService extends SuperService {
     Category searchCategory(String id) throws SQLException;
 
     List<Category> getAllCategory() throws Exception;
+
+    String getCategoryId() throws Exception;
 }

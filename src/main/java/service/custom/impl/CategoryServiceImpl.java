@@ -15,12 +15,18 @@ public class CategoryServiceImpl implements CategoryService {
 
     @Override
     public boolean addCategory(Category category) throws Exception {
-        return false;
+        if (categoryRepository.isDuplicateCategory(category.getName())) {
+            throw new Exception("Category '" + category.getName() + "' already exists!");
+        }
+        return categoryRepository.create(category);
     }
 
     @Override
     public boolean updateCategory(Category category) throws Exception {
-        return false;
+        if (categoryRepository.isDuplicateCategory(category.getName())) {
+            throw new Exception("Category '" + category.getName() + "' already exists!");
+        }
+        return categoryRepository.update(category);
     }
 
     @Override
@@ -31,5 +37,10 @@ public class CategoryServiceImpl implements CategoryService {
     @Override
     public List<Category> getAllCategory() throws Exception {
         return categoryRepository.getAll();
+    }
+
+    @Override
+    public String getCategoryId() throws Exception {
+        return categoryRepository.getId();
     }
 }
