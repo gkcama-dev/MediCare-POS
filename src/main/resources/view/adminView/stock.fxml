@@ -15,192 +15,193 @@
 <?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="574.0" prefWidth="954.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.adminController.StockController">
-   <children>
-      <Label layoutX="57.0" layoutY="4.0" prefHeight="42.0" prefWidth="335.0" text="Stock Management" textFill="#731ef0">
-         <font>
-            <Font name="Arial Bold" size="30.0" />
-         </font>
-      </Label>
-      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="14.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../icon/medicineDashboard.png" />
-         </image>
-      </ImageView>
-      <Label layoutX="19.0" layoutY="47.0" prefHeight="18.0" prefWidth="372.0" text="Organize your pharmaceutical stock details." textFill="#4b465c">
-         <font>
-            <Font name="Arial" size="14.0" />
-         </font>
-      </Label>
-      <TableView layoutX="14.0" layoutY="116.0" prefHeight="390.0" prefWidth="670.0">
-        <columns>
-          <TableColumn prefWidth="42.39999008178711" text="ID" />
-          <TableColumn prefWidth="84.0" text="Supplier" />
-            <TableColumn prefWidth="87.20001220703125" text="Medicine" />
-            <TableColumn prefWidth="60.80000305175781" text="MFD" />
-            <TableColumn prefWidth="57.60003662109375" text="EXP" />
-            <TableColumn prefWidth="113.60003662109375" text="Buying Price" />
-            <TableColumn prefWidth="112.0" text="Selling Price" />
-            <TableColumn prefWidth="104.0" text="Quantity" />
-        </columns>
-         <styleClass>
-            <String fx:value="table-row-cell" />
-            <String fx:value="table-cell" />
-            <String fx:value="table-view" />
-         </styleClass>
-         <stylesheets>
-            <URL value="@../../css/style.css" />
-            <URL value="@../../css/table-style.css" />
-         </stylesheets>
-      </TableView>
-      <TextField layoutX="475.0" layoutY="69.0" prefHeight="36.0" prefWidth="206.0" promptText="Search Here" styleClass="search-field">
-         <font>
-            <Font name="Arial" size="14.0" />
-         </font>
-         <stylesheets>
-            <URL value="@../../css/style.css" />
-            <URL value="@../../css/components-style.css" />
-         </stylesheets>
-      </TextField>
-      <Pane layoutX="692.0" layoutY="11.0" prefHeight="559.0" prefWidth="254.0" style="-fx-background-color: #ffffff;" styleClass="rounded-white-pane" stylesheets="@../../css/style.css">
-         <children>
-            <Label layoutX="10.0" layoutY="9.0" prefHeight="18.0" prefWidth="77.0" text="Stock ID" textFill="#4b465c">
-               <font>
-                  <Font name="Arial" size="14.0" />
-               </font>
-            </Label>
-            <TextField layoutX="5.0" layoutY="30.0" prefHeight="37.0" prefWidth="244.0" promptText="s001" styleClass="custom-text-field" stylesheets="@../../css/components-style.css">
-               <font>
-                  <Font name="Arial" size="14.0" />
-               </font>
-            </TextField>
-            <Label layoutX="9.0" layoutY="78.0" prefHeight="18.0" prefWidth="104.0" text="Supplier" textFill="#4b465c">
-               <font>
-                  <Font name="Arial" size="14.0" />
-               </font>
-            </Label>
-            <TextField layoutX="6.0" layoutY="99.0" prefHeight="37.0" prefWidth="200.0" promptText="select supplier" styleClass="custom-text-field" stylesheets="@../../css/components-style.css">
-               <font>
-                  <Font name="Arial" size="14.0" />
-               </font>
-            </TextField>
-            <Label layoutX="8.0" layoutY="147.0" prefHeight="18.0" prefWidth="77.0" text="Medicine" textFill="#4b465c">
-               <font>
-                  <Font name="Arial" size="14.0" />
-               </font>
-            </Label>
-            <TextField layoutX="4.0" layoutY="168.0" prefHeight="37.0" prefWidth="200.0" promptText="select medicine" styleClass="custom-text-field" stylesheets="@../../css/components-style.css">
-               <font>
-                  <Font name="Arial" size="14.0" />
-               </font>
-            </TextField>
-            <Label layoutX="8.0" layoutY="216.0" prefHeight="18.0" prefWidth="77.0" text="MFD" textFill="#4b465c">
-               <font>
-                  <Font name="Arial" size="14.0" />
-               </font>
-            </Label>
-            <Label layoutX="8.0" layoutY="285.0" prefHeight="18.0" prefWidth="96.0" text="Buying Price" textFill="#4b465c">
-               <font>
-                  <Font name="Arial" size="14.0" />
-               </font>
-            </Label>
-            <TextField layoutX="4.0" layoutY="306.0" prefHeight="37.0" prefWidth="120.0" promptText="buying price" styleClass="custom-text-field" stylesheets="@../../css/components-style.css">
-               <font>
-                  <Font name="Arial" size="14.0" />
-               </font>
-            </TextField>
-            <JFXButton layoutX="4.0" layoutY="461.0" prefHeight="27.0" prefWidth="120.0" styleClass="add-button" stylesheets="@../../css/components-style.css" text="Add" textFill="#4b465c">
-               <font>
-                  <Font name="Arial Bold" size="14.0" />
-               </font>
-            </JFXButton>
-            <JFXButton layoutX="3.0" layoutY="510.0" prefHeight="27.0" prefWidth="244.0" styleClass="update-button" text="Save GRN" textFill="#4b465c">
-               <font>
-                  <Font name="Arial Bold" size="14.0" />
-               </font>
-               <stylesheets>
-                  <URL value="@../../css/style.css" />
-                  <URL value="@../../css/components-style.css" />
-               </stylesheets>
-            </JFXButton>
-            <JFXButton layoutX="128.0" layoutY="461.0" prefHeight="27.0" prefWidth="120.0" styleClass="clear-button" text="Clear" textFill="#4b465c">
-               <font>
-                  <Font name="Arial Bold" size="14.0" />
-               </font>
-               <stylesheets>
-                  <URL value="@../../css/style.css" />
-                  <URL value="@../../css/components-style.css" />
-               </stylesheets>
-            </JFXButton>
-            <JFXButton fx:id="btnMedicine" layoutX="210.0" layoutY="169.0" onAction="#btnMedicineOnAction" prefHeight="35.0" prefWidth="35.0" styleClass="icon-container" textFill="#4b465c">
-               <font>
-                  <Font name="Arial Bold" size="14.0" />
-               </font>
-               <stylesheets>
-                  <URL value="@../../css/style.css" />
-                  <URL value="@../../css/components-style.css" />
-               </stylesheets>
-            </JFXButton>
-            <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="218.0" layoutY="177.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../icon/plus.png" />
-               </image>
-            </ImageView>
-            <JFXButton fx:id="btnSupplier" layoutX="211.0" layoutY="100.0" onAction="#btnSupplierOnAction" prefHeight="35.0" prefWidth="35.0" styleClass="icon-container" textFill="#4b465c">
-               <font>
-                  <Font name="Arial Bold" size="14.0" />
-               </font>
-               <stylesheets>
-                  <URL value="@../../css/style.css" />
-                  <URL value="@../../css/components-style.css" />
-               </stylesheets>
-            </JFXButton>
-            <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="218.0" layoutY="108.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../icon/plus.png" />
-               </image>
-            </ImageView>
-            <Label layoutX="132.0" layoutY="216.0" prefHeight="18.0" prefWidth="77.0" text="EXP" textFill="#4b465c">
-               <font>
-                  <Font name="Arial" size="14.0" />
-               </font>
-            </Label>
-            <Label layoutX="132.0" layoutY="285.0" prefHeight="18.0" prefWidth="96.0" text="Selling Price" textFill="#4b465c">
-               <font>
-                  <Font name="Arial" size="14.0" />
-               </font>
-            </Label>
-            <TextField layoutX="128.0" layoutY="306.0" prefHeight="37.0" prefWidth="120.0" promptText="selling price" styleClass="custom-text-field" stylesheets="@../../css/components-style.css">
-               <font>
-                  <Font name="Arial" size="14.0" />
-               </font>
-            </TextField>
-            <Label layoutX="8.0" layoutY="356.0" prefHeight="18.0" prefWidth="96.0" text="Quantity" textFill="#4b465c">
-               <font>
-                  <Font name="Arial" size="14.0" />
-               </font>
-            </Label>
-            <TextField layoutX="4.0" layoutY="377.0" prefHeight="37.0" prefWidth="244.0" promptText="enter quantity" styleClass="custom-text-field" stylesheets="@../../css/components-style.css">
-               <font>
-                  <Font name="Arial" size="14.0" />
-               </font>
-            </TextField>
-            <DatePicker layoutX="4.0" layoutY="234.0" prefHeight="36.0" prefWidth="120.0" styleClass="date-picker" stylesheets="@../../css/components-style.css" />
-            <DatePicker layoutX="128.0" layoutY="234.0" prefHeight="36.0" prefWidth="120.0" styleClass="date-picker" stylesheets="@../../css/components-style.css" />
-         </children>
-      </Pane>
-      <Pane layoutX="14.0" layoutY="514.0" prefHeight="53.0" prefWidth="670.0" style="-fx-background-color: #ffffff;" styleClass="rounded-white-pane" stylesheets="@../../css/style.css">
-         <children>
-            <Label layoutX="343.0" layoutY="5.0" prefHeight="42.0" prefWidth="172.0" text="Total Price" textFill="#4b465c">
-               <font>
-                  <Font name="Arial Bold" size="30.0" />
-               </font>
-            </Label>
-            <Label layoutX="511.0" layoutY="5.0" prefHeight="42.0" prefWidth="146.0" text="        00.00" textAlignment="RIGHT" textFill="#4b465c">
-               <font>
-                  <Font name="Arial Bold" size="30.0" />
-               </font>
-            </Label>
-         </children>
-      </Pane>
-   </children>
+    <children>
+        <Label layoutX="57.0" layoutY="4.0" prefHeight="42.0" prefWidth="335.0" text="Stock Management" textFill="#731ef0">
+            <font>
+                <Font name="Arial Bold" size="30.0" />
+            </font>
+        </Label>
+        <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="14.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../../icon/medicineDashboard.png" />
+            </image>
+        </ImageView>
+        <Label layoutX="19.0" layoutY="47.0" prefHeight="18.0" prefWidth="372.0" text="Organize your pharmaceutical stock details." textFill="#4b465c">
+            <font>
+                <Font name="Arial" size="14.0" />
+            </font>
+        </Label>
+        <TableView fx:id="tblStock" layoutX="14.0" layoutY="116.0" prefHeight="390.0" prefWidth="670.0">
+            <columns>
+                <TableColumn fx:id="colId" prefWidth="66.39999771118164" text="ID" />
+                <TableColumn fx:id="colSupplier" prefWidth="78.4000244140625" text="Supplier" />
+                <TableColumn fx:id="colMedicine" text="Medicine" />
+                <TableColumn fx:id="colMFD" prefWidth="75.19993591308594" text="MFD" />
+                <TableColumn fx:id="colEXP" prefWidth="66.39996337890625" text="EXP" />
+                <TableColumn fx:id="colBuyPrice" prefWidth="88.00006103515625" text="Buy Price" />
+                <TableColumn fx:id="colSellPrice" prefWidth="84.0" text="Sell Price" />
+                <TableColumn fx:id="colQty" prefWidth="57.59991455078125" text="Qty" />
+                <TableColumn fx:id="colTotal" prefWidth="68.00006103515625" text="Total" />
+            </columns>
+            <styleClass>
+                <String fx:value="table-row-cell" />
+                <String fx:value="table-cell" />
+                <String fx:value="table-view" />
+            </styleClass>
+            <stylesheets>
+                <URL value="@../../css/style.css" />
+                <URL value="@../../css/table-style.css" />
+            </stylesheets>
+        </TableView>
+        <TextField fx:id="txtSearch" layoutX="475.0" layoutY="69.0" prefHeight="36.0" prefWidth="206.0" promptText="Search Here" styleClass="search-field">
+            <font>
+                <Font name="Arial" size="14.0" />
+            </font>
+            <stylesheets>
+                <URL value="@../../css/style.css" />
+                <URL value="@../../css/components-style.css" />
+            </stylesheets>
+        </TextField>
+        <Pane layoutX="692.0" layoutY="11.0" prefHeight="559.0" prefWidth="254.0" style="-fx-background-color: #ffffff;" styleClass="rounded-white-pane" stylesheets="@../../css/style.css">
+            <children>
+                <Label layoutX="10.0" layoutY="9.0" prefHeight="18.0" prefWidth="77.0" text="GRN ID" textFill="#4b465c">
+                    <font>
+                        <Font name="Arial" size="14.0" />
+                    </font>
+                </Label>
+                <TextField fx:id="txtId" layoutX="5.0" layoutY="30.0" prefHeight="37.0" prefWidth="244.0" promptText="grn001" styleClass="custom-text-field" stylesheets="@../../css/components-style.css">
+                    <font>
+                        <Font name="Arial" size="14.0" />
+                    </font>
+                </TextField>
+                <Label layoutX="9.0" layoutY="78.0" prefHeight="18.0" prefWidth="104.0" text="Supplier" textFill="#4b465c">
+                    <font>
+                        <Font name="Arial" size="14.0" />
+                    </font>
+                </Label>
+                <TextField fx:id="txtSupplier" layoutX="6.0" layoutY="99.0" prefHeight="37.0" prefWidth="200.0" promptText="select supplier" styleClass="custom-text-field" stylesheets="@../../css/components-style.css">
+                    <font>
+                        <Font name="Arial" size="14.0" />
+                    </font>
+                </TextField>
+                <Label layoutX="8.0" layoutY="147.0" prefHeight="18.0" prefWidth="77.0" text="Medicine" textFill="#4b465c">
+                    <font>
+                        <Font name="Arial" size="14.0" />
+                    </font>
+                </Label>
+                <TextField fx:id="txtMedicine" layoutX="4.0" layoutY="168.0" prefHeight="37.0" prefWidth="200.0" promptText="select medicine" styleClass="custom-text-field" stylesheets="@../../css/components-style.css">
+                    <font>
+                        <Font name="Arial" size="14.0" />
+                    </font>
+                </TextField>
+                <Label layoutX="8.0" layoutY="216.0" prefHeight="18.0" prefWidth="77.0" text="MFD" textFill="#4b465c">
+                    <font>
+                        <Font name="Arial" size="14.0" />
+                    </font>
+                </Label>
+                <Label layoutX="8.0" layoutY="285.0" prefHeight="18.0" prefWidth="96.0" text="Buying Price" textFill="#4b465c">
+                    <font>
+                        <Font name="Arial" size="14.0" />
+                    </font>
+                </Label>
+                <TextField fx:id="txtBuyingPrice" layoutX="4.0" layoutY="306.0" prefHeight="37.0" prefWidth="120.0" promptText="buying price" styleClass="custom-text-field" stylesheets="@../../css/components-style.css">
+                    <font>
+                        <Font name="Arial" size="14.0" />
+                    </font>
+                </TextField>
+                <JFXButton fx:id="btnAdd" layoutX="4.0" layoutY="461.0" onAction="#btnAddOnAction" prefHeight="27.0" prefWidth="120.0" styleClass="add-button" stylesheets="@../../css/components-style.css" text="Add" textFill="#4b465c">
+                    <font>
+                        <Font name="Arial Bold" size="14.0" />
+                    </font>
+                </JFXButton>
+                <JFXButton fx:id="btnSaveGRN" layoutX="3.0" layoutY="510.0" onAction="#btnSaveGRNOnAction" prefHeight="27.0" prefWidth="244.0" styleClass="update-button" text="Save GRN" textFill="#4b465c">
+                    <font>
+                        <Font name="Arial Bold" size="14.0" />
+                    </font>
+                    <stylesheets>
+                        <URL value="@../../css/style.css" />
+                        <URL value="@../../css/components-style.css" />
+                    </stylesheets>
+                </JFXButton>
+                <JFXButton layoutX="128.0" layoutY="461.0" onAction="#btnClearOnAction" prefHeight="27.0" prefWidth="120.0" styleClass="clear-button" text="Clear" textFill="#4b465c">
+                    <font>
+                        <Font name="Arial Bold" size="14.0" />
+                    </font>
+                    <stylesheets>
+                        <URL value="@../../css/style.css" />
+                        <URL value="@../../css/components-style.css" />
+                    </stylesheets>
+                </JFXButton>
+                <JFXButton fx:id="btnMedicine" layoutX="210.0" layoutY="169.0" onAction="#btnMedicineOnAction" prefHeight="35.0" prefWidth="35.0" styleClass="icon-container" textFill="#4b465c">
+                    <font>
+                        <Font name="Arial Bold" size="14.0" />
+                    </font>
+                    <stylesheets>
+                        <URL value="@../../css/style.css" />
+                        <URL value="@../../css/components-style.css" />
+                    </stylesheets>
+                </JFXButton>
+                <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="218.0" layoutY="177.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../../icon/plus.png" />
+                    </image>
+                </ImageView>
+                <JFXButton fx:id="btnSupplier" layoutX="211.0" layoutY="100.0" onAction="#btnSupplierOnAction" prefHeight="35.0" prefWidth="35.0" styleClass="icon-container" textFill="#4b465c">
+                    <font>
+                        <Font name="Arial Bold" size="14.0" />
+                    </font>
+                    <stylesheets>
+                        <URL value="@../../css/style.css" />
+                        <URL value="@../../css/components-style.css" />
+                    </stylesheets>
+                </JFXButton>
+                <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="218.0" layoutY="108.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../../icon/plus.png" />
+                    </image>
+                </ImageView>
+                <Label layoutX="132.0" layoutY="216.0" prefHeight="18.0" prefWidth="77.0" text="EXP" textFill="#4b465c">
+                    <font>
+                        <Font name="Arial" size="14.0" />
+                    </font>
+                </Label>
+                <Label layoutX="132.0" layoutY="285.0" prefHeight="18.0" prefWidth="96.0" text="Selling Price" textFill="#4b465c">
+                    <font>
+                        <Font name="Arial" size="14.0" />
+                    </font>
+                </Label>
+                <TextField fx:id="txtSellingPrice" layoutX="128.0" layoutY="306.0" prefHeight="37.0" prefWidth="120.0" promptText="selling price" styleClass="custom-text-field" stylesheets="@../../css/components-style.css">
+                    <font>
+                        <Font name="Arial" size="14.0" />
+                    </font>
+                </TextField>
+                <Label layoutX="8.0" layoutY="356.0" prefHeight="18.0" prefWidth="96.0" text="Quantity" textFill="#4b465c">
+                    <font>
+                        <Font name="Arial" size="14.0" />
+                    </font>
+                </Label>
+                <TextField fx:id="txtQty" layoutX="4.0" layoutY="377.0" prefHeight="37.0" prefWidth="244.0" promptText="enter quantity" styleClass="custom-text-field" stylesheets="@../../css/components-style.css">
+                    <font>
+                        <Font name="Arial" size="14.0" />
+                    </font>
+                </TextField>
+                <DatePicker fx:id="dateMFD" layoutX="4.0" layoutY="234.0" prefHeight="36.0" prefWidth="120.0" styleClass="date-picker" stylesheets="@../../css/components-style.css" />
+                <DatePicker fx:id="dateEXP" layoutX="128.0" layoutY="234.0" prefHeight="36.0" prefWidth="120.0" styleClass="date-picker" stylesheets="@../../css/components-style.css" />
+            </children>
+        </Pane>
+        <Pane layoutX="14.0" layoutY="514.0" prefHeight="53.0" prefWidth="670.0" style="-fx-background-color: #ffffff;" styleClass="rounded-white-pane" stylesheets="@../../css/style.css">
+            <children>
+                <Label layoutX="343.0" layoutY="5.0" prefHeight="42.0" prefWidth="172.0" text="Total Price" textFill="#4b465c">
+                    <font>
+                        <Font name="Arial Bold" size="30.0" />
+                    </font>
+                </Label>
+                <Label fx:id="lblTotal" layoutX="511.0" layoutY="5.0" prefHeight="42.0" prefWidth="146.0" text="        00.00" textAlignment="RIGHT" textFill="#4b465c">
+                    <font>
+                        <Font name="Arial Bold" size="30.0" />
+                    </font>
+                </Label>
+            </children>
+        </Pane>
+    </children>
 </AnchorPane>
