@@ -1,9 +1,7 @@
 package repository;
 
-import repository.custom.impl.BrandRepositoryImpl;
-import repository.custom.impl.CategoryRepositoryImpl;
-import repository.custom.impl.ProductRepositoryImpl;
-import repository.custom.impl.SupplierRepositoryImpl;
+import repository.custom.impl.*;
+import service.custom.impl.GRNServiceImpl;
 import util.RepositoryType;
 
 public class RepositoryFactory {
@@ -22,6 +20,9 @@ public class RepositoryFactory {
             case PRODUCT:return (T) new ProductRepositoryImpl();
             case BRAND:return (T) new BrandRepositoryImpl();
             case CATEGORY:return (T) new CategoryRepositoryImpl();
+            case GRN:return (T) new GRNRepositoryImpl();
+            case GRN_ITEM:return (T) new GRNItemRepositoryImpl();
+            case STOCK:return (T) new StockRepositoryImpl();
         }
         return null;
     }

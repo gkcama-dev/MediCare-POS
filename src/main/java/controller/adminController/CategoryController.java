@@ -29,11 +29,6 @@ import java.util.List;
 import java.util.ResourceBundle;
 
 public class CategoryController implements Initializable {
-    private final CategoryService categoryService = ServiceFactory.getInstance().getServiceType(ServiceType.CATEGORY);
-
-    private ObservableList<CategoryTM> categoryMasterData = FXCollections.observableArrayList();
-
-    private MedicineController medicineController;
 
     @FXML
     private JFXButton btnAdd;
@@ -55,6 +50,12 @@ public class CategoryController implements Initializable {
 
     @FXML
     private TextField txtSearch;
+
+    private final CategoryService categoryService = ServiceFactory.getInstance().getServiceType(ServiceType.CATEGORY);
+
+    private ObservableList<CategoryTM> categoryMasterData = FXCollections.observableArrayList();
+
+    private MedicineController medicineController;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {

@@ -38,10 +38,6 @@ import java.util.ResourceBundle;
 
 public class MedicineController implements Initializable {
 
-    private final ProductService productService = ServiceFactory.getInstance().getServiceType(ServiceType.PRODUCT);
-
-    private ObservableList<ProductTM> masterData = FXCollections.observableArrayList();
-
     @FXML
     private JFXButton btnAdd;
 
@@ -86,6 +82,10 @@ public class MedicineController implements Initializable {
 
     @FXML
     private TextField txtSearch;
+
+    private final ProductService productService = ServiceFactory.getInstance().getServiceType(ServiceType.PRODUCT);
+
+    private ObservableList<ProductTM> masterData = FXCollections.observableArrayList();
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {

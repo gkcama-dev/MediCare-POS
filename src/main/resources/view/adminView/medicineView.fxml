@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.JFXButton?>
 <?import java.lang.String?>
 <?import java.net.URL?>
 <?import javafx.scene.control.Label?>
@@ -12,7 +11,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="574.0" prefWidth="698.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.adminController.MedicineController">
+<AnchorPane prefHeight="574.0" prefWidth="698.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.adminController.MedicineViewController">
    <children>
       <Label layoutX="57.0" layoutY="4.0" prefHeight="42.0" prefWidth="335.0" text="Medicine Management" textFill="#731ef0">
          <font>
@@ -29,15 +28,13 @@
             <Font name="Arial" size="14.0" />
          </font>
       </Label>
-      <TableView layoutX="14.0" layoutY="116.0" prefHeight="453.0" prefWidth="670.0">
+      <TableView fx:id="tblMedicine" layoutX="14.0" layoutY="116.0" prefHeight="453.0" prefWidth="670.0">
         <columns>
-          <TableColumn prefWidth="45.599976539611816" text="ID" />
-          <TableColumn prefWidth="98.39999008178711" text="Name" />
-            <TableColumn prefWidth="117.60002136230469" text="Brand" />
-            <TableColumn prefWidth="112.0" text="Category" />
-            <TableColumn prefWidth="99.20001220703125" text="Mobile" />
-            <TableColumn prefWidth="112.0" text="Email" />
-            <TableColumn prefWidth="112.7999267578125" text="Status" />
+          <TableColumn fx:id="colId" prefWidth="96.80002212524414" text="ID" />
+          <TableColumn fx:id="colName" prefWidth="142.3999481201172" text="Name" />
+            <TableColumn fx:id="colBrand" prefWidth="131.99993896484375" text="Brand" />
+            <TableColumn fx:id="colCategory" prefWidth="176.0" text="Category" />
+            <TableColumn fx:id="colStatus" prefWidth="119.20001220703125" text="Status" />
         </columns>
          <styleClass>
             <String fx:value="table-row-cell" />
@@ -49,16 +46,7 @@
             <URL value="@../../css/table-style.css" />
          </stylesheets>
       </TableView>
-      <JFXButton layoutX="459.0" layoutY="68.0" prefHeight="27.0" prefWidth="110.0" styleClass="search-button" text="Search" textFill="#4b465c">
-         <font>
-            <Font name="Arial Bold" size="14.0" />
-         </font>
-         <stylesheets>
-            <URL value="@../../css/style.css" />
-            <URL value="@../../css/components-style.css" />
-         </stylesheets>
-      </JFXButton>
-      <TextField layoutX="249.0" layoutY="69.0" prefHeight="36.0" prefWidth="206.0" promptText="Search Here" styleClass="search-field">
+      <TextField fx:id="txtSearch" layoutX="474.0" layoutY="69.0" prefHeight="36.0" prefWidth="206.0" promptText="Search Here" styleClass="search-field">
          <font>
             <Font name="Arial" size="14.0" />
          </font>
@@ -67,14 +55,5 @@
             <URL value="@../../css/components-style.css" />
          </stylesheets>
       </TextField>
-      <JFXButton layoutX="573.0" layoutY="68.0" prefHeight="27.0" prefWidth="110.0" styleClass="searchbar-clear-button" text="Clear" textFill="#4b465c">
-         <font>
-            <Font name="Arial Bold" size="14.0" />
-         </font>
-         <stylesheets>
-            <URL value="@../../css/style.css" />
-            <URL value="@../../css/components-style.css" />
-         </stylesheets>
-      </JFXButton>
    </children>
 </AnchorPane>

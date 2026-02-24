@@ -1,8 +1,5 @@
 package util;
 
 public enum RepositoryType {
-    SUPPLIER,
-    PRODUCT,
-    BRAND,
-    CATEGORY
+    SUPPLIER, PRODUCT, BRAND, CATEGORY, GRN, GRN_ITEM, STOCK
 }

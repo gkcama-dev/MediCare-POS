@@ -1,9 +1,9 @@
 package service;
 
-import service.custom.impl.BrandServiceImpl;
-import service.custom.impl.CategoryServiceImpl;
-import service.custom.impl.ProductServiceImpl;
-import service.custom.impl.SupplierServiceImpl;
+import repository.custom.impl.GRNItemRepositoryImpl;
+import repository.custom.impl.StockRepositoryImpl;
+import service.custom.impl.*;
+import util.RepositoryType;
 import util.ServiceType;
 
 public class ServiceFactory {
@@ -22,6 +22,7 @@ public class ServiceFactory {
             case PRODUCT:return (T) new ProductServiceImpl();
             case BRAND:return (T) new BrandServiceImpl();
             case CATEGORY:return (T) new CategoryServiceImpl();
+            case GRN:return (T) new GRNServiceImpl();
         }
         return null;
     }
