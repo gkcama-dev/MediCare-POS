@@ -69,7 +69,7 @@
                         <Font name="Arial" size="14.0" />
                     </font>
                 </Label>
-                <TextField fx:id="txtId" layoutX="5.0" layoutY="30.0" prefHeight="37.0" prefWidth="244.0" promptText="grn001" styleClass="custom-text-field" stylesheets="@../../css/components-style.css">
+                <TextField fx:id="txtId" layoutX="5.0" layoutY="30.0" prefHeight="37.0" prefWidth="244.0" promptText="#grn001" styleClass="custom-text-field" stylesheets="@../../css/components-style.css">
                     <font>
                         <Font name="Arial" size="14.0" />
                     </font>

@@ -66,7 +66,7 @@
                   <Font name="Arial" size="14.0" />
                </font>
             </Label>
-            <TextField fx:id="txtUserId" layoutX="6.0" layoutY="30.0" prefHeight="37.0" prefWidth="244.0" promptText="#0001" styleClass="custom-text-field" stylesheets="@../../css/components-style.css">
+            <TextField fx:id="txtUserId" layoutX="6.0" layoutY="30.0" prefHeight="37.0" prefWidth="244.0" promptText="#u001" styleClass="custom-text-field" stylesheets="@../../css/components-style.css">
                <font>
                   <Font name="Arial" size="14.0" />
                </font>
@@ -76,7 +76,7 @@
                   <Font name="Arial" size="14.0" />
                </font>
             </Label>
-            <TextField fx:id="txtUsername" layoutX="6.0" layoutY="99.0" prefHeight="37.0" prefWidth="244.0" promptText="Geeth" styleClass="custom-text-field" stylesheets="@../../css/components-style.css">
+            <TextField fx:id="txtUsername" layoutX="6.0" layoutY="99.0" prefHeight="37.0" prefWidth="244.0" promptText="enter username" styleClass="custom-text-field" stylesheets="@../../css/components-style.css">
                <font>
                   <Font name="Arial" size="14.0" />
                </font>
@@ -119,9 +119,9 @@
                   <URL value="@../../css/components-style.css" />
                </stylesheets>
             </JFXButton>
-            <PasswordField fx:id="txtPassword" layoutX="5.0" layoutY="168.0" prefHeight="37.0" prefWidth="244.0" promptText="xxxxxx" styleClass="custom-text-field" stylesheets="@../../css/components-style.css" />
+            <PasswordField fx:id="txtPassword" layoutX="5.0" layoutY="168.0" prefHeight="37.0" prefWidth="244.0" promptText="enter password" styleClass="custom-text-field" stylesheets="@../../css/components-style.css" />
             <JFXComboBox fx:id="cmbStatus" layoutX="6.0" layoutY="307.0" prefHeight="38.0" prefWidth="244.0" promptText="active" styleClass="custom-combo-box" stylesheets="@../../css/components-style.css" unFocusColor="#cfcaca" />
-            <JFXComboBox fx:id="cmbRole" layoutX="6.0" layoutY="237.0" prefHeight="38.0" prefWidth="244.0" promptText="admin" styleClass="custom-combo-box" stylesheets="@../../css/components-style.css" unFocusColor="#cfcaca" />
+            <JFXComboBox fx:id="cmbRole" layoutX="6.0" layoutY="237.0" prefHeight="38.0" prefWidth="244.0" promptText="select user role" styleClass="custom-combo-box" stylesheets="@../../css/components-style.css" unFocusColor="#cfcaca" />
          </children>
       </Pane>
    </children>

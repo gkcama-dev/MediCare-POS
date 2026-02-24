@@ -61,7 +61,7 @@
                   <Font name="Arial" size="14.0" />
                </font>
             </Label>
-            <TextField fx:id="txtId" layoutX="6.0" layoutY="30.0" prefHeight="37.0" prefWidth="244.0" promptText="#0001" styleClass="custom-text-field" stylesheets="@../../css/components-style.css">
+            <TextField fx:id="txtId" layoutX="6.0" layoutY="30.0" prefHeight="37.0" prefWidth="244.0" promptText="#cat0001" styleClass="custom-text-field" stylesheets="@../../css/components-style.css">
                <font>
                   <Font name="Arial" size="14.0" />
                </font>
@@ -71,7 +71,7 @@
                   <Font name="Arial" size="14.0" />
                </font>
             </Label>
-            <TextField fx:id="txtCategory" layoutX="6.0" layoutY="99.0" prefHeight="37.0" prefWidth="244.0" promptText="Geeth" styleClass="custom-text-field" stylesheets="@../../css/components-style.css">
+            <TextField fx:id="txtCategory" layoutX="6.0" layoutY="99.0" prefHeight="37.0" prefWidth="244.0" promptText="enter category" styleClass="custom-text-field" stylesheets="@../../css/components-style.css">
                <font>
                   <Font name="Arial" size="14.0" />
                </font>
