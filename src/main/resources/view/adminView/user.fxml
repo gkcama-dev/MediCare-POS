@@ -121,7 +121,7 @@
             </JFXButton>
             <PasswordField fx:id="txtPassword" layoutX="5.0" layoutY="168.0" prefHeight="37.0" prefWidth="244.0" promptText="enter password" styleClass="custom-text-field" stylesheets="@../../css/components-style.css" />
             <JFXComboBox fx:id="cmbStatus" layoutX="6.0" layoutY="307.0" prefHeight="38.0" prefWidth="244.0" promptText="active" styleClass="custom-combo-box" stylesheets="@../../css/components-style.css" unFocusColor="#cfcaca" />
-            <JFXComboBox fx:id="cmbRole" layoutX="6.0" layoutY="237.0" prefHeight="38.0" prefWidth="244.0" promptText="select user role" styleClass="custom-combo-box" stylesheets="@../../css/components-style.css" unFocusColor="#cfcaca" />
+            <JFXComboBox fx:id="cmbRole" layoutX="6.0" layoutY="237.0" prefHeight="38.0" prefWidth="244.0" promptText="admin" styleClass="custom-combo-box" stylesheets="@../../css/components-style.css" unFocusColor="#cfcaca" />
          </children>
       </Pane>
    </children>
