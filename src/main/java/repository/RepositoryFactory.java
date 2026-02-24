@@ -23,6 +23,7 @@ public class RepositoryFactory {
             case GRN:return (T) new GRNRepositoryImpl();
             case GRN_ITEM:return (T) new GRNItemRepositoryImpl();
             case STOCK:return (T) new StockRepositoryImpl();
+            case USER:return (T) new UserRepositoryImpl();
         }
         return null;
     }

@@ -23,6 +23,7 @@ public class ServiceFactory {
             case BRAND:return (T) new BrandServiceImpl();
             case CATEGORY:return (T) new CategoryServiceImpl();
             case GRN:return (T) new GRNServiceImpl();
+            case USER:return (T) new UserServiceImpl();
         }
         return null;
     }

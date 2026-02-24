@@ -32,13 +32,13 @@
             <Font name="Arial" size="14.0" />
          </font>
       </Label>
-      <TableView layoutX="14.0" layoutY="116.0" prefHeight="453.0" prefWidth="670.0">
+      <TableView fx:id="tblUser" layoutX="14.0" layoutY="116.0" prefHeight="453.0" prefWidth="670.0">
         <columns>
-          <TableColumn prefWidth="71.20000839233398" text="ID" />
-          <TableColumn prefWidth="157.60000610351562" text="Username" />
-            <TableColumn prefWidth="179.1999969482422" text="Password" />
-            <TableColumn prefWidth="134.4000244140625" text="Role" />
-            <TableColumn prefWidth="120.0" text="Status" />
+          <TableColumn fx:id="colId" prefWidth="71.20000839233398" text="ID" />
+          <TableColumn fx:id="colUsername" prefWidth="157.60000610351562" text="Username" />
+            <TableColumn fx:id="colPassword" prefWidth="179.1999969482422" text="Password" />
+            <TableColumn fx:id="colRole" prefWidth="134.4000244140625" text="Role" />
+            <TableColumn fx:id="colStatus" prefWidth="120.0" text="Status" />
         </columns>
          <styleClass>
             <String fx:value="table-row-cell" />
@@ -50,7 +50,7 @@
             <URL value="@../../css/table-style.css" />
          </stylesheets>
       </TableView>
-      <TextField layoutX="477.0" layoutY="69.0" prefHeight="36.0" prefWidth="206.0" promptText="Search Here" styleClass="search-field">
+      <TextField fx:id="txtSearch" layoutX="477.0" layoutY="69.0" prefHeight="36.0" prefWidth="206.0" promptText="Search Here" styleClass="search-field">
          <font>
             <Font name="Arial" size="14.0" />
          </font>
@@ -96,12 +96,12 @@
                   <Font name="Arial" size="14.0" />
                </font>
             </Label>
-            <JFXButton layoutX="4.0" layoutY="461.0" prefHeight="27.0" prefWidth="244.0" styleClass="add-button" stylesheets="@../../css/components-style.css" text="Add User" textFill="#4b465c">
+            <JFXButton fx:id="btnAdd" layoutX="4.0" layoutY="461.0" onAction="#btnAddOnAction" prefHeight="27.0" prefWidth="244.0" styleClass="add-button" stylesheets="@../../css/components-style.css" text="Add User" textFill="#4b465c">
                <font>
                   <Font name="Arial Bold" size="14.0" />
                </font>
             </JFXButton>
-            <JFXButton layoutX="5.0" layoutY="510.0" prefHeight="27.0" prefWidth="120.0" styleClass="update-button" text="Update" textFill="#4b465c">
+            <JFXButton layoutX="5.0" layoutY="510.0" onAction="#btnUpdateOnAction" prefHeight="27.0" prefWidth="120.0" styleClass="update-button" text="Update" textFill="#4b465c">
                <font>
                   <Font name="Arial Bold" size="14.0" />
                </font>
@@ -110,7 +110,7 @@
                   <URL value="@../../css/components-style.css" />
                </stylesheets>
             </JFXButton>
-            <JFXButton layoutX="128.0" layoutY="510.0" prefHeight="27.0" prefWidth="120.0" styleClass="clear-button" text="Clear" textFill="#4b465c">
+            <JFXButton layoutX="128.0" layoutY="510.0" onAction="#btnClearOnAction" prefHeight="27.0" prefWidth="120.0" styleClass="clear-button" text="Clear" textFill="#4b465c">
                <font>
                   <Font name="Arial Bold" size="14.0" />
                </font>
@@ -120,8 +120,8 @@
                </stylesheets>
             </JFXButton>
             <PasswordField fx:id="txtPassword" layoutX="5.0" layoutY="168.0" prefHeight="37.0" prefWidth="244.0" promptText="xxxxxx" styleClass="custom-text-field" stylesheets="@../../css/components-style.css" />
-            <JFXComboBox layoutX="6.0" layoutY="307.0" prefHeight="38.0" prefWidth="244.0" promptText="active" styleClass="custom-combo-box" stylesheets="@../../css/components-style.css" unFocusColor="#cfcaca" />
-            <JFXComboBox layoutX="6.0" layoutY="237.0" prefHeight="38.0" prefWidth="244.0" promptText="admin" styleClass="custom-combo-box" stylesheets="@../../css/components-style.css" unFocusColor="#cfcaca" />
+            <JFXComboBox fx:id="cmbStatus" layoutX="6.0" layoutY="307.0" prefHeight="38.0" prefWidth="244.0" promptText="active" styleClass="custom-combo-box" stylesheets="@../../css/components-style.css" unFocusColor="#cfcaca" />
+            <JFXComboBox fx:id="cmbRole" layoutX="6.0" layoutY="237.0" prefHeight="38.0" prefWidth="244.0" promptText="admin" styleClass="custom-combo-box" stylesheets="@../../css/components-style.css" unFocusColor="#cfcaca" />
          </children>
       </Pane>
    </children>
