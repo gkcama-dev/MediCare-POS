@@ -134,10 +134,10 @@
 }
 
 
-.custom-combo-box .list-cell:selected {
-    -fx-background-color: #731EF0;
-    -fx-text-fill: white;
-}
+/*.custom-combo-box .list-cell:selected {*/
+/*    -fx-background-color: #731EF0;*/
+/*    -fx-text-fill: white;*/
+/*}*/
 
 
 .custom-combo-box .arrow-button {
