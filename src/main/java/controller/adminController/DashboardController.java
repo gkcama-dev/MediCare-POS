@@ -13,11 +13,6 @@ import java.util.ResourceBundle;
 
 public class DashboardController implements Initializable {
 
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-        setNode("/view/adminView/home.fxml",btnDashboard);
-
-    }
 
     @FXML
     private JFXButton btnAllInvoice;
@@ -45,6 +40,12 @@ public class DashboardController implements Initializable {
 
     @FXML
     private AnchorPane dashroot;
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        setNode("/view/adminView/home.fxml",btnDashboard);
+
+    }
 
     @FXML
     void btnAllInvoiceOnAction(ActionEvent event) {
@@ -108,6 +109,7 @@ public class DashboardController implements Initializable {
             dashroot.getChildren().clear();
             dashroot.getChildren().add(parent);
         } catch (Exception e) {
+            e.printStackTrace();
             throw new RuntimeException();
         }
     }

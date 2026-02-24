@@ -30,12 +30,6 @@ import javafx.scene.input.MouseEvent;
 
 public class BrandController implements Initializable {
 
-    private final BrandService brandService = ServiceFactory.getInstance().getServiceType(ServiceType.BRAND);
-
-    private ObservableList<BrandTM> brandMasterData = FXCollections.observableArrayList();
-
-    private MedicineController medicineController;
-
     @FXML
     private JFXButton btnAdd;
 
@@ -56,6 +50,12 @@ public class BrandController implements Initializable {
 
     @FXML
     private TextField txtSearch;
+
+    private final BrandService brandService = ServiceFactory.getInstance().getServiceType(ServiceType.BRAND);
+
+    private ObservableList<BrandTM> brandMasterData = FXCollections.observableArrayList();
+
+    private MedicineController medicineController;
 
 
     @Override

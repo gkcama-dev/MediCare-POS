@@ -25,10 +25,6 @@ import java.util.ResourceBundle;
 
 public class SupplierController implements Initializable {
 
-    private final SupplierService supplierService = ServiceFactory.getInstance().getServiceType(ServiceType.SUPPLIER);
-
-    private ObservableList<SupplierTM> masterData = FXCollections.observableArrayList();
-
     @FXML
     private JFXButton btnAdd;
 
@@ -79,6 +75,10 @@ public class SupplierController implements Initializable {
 
     @FXML
     private TextField txtSearch;
+
+    private final SupplierService supplierService = ServiceFactory.getInstance().getServiceType(ServiceType.SUPPLIER);
+
+    private ObservableList<SupplierTM> masterData = FXCollections.observableArrayList();
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {

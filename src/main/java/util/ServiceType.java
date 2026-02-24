@@ -4,5 +4,6 @@ public enum ServiceType {
     SUPPLIER,
     PRODUCT,
     BRAND,
-    CATEGORY
+    CATEGORY,
+    GRN
 }

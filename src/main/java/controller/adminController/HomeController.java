@@ -18,13 +18,6 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class HomeController implements Initializable {
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-      setLowStockListDesign();
-      loadLowStockSampleData();
-      setExpiringDesign();
-      loadExpiringSampleData();
-    }
 
     @FXML
     private Label lblExpiringSoon;
@@ -43,6 +36,14 @@ public class HomeController implements Initializable {
 
     @FXML
     private ListView<String> lstExpiring;
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        setLowStockListDesign();
+        loadLowStockSampleData();
+        setExpiringDesign();
+        loadExpiringSampleData();
+    }
 
     private void loadLowStockSampleData() {
         ObservableList<String> sampleData = FXCollections.observableArrayList(
