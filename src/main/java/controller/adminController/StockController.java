@@ -112,6 +112,7 @@ public class StockController implements Initializable {
         setCellValueForTable();
         initTableDoubleClickEvent();
         disableField();
+        dateValidate();
     }
 
     private long generateRandomGrnId() {
@@ -134,6 +135,20 @@ public class StockController implements Initializable {
         txtId.setText(String.valueOf(randomGrnId));
         txtId.setDisable(true);
         txtId.setStyle("-fx-text-fill: black; -fx-opacity: 0.8;");
+    }
+
+    private void dateValidate() {
+        dateEXP.setOnAction(event -> {
+            LocalDate mfd = dateMFD.getValue();
+            LocalDate exp = dateEXP.getValue();
+
+            if (mfd != null && exp != null) {
+                if (exp.isBefore(mfd) || exp.isEqual(mfd)) {
+                    new Alert(Alert.AlertType.ERROR, "Expiry date must be after the Manufacturing date!").show();
+                    dateEXP.setValue(null);
+                }
+            }
+        });
     }
 
     private void setCellValueForTable() {
@@ -174,186 +189,252 @@ public class StockController implements Initializable {
         });
     }
 
-    @FXML
-    void btnAddOnAction(ActionEvent event) {
+    private boolean isValid() {
+
+        if (txtSupplier.getText().trim().isEmpty() ||
+                txtMedicine.getText().trim().isEmpty() ||
+                txtBuyingPrice.getText().trim().isEmpty() ||
+                txtSellingPrice.getText().trim().isEmpty() ||
+                txtQty.getText().trim().isEmpty() ||
+                dateMFD.getValue() == null ||
+                dateEXP.getValue() == null) {
+
+            new Alert(Alert.AlertType.WARNING, "All fields are required!").show();
+            return false;
+        }
 
         try {
 
-            long GRNId = Long.parseLong(txtId.getText());
-            String supplier = txtSupplier.getText();
-            String medicine = txtMedicine.getText();
-            LocalDate mfd = dateMFD.getValue();
-            LocalDate exp = dateEXP.getValue();
             double buyPrice = Double.parseDouble(txtBuyingPrice.getText());
             double sellPrice = Double.parseDouble(txtSellingPrice.getText());
             double qty = Double.parseDouble(txtQty.getText());
 
-            for (StockTM tm : stockDetailsList) {
 
-                if (tm.getSupplier().equals(supplier) && tm.getProduct().equals(medicine) &&
-                        tm.getBuyingPrice() == buyPrice && tm.getSellingPrice() == sellPrice &&
-                        tm.getExp().equals(exp) && tm.getMfd().equals(mfd)) {
-
-                    tm.setQty(tm.getQty() + qty);
-                    tm.setTotal(tm.getQty() * tm.getBuyingPrice());
-
-                    tblStock.refresh();
-                    calculateNetTotal();
-                    clearItemFields();
-                    return;
-                }
+            if (buyPrice <= 0 || sellPrice <= 0 || qty <= 0) {
+                new Alert(Alert.AlertType.ERROR, "Price and Quantity must be greater than zero!").show();
+                return false;
             }
 
-            double total = qty * buyPrice;
-            StockTM stockTM = new StockTM(
-                    GRNId,
-                    supplier,
-                    medicine,
-                    mfd,
-                    exp,
-                    buyPrice,
-                    sellPrice,
-                    qty,
-                    total
-            );
 
-            stockDetailsList.add(stockTM);
-            tblStock.setItems(stockDetailsList);
+            if (sellPrice < buyPrice) {
+                new Alert(Alert.AlertType.ERROR, "Selling price cannot be less than the buying price!").show();
+                return false;
+            }
 
-            calculateNetTotal();
-            clearItemFields();
 
-        } catch (Exception e) {
-            new Alert(Alert.AlertType.ERROR, "Please enter prices and quantities correctly.!").show();
+            if (dateMFD.getValue() == null || dateEXP.getValue() == null) {
+                new Alert(Alert.AlertType.ERROR, "Please select MFD and EXP dates!").show();
+                return false;
+            }
+
+
+        } catch (NumberFormatException e) {
+            new Alert(Alert.AlertType.ERROR, "Invalid input! Please enter numeric values for prices and quantity.").show();
         }
+        return true;
     }
 
-    private void calculateNetTotal() {
-        double netTotal = 0.0;
-        for (StockTM tm : stockDetailsList) {
-            netTotal += tm.getTotal();
-        }
-        lblTotal.setText(String.format("%.2f", netTotal));
+
+
+@FXML
+void btnAddOnAction(ActionEvent event) {
+
+    if (!isValid()) {
+        return;
     }
 
-    private void clearItemFields() {
-        txtMedicine.clear();
-        txtSupplier.clear();
-        txtBuyingPrice.clear();
-        txtSellingPrice.clear();
-        txtQty.clear();
-        dateEXP.setValue(null);
-        dateMFD.setValue(null);
-    }
+    try {
 
-    @FXML
-    void btnClearOnAction(ActionEvent event) {
+        long GRNId = Long.parseLong(txtId.getText());
+        String supplier = txtSupplier.getText();
+        String medicine = txtMedicine.getText();
+        LocalDate mfd = dateMFD.getValue();
+        LocalDate exp = dateEXP.getValue();
+        double buyPrice = Double.parseDouble(txtBuyingPrice.getText());
+        double sellPrice = Double.parseDouble(txtSellingPrice.getText());
+        double qty = Double.parseDouble(txtQty.getText());
 
-    }
-
-    @FXML
-    void btnSaveGRNOnAction(ActionEvent event) {
-
-        if (stockDetailsList.isEmpty()) {
-            new Alert(Alert.AlertType.WARNING, "Please add items to the table!").show();
+        if (buyPrice <= 0 || sellPrice <= 0 || qty <= 0) {
+            new Alert(Alert.AlertType.ERROR, "Price and Quantity must be greater than zero!").show();
             return;
         }
 
-        List<GRNItem> grnItemsList = new ArrayList<>();
-        List<Stock> stocksList = new ArrayList<>();
+        if (sellPrice < buyPrice) {
+            new Alert(Alert.AlertType.ERROR, "Selling price cannot be less than the buying price!").show();
+            return;
+        }
+
+        if (dateMFD.getValue() == null || dateEXP.getValue() == null) {
+            new Alert(Alert.AlertType.ERROR, "Please select MFD and EXP dates!").show();
+            return;
+        }
 
         for (StockTM tm : stockDetailsList) {
-            stocksList.add(new Stock(
-                    0,
-                    tm.getProduct(),
-                    tm.getSellingPrice(),
-                    tm.getQty(),
-                    tm.getMfd(),
-                    tm.getExp(),
-                    1
-            ));
 
-            grnItemsList.add(new GRNItem(
-                    0,
-                    tm.getQty(),
-                    tm.getBuyingPrice(),
-                    0,
-                    tm.getGrnId()
-            ));
+            if (tm.getSupplier().equals(supplier) && tm.getProduct().equals(medicine) &&
+                    tm.getBuyingPrice() == buyPrice && tm.getSellingPrice() == sellPrice &&
+                    tm.getExp().equals(exp) && tm.getMfd().equals(mfd)) {
+
+                tm.setQty(tm.getQty() + qty);
+                tm.setTotal(tm.getQty() * tm.getBuyingPrice());
+
+                tblStock.refresh();
+                calculateNetTotal();
+                clearItemFields();
+                return;
+            }
         }
 
-        GRN grn = new GRN(
-                Long.parseLong(txtId.getText()),
-                LocalDate.now(),
-                0.0,
-                Double.parseDouble(lblTotal.getText()),
-                0.0,
-                selectedSupplierId,
-                grnItemsList,
-                stocksList
+        double total = qty * buyPrice;
+        StockTM stockTM = new StockTM(
+                GRNId,
+                supplier,
+                medicine,
+                mfd,
+                exp,
+                buyPrice,
+                sellPrice,
+                qty,
+                total
         );
 
-        try {
+        stockDetailsList.add(stockTM);
+        tblStock.setItems(stockDetailsList);
 
-            if (grnService.placeGRN(grn)) {
-                new Alert(Alert.AlertType.INFORMATION, "GRN Saved Successfully!").show();
-                stockDetailsList.clear();
-                tblStock.refresh();
-                setGRNId();
-                calculateNetTotal();
-            } else {
-                new Alert(Alert.AlertType.ERROR, "Failed to save GRN!").show();
-            }
+        calculateNetTotal();
+        clearItemFields();
 
-        } catch (Exception e) {
-            e.printStackTrace();
-            new Alert(Alert.AlertType.ERROR, "Error: " + e.getMessage()).show();
-            throw new RuntimeException(e);
+    } catch (Exception e) {
+        new Alert(Alert.AlertType.ERROR, "Please enter prices and quantities correctly.!").show();
+    }
+}
+
+private void calculateNetTotal() {
+    double netTotal = 0.0;
+    for (StockTM tm : stockDetailsList) {
+        netTotal += tm.getTotal();
+    }
+    lblTotal.setText(String.format("%.2f", netTotal));
+}
+
+private void clearItemFields() {
+    txtMedicine.clear();
+    txtSupplier.clear();
+    txtBuyingPrice.clear();
+    txtSellingPrice.clear();
+    txtQty.clear();
+    dateEXP.setValue(null);
+    dateMFD.setValue(null);
+}
+
+@FXML
+void btnClearOnAction(ActionEvent event) {
+
+}
+
+@FXML
+void btnSaveGRNOnAction(ActionEvent event) {
+
+    if (stockDetailsList.isEmpty()) {
+        new Alert(Alert.AlertType.WARNING, "Please add items to the table!").show();
+        return;
+    }
+
+    List<GRNItem> grnItemsList = new ArrayList<>();
+    List<Stock> stocksList = new ArrayList<>();
+
+    for (StockTM tm : stockDetailsList) {
+        stocksList.add(new Stock(
+                0,
+                tm.getProduct(),
+                tm.getSellingPrice(),
+                tm.getQty(),
+                tm.getMfd(),
+                tm.getExp(),
+                1
+        ));
+
+        grnItemsList.add(new GRNItem(
+                0,
+                tm.getQty(),
+                tm.getBuyingPrice(),
+                0,
+                tm.getGrnId()
+        ));
+    }
+
+    GRN grn = new GRN(
+            Long.parseLong(txtId.getText()),
+            LocalDate.now(),
+            0.0,
+            Double.parseDouble(lblTotal.getText()),
+            0.0,
+            selectedSupplierId,
+            grnItemsList,
+            stocksList
+    );
+
+    try {
+
+        if (grnService.placeGRN(grn)) {
+            new Alert(Alert.AlertType.INFORMATION, "GRN Saved Successfully!").show();
+            stockDetailsList.clear();
+            tblStock.refresh();
+            setGRNId();
+            calculateNetTotal();
+        } else {
+            new Alert(Alert.AlertType.ERROR, "Failed to save GRN!").show();
         }
 
-
-    }
-
-    @FXML
-    void btnMedicineOnAction(ActionEvent event) {
-        loadWindow("/view/adminView/medicineView.fxml", "MedicineView");
-    }
-
-    @FXML
-    void btnSupplierOnAction(ActionEvent event) {
-        loadWindow("/view/adminView/supplierView.fxml", "SuppllierView");
+    } catch (Exception e) {
+        e.printStackTrace();
+        new Alert(Alert.AlertType.ERROR, "Error: " + e.getMessage()).show();
+        throw new RuntimeException(e);
     }
 
 
-    private void loadWindow(String fxmlPath, String title) {
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlPath));
-            Parent root = loader.load();
+}
 
-            Object controller = loader.getController();
+@FXML
+void btnMedicineOnAction(ActionEvent event) {
+    loadWindow("/view/adminView/medicineView.fxml", "MedicineView");
+}
+
+@FXML
+void btnSupplierOnAction(ActionEvent event) {
+    loadWindow("/view/adminView/supplierView.fxml", "SuppllierView");
+}
 
 
-            if (controller instanceof MedicineViewController) {
-                ((MedicineViewController) controller).setListener(product -> {
-                    txtMedicine.setText(product.getCode());
-                });
-            } else if (controller instanceof SupplierViewController) {
-                ((SupplierViewController) controller).setListener(supplier -> {
-                    txtSupplier.setText(supplier.getMobile());
-                    this.selectedSupplierId = supplier.getId();
-                });
-            }
+private void loadWindow(String fxmlPath, String title) {
+    try {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlPath));
+        Parent root = loader.load();
 
-            Stage stage = new Stage();
-            stage.setScene(new Scene(root));
-            stage.initModality(Modality.APPLICATION_MODAL);
-            stage.setTitle(title);
-            stage.centerOnScreen();
-            stage.show();
+        Object controller = loader.getController();
 
-        } catch (Exception e) {
-            e.printStackTrace();
+
+        if (controller instanceof MedicineViewController) {
+            ((MedicineViewController) controller).setListener(product -> {
+                txtMedicine.setText(product.getCode());
+            });
+        } else if (controller instanceof SupplierViewController) {
+            ((SupplierViewController) controller).setListener(supplier -> {
+                txtSupplier.setText(supplier.getMobile());
+                this.selectedSupplierId = supplier.getId();
+            });
         }
+
+        Stage stage = new Stage();
+        stage.setScene(new Scene(root));
+        stage.initModality(Modality.APPLICATION_MODAL);
+        stage.setTitle(title);
+        stage.centerOnScreen();
+        stage.show();
+
+    } catch (Exception e) {
+        e.printStackTrace();
     }
+}
 
 }
