@@ -53,7 +53,7 @@
                 <URL value="@../../css/table-style.css" />
             </stylesheets>
         </TableView>
-        <TextField fx:id="txtSearch" layoutX="475.0" layoutY="69.0" prefHeight="36.0" prefWidth="206.0" promptText="Search Here" styleClass="search-field">
+        <TextField fx:id="txtSearch" layoutX="477.0" layoutY="69.0" prefHeight="36.0" prefWidth="206.0" promptText="Search Here" styleClass="search-field">
             <font>
                 <Font name="Arial" size="14.0" />
             </font>
