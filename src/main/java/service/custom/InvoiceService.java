@@ -1,4 +1,9 @@
 package service.custom;
 
-public interface InvoiceService {
+import model.Invoice;
+import repository.SuperRepository;
+import service.SuperService;
+
+public interface InvoiceService extends SuperService {
+    boolean placeInvoice(Invoice invoice) throws Exception;
 }
