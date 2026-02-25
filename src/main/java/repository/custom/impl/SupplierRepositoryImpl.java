@@ -41,6 +41,20 @@ public class SupplierRepositoryImpl implements SupplierRepository {
     }
 
     @Override
+    public boolean isSupplierActive(String supplierId) throws Exception {
+        String sql = "SELECT st.status FROM supplier s " +
+                "JOIN status st ON s.status_id = st.id " +
+                "WHERE s.id = ?";
+
+        ResultSet rs = CrudUtil.execute(sql, supplierId);
+
+        if (rs.next()) {
+            return rs.getString("status").equalsIgnoreCase("Active");
+        }
+        return false;
+    }
+
+    @Override
     public boolean create(Supplier supplier, int statusId) throws SQLException {
         try {
             return CrudUtil.execute("INSERT INTO supplier VALUES (?,?,?,?,?,?,?)",

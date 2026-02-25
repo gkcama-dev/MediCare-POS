@@ -110,4 +110,18 @@ public class ProductRepositoryImpl implements ProductRepository {
 
         return false;
     }
+
+    @Override
+    public boolean isMedicineActive(String productCode) throws Exception {
+        String sql = "SELECT st.status FROM medicine m " +
+                "JOIN status st ON m.status_id = st.id " +
+                "WHERE m.code = ?";
+
+        ResultSet rs = CrudUtil.execute(sql, productCode);
+
+        if (rs.next()) {
+            return rs.getString("status").equalsIgnoreCase("Active");
+        }
+        return false;
+    }
 }
