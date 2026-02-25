@@ -57,3 +57,11 @@
     -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.05), 10, 0, 0, 4);
 }
 
+.login-rounded-white-pane {
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 15;
+    -fx-border-radius: 15;
+
+    -fx-effect: dropshadow(three-pass-box, rgba(175, 145, 244, 0.6), 25, 0, 0, 0);
+}
+
