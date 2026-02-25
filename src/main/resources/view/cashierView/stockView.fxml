@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import java.net.URL?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="574.0" prefWidth="698.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.cashierController.stockViewController">
+   <children>
+      <Label layoutX="57.0" layoutY="4.0" prefHeight="42.0" prefWidth="335.0" text="Stock Details" textFill="#731ef0">
+         <font>
+            <Font name="Arial Bold" size="30.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="14.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../icon/stock2.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="19.0" layoutY="47.0" prefHeight="18.0" prefWidth="372.0" text="Organize your pharmaceutical stock details." textFill="#4b465c">
+         <font>
+            <Font name="Arial" size="14.0" />
+         </font>
+      </Label>
+      <TableView fx:id="tblStock" layoutX="14.0" layoutY="116.0" prefHeight="453.0" prefWidth="670.0">
+        <columns>
+          <TableColumn fx:id="colId" prefWidth="96.80002212524414" text="ID" />
+          <TableColumn fx:id="colMedicine" prefWidth="212.80003356933594" text="Medicine" />
+            <TableColumn fx:id="colPrice" prefWidth="191.20001220703125" text="Price" />
+            <TableColumn fx:id="colQty" prefWidth="165.60003662109375" text="Stock Qty" />
+        </columns>
+         <styleClass>
+            <String fx:value="table-row-cell" />
+            <String fx:value="table-cell" />
+            <String fx:value="table-view" />
+         </styleClass>
+         <stylesheets>
+            <URL value="@../../css/style.css" />
+            <URL value="@../../css/table-style.css" />
+         </stylesheets>
+      </TableView>
+      <TextField fx:id="txtSearch" layoutX="474.0" layoutY="69.0" prefHeight="36.0" prefWidth="206.0" promptText="Search Here" styleClass="search-field">
+         <font>
+            <Font name="Arial" size="14.0" />
+         </font>
+         <stylesheets>
+            <URL value="@../../css/style.css" />
+            <URL value="@../../css/components-style.css" />
+         </stylesheets>
+      </TextField>
+   </children>
+</AnchorPane>

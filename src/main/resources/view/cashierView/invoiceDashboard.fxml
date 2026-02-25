@@ -72,14 +72,13 @@
                         <Font name="Arial" size="14.0" />
                      </font>
                   </Label>
-                  <TableView layoutX="11.0" layoutY="76.0" prefHeight="494.0" prefWidth="670.0">
+                  <TableView fx:id="tblInvoice" layoutX="11.0" layoutY="76.0" prefHeight="494.0" prefWidth="670.0">
                      <columns>
-                        <TableColumn prefWidth="109.60000610351562" text="Stock ID" />
-                        <TableColumn prefWidth="96.0" text="Brand" />
-                        <TableColumn prefWidth="143.20001220703125" text="Medicine" />
-                        <TableColumn prefWidth="116.79998779296875" text="Price" />
-                        <TableColumn prefWidth="80.79998779296875" text="Qty" />
-                        <TableColumn prefWidth="100.7999267578125" text="Total" />
+                        <TableColumn fx:id="colStockID" prefWidth="109.60000610351562" text="Stock ID" />
+                        <TableColumn fx:id="colMedicine" prefWidth="152.80007934570312" text="Medicine" />
+                        <TableColumn fx:id="colPrice" prefWidth="151.199951171875" text="Price" />
+                        <TableColumn fx:id="colQty" prefWidth="104.00006103515625" text="Qty" />
+                        <TableColumn fx:id="colTotal" prefWidth="149.5999755859375" text="Total" />
                      </columns>
                      <styleClass>
                         <String fx:value="table-row-cell" />
@@ -93,13 +92,13 @@
                   </TableView>
                   <Pane layoutX="692.0" layoutY="11.0" prefHeight="559.0" prefWidth="254.0" style="-fx-background-color: #ffffff;" styleClass="rounded-white-pane" stylesheets="@../../css/style.css">
                      <children>
-                        <JFXComboBox layoutX="6.0" layoutY="173.0" prefHeight="38.0" prefWidth="244.0" promptText="cash" styleClass="custom-combo-box" stylesheets="@../../css/components-style.css" unFocusColor="#cfcaca" />
+                        <JFXComboBox fx:id="cmdPaymentMethod" layoutX="6.0" layoutY="173.0" prefHeight="38.0" prefWidth="244.0" promptText="cash" styleClass="custom-combo-box" stylesheets="@../../css/components-style.css" unFocusColor="#cfcaca" />
                         <Label layoutX="10.0" layoutY="9.0" prefHeight="18.0" prefWidth="77.0" text="Total" textFill="#4b465c">
                            <font>
                               <Font name="Arial" size="14.0" />
                            </font>
                         </Label>
-                        <TextField layoutX="6.0" layoutY="31.0" prefHeight="37.0" prefWidth="244.0" promptText="00.00" stylesheets="@../../css/components-style.css">
+                        <TextField fx:id="txtInvoiceTotal" layoutX="6.0" layoutY="31.0" prefHeight="37.0" prefWidth="244.0" promptText="00.00" stylesheets="@../../css/components-style.css">
                            <font>
                               <Font name="Arial" size="18.0" />
                            </font>
@@ -113,7 +112,7 @@
                               <Font name="Arial" size="14.0" />
                            </font>
                         </Label>
-                        <TextField layoutX="6.0" layoutY="102.0" prefHeight="37.0" prefWidth="244.0" promptText="0%" stylesheets="@../../css/components-style.css">
+                        <TextField fx:id="txtInvoiceDiscount" layoutX="6.0" layoutY="102.0" prefHeight="37.0" prefWidth="244.0" promptText="0" stylesheets="@../../css/components-style.css">
                            <font>
                               <Font name="Arial" size="14.0" />
                            </font>
@@ -132,7 +131,7 @@
                               <Font name="Arial" size="14.0" />
                            </font>
                         </Label>
-                        <TextField layoutX="4.0" layoutY="244.0" prefHeight="37.0" prefWidth="244.0" promptText="00.00" stylesheets="@../../css/components-style.css">
+                        <TextField fx:id="txtInvoicePayment" layoutX="4.0" layoutY="244.0" prefHeight="37.0" prefWidth="244.0" promptText="00.00" stylesheets="@../../css/components-style.css">
                            <font>
                               <Font name="Arial" size="14.0" />
                            </font>
@@ -146,7 +145,7 @@
                               <Font name="Arial" size="14.0" />
                            </font>
                         </Label>
-                        <TextField layoutX="4.0" layoutY="315.0" prefHeight="37.0" prefWidth="244.0" promptText="00.00" stylesheets="@../../css/components-style.css">
+                        <TextField fx:id="txtInvoiceBalance" layoutX="4.0" layoutY="315.0" prefHeight="37.0" prefWidth="244.0" promptText="00.00" stylesheets="@../../css/components-style.css">
                            <font>
                               <Font name="Arial" size="14.0" />
                            </font>
@@ -155,7 +154,7 @@
                               <String fx:value="invoice-text-field" />
                            </styleClass>
                         </TextField>
-                        <JFXButton layoutX="6.0" layoutY="507.0" prefHeight="27.0" prefWidth="244.0" styleClass="add-button" stylesheets="@../../css/components-style.css" text="Add Medicine" textFill="#4b465c">
+                        <JFXButton layoutX="6.0" layoutY="507.0" onAction="#btnPrintOnAction" prefHeight="27.0" prefWidth="244.0" styleClass="update-button" stylesheets="@../../css/components-style.css" text="Print" textFill="#4b465c">
                            <font>
                               <Font name="Arial Bold" size="14.0" />
                            </font>
@@ -175,7 +174,7 @@
             <Font name="Arial" size="14.0" />
          </font>
       </Label>
-      <TextField layoutX="8.0" layoutY="98.0" prefHeight="37.0" prefWidth="244.0" promptText="inv0303" styleClass="custom-text-field" stylesheets="@../../css/components-style.css">
+      <TextField fx:id="txtInvoiceID" layoutX="8.0" layoutY="98.0" prefHeight="37.0" prefWidth="244.0" promptText="inv0303" styleClass="custom-text-field" stylesheets="@../../css/components-style.css">
          <font>
             <Font name="Arial" size="14.0" />
          </font>
@@ -185,7 +184,7 @@
             <Font name="Arial" size="14.0" />
          </font>
       </Label>
-      <TextField layoutX="8.0" layoutY="170.0" prefHeight="37.0" prefWidth="244.0" promptText="0702222222" styleClass="custom-text-field" stylesheets="@../../css/components-style.css">
+      <TextField fx:id="txtCutomerMobile" layoutX="8.0" layoutY="170.0" prefHeight="37.0" prefWidth="244.0" promptText="enter cutomer mobile" styleClass="custom-text-field" stylesheets="@../../css/components-style.css">
          <font>
             <Font name="Arial" size="14.0" />
          </font>
@@ -195,12 +194,12 @@
             <Font name="Arial" size="14.0" />
          </font>
       </Label>
-      <TextField layoutX="8.0" layoutY="241.0" prefHeight="38.0" prefWidth="202.0" promptText="Stock ID" styleClass="custom-text-field" stylesheets="@../../css/components-style.css">
+      <TextField fx:id="txtStockID" layoutX="8.0" layoutY="241.0" prefHeight="38.0" prefWidth="202.0" promptText="Stock ID" styleClass="custom-text-field" stylesheets="@../../css/components-style.css">
          <font>
             <Font name="Arial" size="14.0" />
          </font>
       </TextField>
-      <JFXButton fx:id="btnBrand" layoutX="216.0" layoutY="242.0" onAction="#btnBrandOnAction" prefHeight="35.0" prefWidth="35.0" styleClass="icon-container" textFill="#4b465c">
+      <JFXButton fx:id="btnStock" layoutX="216.0" layoutY="242.0" onAction="#btnStockOnAction" prefHeight="35.0" prefWidth="35.0" styleClass="icon-container" textFill="#4b465c">
          <font>
             <Font name="Arial Bold" size="14.0" />
          </font>
@@ -214,27 +213,27 @@
             <Image url="@../../icon/plus.png" />
          </image>
       </ImageView>
-      <TextField layoutX="8.0" layoutY="289.0" prefHeight="38.0" prefWidth="244.0" promptText="Brand" styleClass="custom-text-field" stylesheets="@../../css/components-style.css">
+      <TextField fx:id="txtProduct" layoutX="8.0" layoutY="289.0" prefHeight="38.0" prefWidth="244.0" promptText="Medicine" styleClass="custom-text-field" stylesheets="@../../css/components-style.css">
          <font>
             <Font name="Arial" size="14.0" />
          </font>
       </TextField>
-      <TextField layoutX="8.0" layoutY="336.0" prefHeight="38.0" prefWidth="120.0" promptText="Price" styleClass="custom-text-field" stylesheets="@../../css/components-style.css">
+      <TextField fx:id="txtPrice" layoutX="8.0" layoutY="336.0" prefHeight="38.0" prefWidth="120.0" promptText="Price" styleClass="custom-text-field" stylesheets="@../../css/components-style.css">
          <font>
             <Font name="Arial" size="14.0" />
          </font>
       </TextField>
-      <TextField layoutX="131.0" layoutY="336.0" prefHeight="38.0" prefWidth="120.0" promptText="Available Qty" styleClass="custom-text-field" stylesheets="@../../css/components-style.css">
+      <TextField fx:id="txtAvbQty" layoutX="131.0" layoutY="336.0" prefHeight="38.0" prefWidth="120.0" promptText="Available Qty" styleClass="custom-text-field" stylesheets="@../../css/components-style.css">
          <font>
             <Font name="Arial" size="14.0" />
          </font>
       </TextField>
-      <TextField layoutX="10.0" layoutY="396.0" prefHeight="38.0" prefWidth="244.0" promptText="Enter Qty" styleClass="custom-text-field" stylesheets="@../../css/components-style.css">
+      <TextField fx:id="txtQty" layoutX="10.0" layoutY="398.0" prefHeight="38.0" prefWidth="244.0" promptText="Enter Qty" styleClass="custom-text-field" stylesheets="@../../css/components-style.css">
          <font>
             <Font name="Arial" size="14.0" />
          </font>
       </TextField>
-      <JFXButton layoutX="11.0" layoutY="444.0" prefHeight="27.0" prefWidth="244.0" styleClass="add-button" stylesheets="@../../css/components-style.css" text="Add Medicine" textFill="#4b465c">
+      <JFXButton fx:id="btnAdd" layoutX="11.0" layoutY="450.0" onAction="#btnAddOnAction" prefHeight="27.0" prefWidth="244.0" styleClass="add-button" stylesheets="@../../css/components-style.css" text="Add Medicine" textFill="#4b465c">
          <font>
             <Font name="Arial Bold" size="14.0" />
          </font>
@@ -244,7 +243,7 @@
             <Font name="Arial Bold" size="18.0" />
          </font>
       </Label>
-      <Label layoutX="112.0" layoutY="530.0" prefHeight="42.0" prefWidth="141.0" text="2000.00" textAlignment="RIGHT" textFill="#4b465c">
+      <Label fx:id="lblTotal" layoutX="112.0" layoutY="530.0" prefHeight="42.0" prefWidth="141.0" text="0000.00" textAlignment="RIGHT" textFill="#4b465c">
          <font>
             <Font name="Arial Bold" size="24.0" />
          </font>
