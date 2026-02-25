@@ -23,7 +23,7 @@
         </Label>
         <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="14.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
             <image>
-                <Image url="@../../icon/medicineDashboard.png" />
+                <Image url="@../../icon/stock2.png" />
             </image>
         </ImageView>
         <Label layoutX="19.0" layoutY="47.0" prefHeight="18.0" prefWidth="372.0" text="Organize your pharmaceutical stock details." textFill="#4b465c">

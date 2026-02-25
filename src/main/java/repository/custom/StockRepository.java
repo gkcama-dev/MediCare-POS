@@ -4,6 +4,7 @@ import model.Stock;
 import repository.SuperRepository;
 
 import java.sql.Connection;
+import java.util.List;
 
 public interface StockRepository extends SuperRepository {
 
@@ -12,5 +13,9 @@ public interface StockRepository extends SuperRepository {
     int isExists(Stock stock, Connection connection) throws Exception;
 
     boolean updateQty(int stockId, double qty, Connection connection) throws Exception;
+
+    List<Stock> getAllStock() throws Exception;
+
+    boolean reduceQty(int stockId, double qty, Connection connection) throws Exception;
 }
 

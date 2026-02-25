@@ -1,5 +1,7 @@
 package repository;
 
+import repository.custom.InvoiceItemRepository;
+import repository.custom.InvoiceRepository;
 import repository.custom.impl.*;
 import service.custom.impl.GRNServiceImpl;
 import util.RepositoryType;
@@ -24,6 +26,8 @@ public class RepositoryFactory {
             case GRN_ITEM:return (T) new GRNItemRepositoryImpl();
             case STOCK:return (T) new StockRepositoryImpl();
             case USER:return (T) new UserRepositoryImpl();
+            case INVOICE:return (T) new InvoiceRepositoryImpl();
+            case INVOICE_ITEM:return (T) new InvoiceItemRepositoryImpl();
         }
         return null;
     }

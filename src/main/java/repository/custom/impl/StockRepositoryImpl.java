@@ -1,5 +1,6 @@
 package repository.custom.impl;
 
+import database.DbConnection;
 import model.Stock;
 import repository.custom.StockRepository;
 
@@ -7,6 +8,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 
 public class StockRepositoryImpl implements StockRepository {
 
@@ -49,6 +52,47 @@ public class StockRepositoryImpl implements StockRepository {
         PreparedStatement pstm = connection.prepareStatement(query);
         pstm.setDouble(1, qty);
         pstm.setInt(2, stockId);
+        return pstm.executeUpdate() > 0;
+    }
+
+    @Override
+    public List<Stock> getAllStock() throws Exception {
+        String query = "SELECT * FROM stock";
+
+        PreparedStatement pstm = DbConnection.getInstance()
+                .getConnection()
+                .prepareStatement(query);
+
+        ResultSet rs = pstm.executeQuery();
+
+        List<Stock> stockList = new ArrayList<>();
+
+        while (rs.next()) {
+            stockList.add(new Stock(
+                    rs.getInt("id"),
+                    rs.getString("product_code"),
+                    rs.getDouble("selling_price"),
+                    rs.getDouble("qty"),
+                    rs.getDate("mfd").toLocalDate(),
+                    rs.getDate("exp").toLocalDate(),
+                    rs.getInt("user_id")
+            ));
+        }
+
+        return stockList;
+    }
+
+    @Override
+    public boolean reduceQty(int stockId, double qty, Connection connection) throws Exception {
+
+        String sql = "UPDATE stock SET qty = qty - ? WHERE id = ? AND qty >= ?";
+
+        PreparedStatement pstm = connection.prepareStatement(sql);
+
+        pstm.setDouble(1, qty);
+        pstm.setInt(2, stockId);
+        pstm.setDouble(3, qty);
+
         return pstm.executeUpdate() > 0;
     }
 }
