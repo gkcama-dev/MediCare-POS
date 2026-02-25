@@ -416,10 +416,25 @@ private void loadWindow(String fxmlPath, String title) {
 
         if (controller instanceof MedicineViewController) {
             ((MedicineViewController) controller).setListener(product -> {
+
+                if (!product.getStatus().equalsIgnoreCase("Active")) {
+                    new Alert(Alert.AlertType.ERROR,
+                            "Selected medicine is not Active!").show();
+                    return;
+                }
+
+
                 txtMedicine.setText(product.getCode());
             });
         } else if (controller instanceof SupplierViewController) {
             ((SupplierViewController) controller).setListener(supplier -> {
+
+                if (!supplier.getStatus().equalsIgnoreCase("Active")) {
+                    new Alert(Alert.AlertType.ERROR,
+                            "Selected supplier is not Active!").show();
+                    return;
+                }
+
                 txtSupplier.setText(supplier.getMobile());
                 this.selectedSupplierId = supplier.getId();
             });

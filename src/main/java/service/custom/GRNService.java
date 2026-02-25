@@ -11,5 +11,6 @@ public interface GRNService extends SuperService {
 
     boolean placeGRN(GRN grn) throws Exception;
 
+    void validateActiveStatus(GRN grn) throws Exception;
 
 }

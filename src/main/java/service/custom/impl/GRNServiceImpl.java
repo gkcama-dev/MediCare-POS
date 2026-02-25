@@ -5,10 +5,7 @@ import model.GRN;
 import model.GRNItem;
 import model.Stock;
 import repository.RepositoryFactory;
-import repository.custom.CategoryRepository;
-import repository.custom.GRNItemRepository;
-import repository.custom.GRNRepository;
-import repository.custom.StockRepository;
+import repository.custom.*;
 import repository.custom.impl.GRNItemRepositoryImpl;
 import repository.custom.impl.StockRepositoryImpl;
 import service.custom.GRNService;
@@ -22,9 +19,14 @@ public class GRNServiceImpl implements GRNService {
     private final GRNRepository grnRepository = RepositoryFactory.getInstance().getRepository(RepositoryType.GRN);
     private final GRNItemRepository grnItemRepository = RepositoryFactory.getInstance().getRepository(RepositoryType.GRN_ITEM);
     private final StockRepository stockRepository = RepositoryFactory.getInstance().getRepository(RepositoryType.STOCK);
+    private final SupplierRepository supplierRepository = RepositoryFactory.getInstance().getRepository(RepositoryType.SUPPLIER);
+
+    private final ProductRepository medicineRepository = RepositoryFactory.getInstance().getRepository(RepositoryType.PRODUCT);
 
     @Override
     public boolean placeGRN(GRN grn) throws Exception {
+
+        validateActiveStatus(grn);
 
         Connection connection = DbConnection.getInstance().getConnection();
 
@@ -81,5 +83,22 @@ public class GRNServiceImpl implements GRNService {
             // Reset connection auto-commit mode
             connection.setAutoCommit(true);
         }
+    }
+
+    @Override
+    public void validateActiveStatus(GRN grn) throws Exception {
+
+        if (!supplierRepository.isSupplierActive(grn.getSupplierId())) {
+            throw new RuntimeException("Selected supplier is not Active!");
+        }
+
+        for (Stock stock : grn.getStocks()) {
+            if (!medicineRepository.isMedicineActive(stock.getProductCode())) {
+                throw new RuntimeException(
+                        "Medicine " + stock.getProductCode() + " is not Active!"
+                );
+            }
+        }
+
     }
 }

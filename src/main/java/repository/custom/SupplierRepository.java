@@ -13,4 +13,6 @@ public interface SupplierRepository extends CrudRepository<Supplier,String> {
     List<String> getAllStatus() throws Exception;
 
     boolean isDuplicateEmailOrMobile(String id,String Email,String Mobile) throws Exception;
+
+    boolean isSupplierActive(String supplierId) throws Exception;
 }
