@@ -52,3 +52,9 @@
 .table-view .virtual-flow {
     -fx-background-radius: 0 0 15 15;
 }
+
+.table-view .scroll-bar:horizontal {
+    -fx-pref-height: 0;
+    -fx-max-height: 0;
+    -fx-opacity: 0;
+}
