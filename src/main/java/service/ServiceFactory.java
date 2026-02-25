@@ -24,6 +24,8 @@ public class ServiceFactory {
             case CATEGORY:return (T) new CategoryServiceImpl();
             case GRN:return (T) new GRNServiceImpl();
             case USER:return (T) new UserServiceImpl();
+            case INVOICE:return (T) new InvoiceServiceImpl();
+            case STOCKVIEW :return (T) new StockViewServiceImpl();
         }
         return null;
     }
