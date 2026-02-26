@@ -20,18 +20,21 @@ import model.Invoice;
 import model.InvoiceItem;
 import model.tableModel.InvoiceTM;
 import service.ServiceFactory;
-import service.SuperService;
 import service.custom.InvoiceService;
-import service.custom.impl.InvoiceServiceImpl;
 import util.ServiceType;
+import util.Session.Session;
 
 import java.net.URL;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.ResourceBundle;
 
 public class InvoiceDashboardController implements Initializable {
+
+    @FXML
+    private Label lblUser;
 
     @FXML
     private JFXButton btnAdd;
@@ -121,6 +124,11 @@ public class InvoiceDashboardController implements Initializable {
         allowOnlyNumbers(txtInvoicePayment);
         allowOnlyNumbers(txtCutomerMobile);
         txtInvoicePayment.textProperty().addListener((obs, oldVal, newVal) -> calculateFinalAmounts());
+
+        if (Session.getUser() != null) {
+            lblUser.setText(Session.getUser().getUsername());
+        }
+
     }
 
     private void setInvoiceId() {
@@ -130,7 +138,7 @@ public class InvoiceDashboardController implements Initializable {
         txtInvoiceID.setStyle("-fx-text-fill: black; -fx-opacity: 0.8;");
     }
 
-    private void disableFiled(){
+    private void disableFiled() {
         txtInvoiceDiscount.setText("0");
         txtInvoiceDiscount.setDisable(true);
         txtInvoiceTotal.setDisable(true);
@@ -177,7 +185,7 @@ public class InvoiceDashboardController implements Initializable {
         return Long.parseLong(uniquePart + randomPart);
     }
 
-    private void removeRaw(){
+    private void removeRaw() {
         tblInvoice.setOnMouseClicked(e -> {
             if (e.getClickCount() == 2) {
                 InvoiceTM selected = (InvoiceTM) tblInvoice.getSelectionModel().getSelectedItem();
@@ -190,7 +198,7 @@ public class InvoiceDashboardController implements Initializable {
         });
     }
 
-    private void clear(){
+    private void clear() {
         txtStockID.clear();
         txtProduct.clear();
         txtPrice.clear();
@@ -198,7 +206,7 @@ public class InvoiceDashboardController implements Initializable {
         txtQty.clear();
     }
 
-    private void calculateTotalLabel(){
+    private void calculateTotalLabel() {
         txtQty.textProperty().addListener((observable, oldValue, newValue) -> {
 
             if (newValue.isEmpty()) {
@@ -410,11 +418,63 @@ public class InvoiceDashboardController implements Initializable {
 
     @FXML
     void btnLogOutOnAction(ActionEvent event) {
+        // Ask confirmation FIRST
+        Alert confirm = new Alert(
+                Alert.AlertType.CONFIRMATION,
+                "Are you sure you want to logout?",
+                ButtonType.YES,
+                ButtonType.NO
+        );
 
+        Optional<ButtonType> result = confirm.showAndWait();
+
+        if (result.isEmpty() || result.get() != ButtonType.YES) {
+            return; // NO -> stop logout
+        }
+
+
+        try {
+
+            // Clear session
+            Session.clear();
+
+            // Load login window
+            FXMLLoader loader = new FXMLLoader(
+                    getClass().getResource("/view/loggingView/login.fxml")
+            );
+
+            Parent root = loader.load();
+
+            Stage stage = new Stage();
+            stage.setScene(new Scene(root));
+            stage.setTitle("Login");
+            stage.getIcons().add(new Image(
+                    getClass().getResourceAsStream("/img/logo.png")
+            ));
+            stage.setResizable(false);
+            stage.centerOnScreen();
+            stage.show();
+
+            // Close current window
+            Stage currentStage = (Stage) dashroot.getScene().getWindow();
+            currentStage.close();
+
+        } catch (Exception e) {
+            new Alert(Alert.AlertType.ERROR,
+                    "Logout Failed: " + e.getMessage()).show();
+        }
     }
 
     @FXML
     void btnPrintOnAction(ActionEvent event) {
+
+
+        if (Session.getUser() == null) {
+            new Alert(Alert.AlertType.ERROR, "Session expired. Please login again.").show();
+            return;
+        }
+
+        int userId = Session.getUser().getId();
 
         if (invoiceList.isEmpty()) {
             new Alert(Alert.AlertType.ERROR, "Invoice is empty!").show();
@@ -432,6 +492,7 @@ public class InvoiceDashboardController implements Initializable {
             new Alert(Alert.AlertType.ERROR, "Payment is not enough! Cannot complete invoice.").show();
             return;
         }
+
 
         try {
 
@@ -457,7 +518,7 @@ public class InvoiceDashboardController implements Initializable {
                     Double.parseDouble(txtInvoiceDiscount.getText()),
                     Double.parseDouble(txtInvoiceBalance.getText()),
                     Double.parseDouble(txtInvoiceTotal.getText()),
-                    1,
+                    userId,
                     1,
                     itemList
             );

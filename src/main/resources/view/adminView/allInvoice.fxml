@@ -29,15 +29,15 @@
             <Font name="Arial" size="14.0" />
          </font>
       </Label>
-      <TableView layoutX="14.0" layoutY="116.0" prefHeight="406.0" prefWidth="930.0">
+      <TableView fx:id="tblinvoice" layoutX="14.0" layoutY="116.0" prefHeight="406.0" prefWidth="930.0">
         <columns>
-          <TableColumn prefWidth="111.20001602172852" text="Invoice ID" />
-          <TableColumn prefWidth="149.59996032714844" text="Customer" />
-            <TableColumn prefWidth="122.4000244140625" text="Date" />
-            <TableColumn prefWidth="127.20001220703125" text="Discount" />
-            <TableColumn prefWidth="146.39990234375" text="Payment Type" />
-            <TableColumn prefWidth="144.0001220703125" text="Total" />
-            <TableColumn prefWidth="120.7999267578125" text="User" />
+          <TableColumn fx:id="colInvoiceId" prefWidth="111.20001602172852" text="Invoice ID" />
+          <TableColumn fx:id="colCustomer" prefWidth="149.59996032714844" text="Customer" />
+            <TableColumn fx:id="colDate" prefWidth="122.4000244140625" text="Date" />
+            <TableColumn fx:id="colDiscount" prefWidth="127.20001220703125" text="Discount" />
+            <TableColumn fx:id="colPaymentType" prefWidth="146.39990234375" text="Payment Type" />
+            <TableColumn fx:id="colTotal" prefWidth="144.0001220703125" text="Total" />
+            <TableColumn fx:id="colUser" prefWidth="120.7999267578125" text="User" />
         </columns>
          <styleClass>
             <String fx:value="table-row-cell" />
@@ -49,7 +49,7 @@
             <URL value="@../../css/table-style.css" />
          </stylesheets>
       </TableView>
-      <TextField layoutX="737.0" layoutY="69.0" prefHeight="36.0" prefWidth="206.0" promptText="Search Here" styleClass="search-field">
+      <TextField fx:id="txtSearch" layoutX="721.0" layoutY="69.0" prefHeight="36.0" prefWidth="226.0" promptText="Search Here" styleClass="search-field">
          <font>
             <Font name="Arial" size="14.0" />
          </font>
@@ -58,7 +58,7 @@
             <URL value="@../../css/components-style.css" />
          </stylesheets>
       </TextField>
-      <JFXButton layoutX="718.0" layoutY="529.0" prefHeight="38.0" prefWidth="226.0" styleClass="update-button" text="Print" textFill="#4b465c">
+      <JFXButton fx:id="btnPrint" layoutX="718.0" layoutY="529.0" onAction="#btnPrintOnAction" prefHeight="38.0" prefWidth="226.0" styleClass="update-button" text="Print" textFill="#4b465c">
          <font>
             <Font name="Arial Bold" size="14.0" />
          </font>
