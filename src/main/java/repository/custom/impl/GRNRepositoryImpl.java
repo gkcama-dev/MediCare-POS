@@ -3,10 +3,14 @@ package repository.custom.impl;
 import model.GRN;
 import model.GRNItem;
 import model.Stock;
+import model.tableModel.GrnTM;
 import repository.custom.GRNRepository;
+import util.CrudUtil;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
 import java.util.List;
 
 public class GRNRepositoryImpl implements GRNRepository {
@@ -29,5 +33,34 @@ public class GRNRepositoryImpl implements GRNRepository {
     @Override
     public long getNextGrnId() throws Exception {
         return 0;
+    }
+
+    @Override
+    public List<GrnTM> getAllGRNForView() throws Exception {
+        String sql =
+                "SELECT g.id, g.date, g.total, g.paid_amount, g.balance, " +
+                        "CONCAT(s.first_name, ' ', s.last_name) AS supplier, SUM(gi.qty) AS qty " +
+                        "FROM grn g " +
+                        "JOIN supplier s ON g.supplier_id = s.id " +
+                        "JOIN grn_item gi ON g.id = gi.grn_id " +
+                        "GROUP BY g.id, g.date, g.total, g.paid_amount, g.balance, s.first_name, s.last_name";
+
+        ResultSet rs = CrudUtil.execute(sql);
+
+        List<GrnTM> list = new ArrayList<>();
+
+        while (rs.next()) {
+            list.add(new GrnTM(
+                    rs.getLong("id"),
+                    rs.getDate("date").toLocalDate(),
+                    rs.getDouble("total"),
+                    rs.getDouble("paid_amount"),
+                    rs.getDouble("balance"),
+                    rs.getString("supplier"),
+                    rs.getDouble("qty")
+            ));
+        }
+
+        return list;
     }
 }

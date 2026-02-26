@@ -3,6 +3,7 @@ package service.custom.impl;
 import database.DbConnection;
 import model.Invoice;
 import model.InvoiceItem;
+import model.tableModel.InvoiceViewTM;
 import repository.RepositoryFactory;
 import repository.custom.InvoiceItemRepository;
 import repository.custom.InvoiceRepository;
@@ -11,6 +12,7 @@ import service.custom.InvoiceService;
 import util.RepositoryType;
 
 import java.sql.Connection;
+import java.util.List;
 
 public class InvoiceServiceImpl implements InvoiceService {
 
@@ -74,5 +76,10 @@ public class InvoiceServiceImpl implements InvoiceService {
             connection.setAutoCommit(true);
         }
 
+    }
+
+    @Override
+    public List<InvoiceViewTM> getAllInvoiceForView() throws Exception {
+        return invoiceRepository.getAllInvoiceForView();
     }
 }

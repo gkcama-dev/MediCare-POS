@@ -17,12 +17,12 @@ public class UserServiceImpl implements UserService {
     @Override
     public boolean addUser(User user) throws Exception {
 
-        if (userRepository.isDuplicateUser(0, user.getUsername(), user.getPassword() , user.getUserType())) {
+        if (userRepository.isDuplicateUser(0, user.getUsername(), user.getPassword(), user.getUserType())) {
             throw new SQLException("This exact user profile already exists!");
         }
 
         int statusId = user.getStatus().equalsIgnoreCase("Active") ? 1 : 2;
-        return userRepository.create(user,statusId);
+        return userRepository.create(user, statusId);
     }
 
     @Override
@@ -58,5 +58,15 @@ public class UserServiceImpl implements UserService {
     @Override
     public List<String> getUserRole() throws Exception {
         return userRepository.getUserRole();
+    }
+
+    @Override
+    public User login(String username, String password) throws Exception {
+        User user = userRepository.login(username, password);
+
+        if (user == null)
+            throw new RuntimeException("Invalid username or password");
+
+        return user;
     }
 }

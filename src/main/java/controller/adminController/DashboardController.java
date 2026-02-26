@@ -6,13 +6,23 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
+import javafx.scene.control.Label;
+import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
+import util.Session.Session;
 
 import java.net.URL;
+import java.util.Optional;
 import java.util.ResourceBundle;
 
 public class DashboardController implements Initializable {
 
+    @FXML
+    private Label lblUser;
 
     @FXML
     private JFXButton btnAllInvoice;
@@ -43,8 +53,10 @@ public class DashboardController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        if (Session.getUser() != null) {
+            lblUser.setText(Session.getUser().getUsername());
+        }
         setNode("/view/adminView/home.fxml",btnDashboard);
-
     }
 
     @FXML
@@ -71,6 +83,51 @@ public class DashboardController implements Initializable {
     @FXML
     void btnLogOutOnAction(ActionEvent event) {
 
+        // Ask confirmation FIRST
+        Alert confirm = new Alert(
+                Alert.AlertType.CONFIRMATION,
+                "Are you sure you want to logout?",
+                ButtonType.YES,
+                ButtonType.NO
+        );
+
+        Optional<ButtonType> result = confirm.showAndWait();
+
+        if (result.isEmpty() || result.get() != ButtonType.YES) {
+            return; // NO -> stop logout
+        }
+
+
+        try {
+
+            // Clear session
+            Session.clear();
+
+            // Load login window
+            FXMLLoader loader = new FXMLLoader(
+                    getClass().getResource("/view/loginView/login.fxml")
+            );
+
+            Parent root = loader.load();
+
+            Stage stage = new Stage();
+            stage.setScene(new Scene(root));
+            stage.setTitle("Login");
+            stage.getIcons().add(new Image(
+                    getClass().getResourceAsStream("/img/logo.png")
+            ));
+            stage.setResizable(false);
+            stage.centerOnScreen();
+            stage.show();
+
+            // Close current window
+            Stage currentStage = (Stage) dashroot.getScene().getWindow();
+            currentStage.close();
+
+        } catch (Exception e) {
+            new Alert(Alert.AlertType.ERROR,
+                    "Logout Failed: " + e.getMessage()).show();
+        }
     }
 
     @FXML

@@ -113,7 +113,6 @@ public class SupplierController implements Initializable {
             }
         } catch (Exception e) {
             new Alert(Alert.AlertType.ERROR, "Status Load Error !").show();
-            throw new RuntimeException(e);
         }
 
     }
@@ -137,7 +136,7 @@ public class SupplierController implements Initializable {
         }
 
         if (txtEmail.getText().isEmpty()) {
-            new Alert(Alert.AlertType.WARNING, "Company is required!").show();
+            new Alert(Alert.AlertType.WARNING, "Email is required!").show();
             txtLastName.requestFocus();
             return false;
         }
@@ -347,10 +346,10 @@ public class SupplierController implements Initializable {
                 new Alert(Alert.AlertType.ERROR, "Supplier Added Failed").show();
             }
         } catch (SQLException e) {
-            new Alert(Alert.AlertType.ERROR, "Database Error: " + e.getMessage()).show();
+            new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
             throw new RuntimeException(e);
         } catch (Exception e) {
-            new Alert(Alert.AlertType.ERROR, "Database Error: " + e.getMessage()).show();
+            new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
             throw new RuntimeException(e);
         }
     }

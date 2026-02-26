@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import java.lang.String?>
+<?import java.net.URL?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="574.0" prefWidth="954.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.adminController.AllGRNController">
+   <children>
+      <Label layoutX="57.0" layoutY="4.0" prefHeight="42.0" prefWidth="331.0" text="GRN Details" textFill="#731ef0">
+         <font>
+            <Font name="Arial Bold" size="30.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="14.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../icon/allStock2.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="19.0" layoutY="47.0" prefHeight="18.0" prefWidth="472.0" text="Monitor GRN entries, supplier records, and stock adjustments seamlessly." textFill="#4b465c">
+         <font>
+            <Font name="Arial" size="14.0" />
+         </font>
+      </Label>
+      <TableView fx:id="tblGRN" layoutX="14.0" layoutY="116.0" prefHeight="406.0" prefWidth="930.0">
+        <columns>
+          <TableColumn fx:id="colId" prefWidth="117.60000038146973" text="ID" />
+          <TableColumn fx:id="colDate" prefWidth="156.80001831054688" text="Date" />
+            <TableColumn fx:id="colTotal" prefWidth="154.39996337890625" text="Total" />
+            <TableColumn fx:id="colPayAmount" prefWidth="200.00003051757812" text="Paid Amount" />
+            <TableColumn fx:id="colSupplier" prefWidth="164.0" text="Supplier" />
+            <TableColumn fx:id="colQty" prefWidth="133.5999755859375" text="Qty" />
+        </columns>
+         <styleClass>
+            <String fx:value="table-row-cell" />
+            <String fx:value="table-cell" />
+            <String fx:value="table-view" />
+         </styleClass>
+         <stylesheets>
+            <URL value="@../../css/style.css" />
+            <URL value="@../../css/table-style.css" />
+         </stylesheets>
+      </TableView>
+      <TextField fx:id="txtSearch" layoutX="719.0" layoutY="69.0" prefHeight="36.0" prefWidth="226.0" promptText="Search Here" styleClass="search-field">
+         <font>
+            <Font name="Arial" size="14.0" />
+         </font>
+         <stylesheets>
+            <URL value="@../../css/style.css" />
+            <URL value="@../../css/components-style.css" />
+         </stylesheets>
+      </TextField>
+      <JFXButton fx:id="btnPrint" layoutX="718.0" layoutY="529.0" onAction="#btnPrintOnActionBtn" prefHeight="38.0" prefWidth="226.0" styleClass="update-button" text="Print" textFill="#4b465c">
+         <font>
+            <Font name="Arial Bold" size="14.0" />
+         </font>
+         <stylesheets>
+            <URL value="@../../css/style.css" />
+            <URL value="@../../css/components-style.css" />
+         </stylesheets>
+      </JFXButton>
+      <JFXButton fx:id="btnStock" layoutX="719.0" layoutY="14.0" onAction="#btnStockOnActionBtn" prefHeight="38.0" prefWidth="111.0" styleClass="add-button" text="Stock" textFill="#4b465c">
+         <font>
+            <Font name="Arial Bold" size="14.0" />
+         </font>
+         <stylesheets>
+            <URL value="@../../css/style.css" />
+            <URL value="@../../css/components-style.css" />
+         </stylesheets>
+      </JFXButton>
+      <JFXButton fx:id="btnGRN" layoutX="835.0" layoutY="14.0" onAction="#btnGrnOnActionBtn" prefHeight="38.0" prefWidth="111.0" styleClass="clear-button" text="GRN" textFill="#4b465c">
+         <font>
+            <Font name="Arial Bold" size="14.0" />
+         </font>
+         <stylesheets>
+            <URL value="@../../css/style.css" />
+            <URL value="@../../css/components-style.css" />
+         </stylesheets>
+      </JFXButton>
+   </children>
+</AnchorPane>

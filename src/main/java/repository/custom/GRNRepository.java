@@ -3,6 +3,7 @@ package repository.custom;
 import model.GRN;
 import model.GRNItem;
 import model.Stock;
+import model.tableModel.GrnTM;
 import repository.SuperRepository;
 
 import java.sql.Connection;
@@ -14,4 +15,5 @@ public interface GRNRepository extends SuperRepository {
 
     long getNextGrnId() throws Exception;
 
+    List<GrnTM> getAllGRNForView() throws Exception;
 }

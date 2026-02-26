@@ -440,7 +440,7 @@ public class InvoiceDashboardController implements Initializable {
 
             // Load login window
             FXMLLoader loader = new FXMLLoader(
-                    getClass().getResource("/view/loggingView/login.fxml")
+                    getClass().getResource("/view/loginView/login.fxml")
             );
 
             Parent root = loader.load();

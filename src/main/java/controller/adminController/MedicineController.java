@@ -259,7 +259,6 @@ public class MedicineController implements Initializable {
 
         } catch (Exception e) {
             new Alert(Alert.AlertType.ERROR, "Error Loading Table: " + e.getMessage()).show();
-            throw new RuntimeException(e);
         }
     }
 
@@ -332,7 +331,7 @@ public class MedicineController implements Initializable {
             }
         } catch (Exception e) {
             new Alert(Alert.AlertType.ERROR, "Database Error: " + e.getMessage()).show();
-            throw new RuntimeException(e);
+
         }
     }
 
@@ -370,10 +369,10 @@ public class MedicineController implements Initializable {
             }
         } catch (SQLException e) {
             new Alert(Alert.AlertType.ERROR, "Database Error: " + e.getMessage()).show();
-            throw new RuntimeException(e);
+
         } catch (Exception e) {
             new Alert(Alert.AlertType.ERROR, "Database Error: " + e.getMessage()).show();
-            throw new RuntimeException(e);
+
         }
     }
 

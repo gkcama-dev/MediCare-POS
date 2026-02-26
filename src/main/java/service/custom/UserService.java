@@ -21,4 +21,6 @@ public interface UserService extends SuperService {
     List<String> getUserStatus() throws Exception;
 
     List<String> getUserRole() throws Exception;
+
+    User login(String username, String password) throws Exception;
 }

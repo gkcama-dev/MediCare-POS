@@ -21,6 +21,7 @@ import model.tableModel.StockTM;
 import service.ServiceFactory;
 import service.custom.GRNService;
 import util.ServiceType;
+import util.Session.Session;
 
 import java.net.URL;
 import java.time.LocalDate;
@@ -105,6 +106,7 @@ public class StockController implements Initializable {
     private ObservableList<StockTM> stockDetailsList = FXCollections.observableArrayList();
 
     private String selectedSupplierId;
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -340,6 +342,13 @@ void btnSaveGRNOnAction(ActionEvent event) {
         return;
     }
 
+    int userId = Session.getUser().getId();
+
+    if (Session.getUser() == null) {
+        new Alert(Alert.AlertType.ERROR, "User session expired. Please login again.").show();
+        return;
+    }
+
     List<GRNItem> grnItemsList = new ArrayList<>();
     List<Stock> stocksList = new ArrayList<>();
 
@@ -351,7 +360,7 @@ void btnSaveGRNOnAction(ActionEvent event) {
                 tm.getQty(),
                 tm.getMfd(),
                 tm.getExp(),
-                1
+                userId
         ));
 
         grnItemsList.add(new GRNItem(
