@@ -16,4 +16,6 @@ public interface UserRepository extends CrudRepository<User,String> {
 
     boolean isDuplicateUser(int id, String username, String password, String role) throws Exception;
 
+    User login(String username, String password) throws Exception;
+
 }
