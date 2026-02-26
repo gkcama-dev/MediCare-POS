@@ -29,13 +29,13 @@
             <Font name="Arial" size="14.0" />
          </font>
       </Label>
-      <TableView layoutX="14.0" layoutY="116.0" prefHeight="406.0" prefWidth="930.0">
+      <TableView fx:id="tblProduct" layoutX="14.0" layoutY="116.0" prefHeight="406.0" prefWidth="930.0">
         <columns>
-          <TableColumn prefWidth="132.79998397827148" text="ID" />
-          <TableColumn prefWidth="224.0000457763672" text="Name" />
-            <TableColumn prefWidth="271.99993896484375" text="Brand" />
-            <TableColumn prefWidth="155.199951171875" text="Category" />
-            <TableColumn prefWidth="140.7999267578125" text="Status" />
+          <TableColumn fx:id="colCode" prefWidth="132.79998397827148" text="ID" />
+          <TableColumn fx:id="colName" prefWidth="224.0000457763672" text="Name" />
+            <TableColumn fx:id="colBrand" prefWidth="271.99993896484375" text="Brand" />
+            <TableColumn fx:id="colCategory" prefWidth="155.199951171875" text="Category" />
+            <TableColumn fx:id="colStatus" prefWidth="140.7999267578125" text="Status" />
         </columns>
          <styleClass>
             <String fx:value="table-row-cell" />
@@ -47,7 +47,7 @@
             <URL value="@../../css/table-style.css" />
          </stylesheets>
       </TableView>
-      <TextField layoutX="739.0" layoutY="69.0" prefHeight="36.0" prefWidth="206.0" promptText="Search Here" styleClass="search-field">
+      <TextField fx:id="txtSearch" layoutX="719.0" layoutY="69.0" prefHeight="36.0" prefWidth="226.0" promptText="Search Here" styleClass="search-field">
          <font>
             <Font name="Arial" size="14.0" />
          </font>
@@ -56,7 +56,7 @@
             <URL value="@../../css/components-style.css" />
          </stylesheets>
       </TextField>
-      <JFXButton layoutX="718.0" layoutY="529.0" prefHeight="38.0" prefWidth="226.0" styleClass="update-button" text="Print" textFill="#4b465c">
+      <JFXButton fx:id="btnPrint" layoutX="718.0" layoutY="529.0" onAction="#btnPrintOnAction" prefHeight="38.0" prefWidth="226.0" styleClass="update-button" text="Print" textFill="#4b465c">
          <font>
             <Font name="Arial Bold" size="14.0" />
          </font>

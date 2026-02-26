@@ -113,9 +113,10 @@ public class ProductRepositoryImpl implements ProductRepository {
 
     @Override
     public boolean isMedicineActive(String productCode) throws Exception {
-        String sql = "SELECT st.status FROM medicine m " +
-                "JOIN status st ON m.status_id = st.id " +
-                "WHERE m.code = ?";
+        String sql =
+                "SELECT s.status FROM product p " +
+                        "JOIN status s ON p.status_id = s.id " +
+                        "WHERE p.code = ?";
 
         ResultSet rs = CrudUtil.execute(sql, productCode);
 

@@ -2,7 +2,9 @@ package repository.custom.impl;
 
 import database.DbConnection;
 import model.Stock;
+import model.tableModel.StockTM;
 import repository.custom.StockRepository;
+import util.CrudUtil;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -95,4 +97,44 @@ public class StockRepositoryImpl implements StockRepository {
 
         return pstm.executeUpdate() > 0;
     }
+
+    @Override
+    public List<StockTM> getAllStockForStockView() throws Exception {
+        String sql =
+                "SELECT g.id AS grn_id, " +
+                        "s.company AS supplier, " +
+                        "p.name AS product, " +
+                        "st.mfd, " +
+                        "st.exp, " +
+                        "gi.buying_price, " +
+                        "st.selling_price, " +
+                        "st.qty " +
+                        "FROM stock st " +
+                        "JOIN grn_item gi ON st.id = gi.stock_id " +
+                        "JOIN grn g ON gi.grn_id = g.id " +
+                        "JOIN supplier s ON g.supplier_id = s.id " +
+                        "JOIN product p ON st.product_code = p.code";
+
+        ResultSet rs = CrudUtil.execute(sql);
+
+        List<StockTM> list = new ArrayList<>();
+
+        while (rs.next()) {
+            list.add(new StockTM(
+                    rs.getLong("grn_id"),
+                    rs.getString("supplier"),
+                    rs.getString("product"),
+                    rs.getDate("mfd").toLocalDate(),
+                    rs.getDate("exp").toLocalDate(),
+                    rs.getDouble("buying_price"),
+                    rs.getDouble("selling_price"),
+                    rs.getDouble("qty"),
+                    rs.getDouble("buying_price") * rs.getDouble("qty")
+            ));
+        }
+
+        return list;
+    }
 }
+
+

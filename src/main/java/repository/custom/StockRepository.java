@@ -1,6 +1,7 @@
 package repository.custom;
 
 import model.Stock;
+import model.tableModel.StockTM;
 import repository.SuperRepository;
 
 import java.sql.Connection;
@@ -17,5 +18,7 @@ public interface StockRepository extends SuperRepository {
     List<Stock> getAllStock() throws Exception;
 
     boolean reduceQty(int stockId, double qty, Connection connection) throws Exception;
+
+    List<StockTM> getAllStockForStockView() throws Exception;
 }
 

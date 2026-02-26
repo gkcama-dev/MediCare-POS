@@ -29,16 +29,16 @@
             <Font name="Arial" size="14.0" />
          </font>
       </Label>
-      <TableView layoutX="14.0" layoutY="116.0" prefHeight="406.0" prefWidth="930.0">
+      <TableView fx:id="tblStcok" layoutX="14.0" layoutY="116.0" prefHeight="406.0" prefWidth="930.0">
         <columns>
-          <TableColumn prefWidth="85.59997177124023" text="ID" />
-          <TableColumn prefWidth="147.2000274658203" text="Supplier" />
-            <TableColumn prefWidth="168.79998779296875" text="Medicine" />
-            <TableColumn prefWidth="78.39996337890625" text="MFD" />
-            <TableColumn prefWidth="88.0" text="EXP" />
-            <TableColumn prefWidth="119.199951171875" text="Buying Price" />
-            <TableColumn prefWidth="117.5999755859375" text="Selling Price" />
-            <TableColumn prefWidth="119.2000732421875" text="Qty" />
+          <TableColumn fx:id="colId" prefWidth="106.40002059936523" text="ID" />
+          <TableColumn fx:id="colSupplier" prefWidth="105.5999755859375" text="Supplier" />
+            <TableColumn fx:id="colMedicine" prefWidth="152.00001525878906" text="Medicine" />
+            <TableColumn fx:id="colMFD" prefWidth="108.800048828125" text="MFD" />
+            <TableColumn fx:id="colEXP" prefWidth="96.79998779296875" text="EXP" />
+            <TableColumn fx:id="colBuyPrice" prefWidth="119.199951171875" text="Buying Price" />
+            <TableColumn fx:id="colSellPrice" prefWidth="117.5999755859375" text="Selling Price" />
+            <TableColumn fx:id="colQty" prefWidth="119.2000732421875" text="Qty" />
         </columns>
          <styleClass>
             <String fx:value="table-row-cell" />
@@ -50,7 +50,7 @@
             <URL value="@../../css/table-style.css" />
          </stylesheets>
       </TableView>
-      <TextField layoutX="739.0" layoutY="69.0" prefHeight="36.0" prefWidth="206.0" promptText="Search Here" styleClass="search-field">
+      <TextField fx:id="txtSearch" layoutX="719.0" layoutY="69.0" prefHeight="36.0" prefWidth="226.0" promptText="Search Here" styleClass="search-field">
          <font>
             <Font name="Arial" size="14.0" />
          </font>
@@ -59,7 +59,25 @@
             <URL value="@../../css/components-style.css" />
          </stylesheets>
       </TextField>
-      <JFXButton layoutX="718.0" layoutY="529.0" prefHeight="38.0" prefWidth="226.0" styleClass="update-button" text="Print" textFill="#4b465c">
+      <JFXButton fx:id="btnPrint" layoutX="718.0" layoutY="529.0" onAction="#btnPrintOnActionBtn" prefHeight="38.0" prefWidth="226.0" styleClass="update-button" text="Print" textFill="#4b465c">
+         <font>
+            <Font name="Arial Bold" size="14.0" />
+         </font>
+         <stylesheets>
+            <URL value="@../../css/style.css" />
+            <URL value="@../../css/components-style.css" />
+         </stylesheets>
+      </JFXButton>
+      <JFXButton fx:id="btnStock" layoutX="719.0" layoutY="14.0" onAction="#btnStockOnActionBtn" prefHeight="38.0" prefWidth="111.0" styleClass="add-button" text="Stock" textFill="#4b465c">
+         <font>
+            <Font name="Arial Bold" size="14.0" />
+         </font>
+         <stylesheets>
+            <URL value="@../../css/style.css" />
+            <URL value="@../../css/components-style.css" />
+         </stylesheets>
+      </JFXButton>
+      <JFXButton fx:id="btnGRN" layoutX="835.0" layoutY="14.0" onAction="#btnGrnOnActionBtn" prefHeight="38.0" prefWidth="111.0" styleClass="clear-button" text="GRN" textFill="#4b465c">
          <font>
             <Font name="Arial Bold" size="14.0" />
          </font>

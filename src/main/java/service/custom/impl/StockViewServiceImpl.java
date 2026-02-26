@@ -1,6 +1,7 @@
 package service.custom.impl;
 
 import model.Stock;
+import model.tableModel.StockTM;
 import repository.RepositoryFactory;
 import repository.custom.StockRepository;
 import service.custom.StockViewService;
@@ -16,6 +17,11 @@ public class StockViewServiceImpl implements StockViewService {
     @Override
     public List<Stock> getAllStock() throws Exception {
         return stockRepository.getAllStock();
+    }
+
+    @Override
+    public List<StockTM> getAllStockForStockView() throws Exception {
+        return stockRepository.getAllStockForStockView();
     }
 
 
