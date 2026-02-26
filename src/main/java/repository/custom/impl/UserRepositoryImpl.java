@@ -135,4 +135,35 @@ public class UserRepositoryImpl implements UserRepository {
 
         return resultSet.next();
     }
+
+    @Override
+    public User login(String username, String password) throws Exception {
+        String sql =
+                "SELECT u.id, u.username, u.password, " +
+                        "ut.user_type, st.status " +
+                        "FROM user u " +
+                        "JOIN user_type ut ON u.user_type_id = ut.id " +
+                        "JOIN status st ON u.status_id = st.id " +
+                        "WHERE u.username = ? AND u.password = ?";
+
+        ResultSet rs = CrudUtil.execute(sql, username, password);
+
+        if (rs.next()) {
+
+            // inactive users
+            if (!rs.getString("status").equalsIgnoreCase("Active")) {
+                throw new RuntimeException("User account is inactive!");
+            }
+
+            return new User(
+                    rs.getInt("id"),
+                    rs.getString("username"),
+                    rs.getString("password"),
+                    rs.getString("user_type"),
+                    rs.getString("status")
+            );
+        }
+
+        return null;
+    }
 }

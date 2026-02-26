@@ -4,6 +4,7 @@ import database.DbConnection;
 import model.GRN;
 import model.GRNItem;
 import model.Stock;
+import model.tableModel.GrnTM;
 import repository.RepositoryFactory;
 import repository.custom.*;
 import repository.custom.impl.GRNItemRepositoryImpl;
@@ -101,4 +102,10 @@ public class GRNServiceImpl implements GRNService {
         }
 
     }
+
+    @Override
+    public List<GrnTM> getAllGRNForView() throws Exception {
+        return grnRepository.getAllGRNForView();
+    }
+
 }
