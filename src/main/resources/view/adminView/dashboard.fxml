@@ -32,7 +32,7 @@
             <Font name="Arial Bold" size="22.0" />
          </font>
       </Label>
-      <Label layoutX="1068.0" layoutY="28.0" prefHeight="46.0" prefWidth="91.0" text="Administrator" textAlignment="CENTER" textFill="#312f2f">
+      <Label fx:id="lblUser" layoutX="1068.0" layoutY="28.0" prefHeight="46.0" prefWidth="91.0" text="Administrator" textAlignment="CENTER" textFill="#312f2f">
          <font>
             <Font name="Arial" size="12.0" />
          </font></Label>
