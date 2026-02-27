@@ -117,8 +117,8 @@ public class InvoiceServiceImpl implements InvoiceService {
         params.put("Total", invoice.getTotal());
         params.put("Balance", invoice.getBalance());
 
-        // String එකක් විදියට පරාමිතිය යවන්න (Report එකේ String නිසා)
-        params.put("paid_amount", String.format("%.2f", invoice.getPaidAmount()));
+
+        params.put("paid_amount", invoice.getPaidAmount());
         params.put("cutomer_mobile", invoice.getCustomerMobile());
 
         return JasperFillManager.fillReport(jasperReport, params, connection);
