@@ -13,4 +13,5 @@ public interface ProductRepository extends CrudRepository<Product,String> {
     boolean isDuplicateProduct(String id,String name,String brand,String category) throws Exception;
 
     boolean isMedicineActive(String productCode) throws Exception;
+
 }

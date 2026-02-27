@@ -17,6 +17,13 @@ import service.ServiceFactory;
 import service.custom.ProductService;
 import util.ServiceType;
 
+import net.sf.jasperreports.engine.*;
+import net.sf.jasperreports.view.JasperViewer;
+import net.sf.jasperreports.engine.JasperPrint;
+import javafx.stage.FileChooser;
+import java.io.File;
+import java.util.Optional;
+
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -163,6 +170,55 @@ public class AllProductController implements Initializable {
 
     @FXML
     void btnPrintOnAction(ActionEvent event) {
+        try {
 
+            JasperPrint jasperPrint = productService.generateAllProductReport();
+
+            // View report
+            JasperViewer viewer = new JasperViewer(jasperPrint, false);
+            viewer.setTitle("All Product Report");
+            viewer.setVisible(true);
+
+            // Ask user what to do
+            Alert choice = new Alert(Alert.AlertType.CONFIRMATION);
+            choice.setTitle("Export Report");
+            choice.setHeaderText("Do you want to save this report as PDF?");
+            choice.getButtonTypes().setAll(
+                    ButtonType.YES,
+                    ButtonType.NO
+            );
+
+            Optional<ButtonType> result = choice.showAndWait();
+
+            if (result.isPresent() && result.get() == ButtonType.YES) {
+
+                // User select save location
+                FileChooser fileChooser = new FileChooser();
+                fileChooser.setTitle("Save Report");
+                fileChooser.getExtensionFilters().add(
+                        new FileChooser.ExtensionFilter("PDF Files", "*.pdf")
+                );
+
+                File file = fileChooser.showSaveDialog(tblProduct.getScene().getWindow());
+
+                if (file != null) {
+                    JasperExportManager.exportReportToPdfFile(
+                            jasperPrint,
+                            file.getAbsolutePath()
+                    );
+
+                    viewer.dispose();
+
+                    new Alert(Alert.AlertType.INFORMATION,
+                            "PDF saved successfully!"
+                    ).show();
+                }
+            }
+
+        } catch (Exception e) {
+            new Alert(Alert.AlertType.ERROR,
+                    "Error generating report: " + e.getMessage()
+            ).show();
+        }
     }
 }

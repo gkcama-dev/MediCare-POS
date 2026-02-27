@@ -19,6 +19,8 @@ import javafx.stage.Stage;
 import model.Invoice;
 import model.InvoiceItem;
 import model.tableModel.InvoiceTM;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.view.JasperViewer;
 import service.ServiceFactory;
 import service.custom.InvoiceService;
 import util.ServiceType;
@@ -527,8 +529,23 @@ public class InvoiceDashboardController implements Initializable {
 
             if (isPlaced) {
 
-                new Alert(Alert.AlertType.INFORMATION, "Invoice Saved Successfully!").show();
+                long invoiceId = Long.parseLong(txtInvoiceID.getText());
 
+
+                // Generate Invoice Bill
+                JasperPrint jasperPrint =
+                        invoiceService.generateSingleInvoiceReport(invoice);
+
+                JasperViewer viewer =
+                        new JasperViewer(jasperPrint, false);
+
+                viewer.setTitle("Invoice Bill");
+                viewer.setVisible(true);
+
+//                new Alert(Alert.AlertType.INFORMATION,
+//                        "Invoice Saved Successfully!").show();
+
+                // Clear UI after printing
                 invoiceList.clear();
                 tblInvoice.refresh();
                 setInvoiceId();

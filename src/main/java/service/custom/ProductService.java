@@ -1,10 +1,9 @@
 package service.custom;
 
 import model.Product;
-import model.Supplier;
+import net.sf.jasperreports.engine.JasperPrint;
 import service.SuperService;
 
-import java.sql.SQLException;
 import java.util.List;
 
 public interface ProductService extends SuperService {
@@ -17,5 +16,7 @@ public interface ProductService extends SuperService {
     String generateNextProductId() throws Exception;
 
     List<String> getProductStatus() throws Exception;
+
+    JasperPrint generateAllProductReport() throws Exception;
 
 }

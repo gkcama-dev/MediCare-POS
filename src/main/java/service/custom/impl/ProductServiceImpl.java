@@ -1,11 +1,14 @@
 package service.custom.impl;
 
+import database.DbConnection;
 import model.Product;
+import net.sf.jasperreports.engine.*;
 import repository.RepositoryFactory;
 import repository.custom.ProductRepository;
 import service.custom.ProductService;
 import util.RepositoryType;
 
+import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.List;
 
@@ -57,5 +60,21 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public List<String> getProductStatus() throws Exception {
         return productRepository.getAllStatus();
+    }
+
+    @Override
+    public JasperPrint generateAllProductReport() throws Exception {
+
+        JasperReport jasperReport = JasperCompileManager.compileReport(
+                getClass().getResourceAsStream("/report/MedicarePOS-All-Products-Report.jrxml")
+        );
+
+        Connection connection = DbConnection.getInstance().getConnection();
+
+        return JasperFillManager.fillReport(
+                jasperReport,
+                null,
+                connection
+        );
     }
 }

@@ -4,6 +4,7 @@ import model.GRN;
 import model.GRNItem;
 import model.Stock;
 import model.tableModel.GrnTM;
+import net.sf.jasperreports.engine.JasperPrint;
 import service.SuperService;
 
 import java.util.List;
@@ -16,4 +17,5 @@ public interface GRNService extends SuperService {
 
     List<GrnTM> getAllGRNForView() throws Exception;
 
+    JasperPrint generateAllGRNReport() throws Exception;
 }

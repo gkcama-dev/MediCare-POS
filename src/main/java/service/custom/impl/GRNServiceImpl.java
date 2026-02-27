@@ -5,6 +5,10 @@ import model.GRN;
 import model.GRNItem;
 import model.Stock;
 import model.tableModel.GrnTM;
+import net.sf.jasperreports.engine.JasperCompileManager;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.JasperReport;
 import repository.RepositoryFactory;
 import repository.custom.*;
 import repository.custom.impl.GRNItemRepositoryImpl;
@@ -106,6 +110,21 @@ public class GRNServiceImpl implements GRNService {
     @Override
     public List<GrnTM> getAllGRNForView() throws Exception {
         return grnRepository.getAllGRNForView();
+    }
+
+    @Override
+    public JasperPrint generateAllGRNReport() throws Exception {
+        JasperReport jasperReport = JasperCompileManager.compileReport(
+                getClass().getResourceAsStream("/report/MedicarePOS-All-GRN-Report.jrxml")
+        );
+
+        Connection connection = DbConnection.getInstance().getConnection();
+
+        return JasperFillManager.fillReport(
+                jasperReport,
+                null,
+                connection
+        );
     }
 
 }

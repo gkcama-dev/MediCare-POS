@@ -4,6 +4,10 @@ import database.DbConnection;
 import model.Invoice;
 import model.InvoiceItem;
 import model.tableModel.InvoiceViewTM;
+import net.sf.jasperreports.engine.JasperCompileManager;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.JasperReport;
 import repository.RepositoryFactory;
 import repository.custom.InvoiceItemRepository;
 import repository.custom.InvoiceRepository;
@@ -12,7 +16,9 @@ import service.custom.InvoiceService;
 import util.RepositoryType;
 
 import java.sql.Connection;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class InvoiceServiceImpl implements InvoiceService {
 
@@ -42,7 +48,7 @@ public class InvoiceServiceImpl implements InvoiceService {
                 return false;
             }
 
-            // 2️⃣ Save Items + Reduce Stock
+            // Save Items + Reduce Stock
             for (InvoiceItem item : invoice.getItems()) {
 
                 boolean itemSaved = invoiceItemRepository.save(item, connection);
@@ -81,5 +87,39 @@ public class InvoiceServiceImpl implements InvoiceService {
     @Override
     public List<InvoiceViewTM> getAllInvoiceForView() throws Exception {
         return invoiceRepository.getAllInvoiceForView();
+    }
+
+    @Override
+    public JasperPrint generateAllInvoiceReport() throws Exception {
+        JasperReport jasperReport = JasperCompileManager.compileReport(
+                getClass().getResourceAsStream("/report/MedicarePOS-All-Invoice-Report.jrxml")
+        );
+
+        Connection connection = DbConnection.getInstance().getConnection();
+
+        return JasperFillManager.fillReport(
+                jasperReport,
+                null,
+                connection
+        );
+    }
+
+    @Override
+    public JasperPrint generateSingleInvoiceReport(Invoice invoice) throws Exception {
+        JasperReport jasperReport = JasperCompileManager.compileReport(
+                getClass().getResourceAsStream("/report/MedicarePOS-Invoice-Bill.jrxml")
+        );
+
+        Connection connection = DbConnection.getInstance().getConnection();
+
+        Map<String, Object> params = new HashMap<>();
+        params.put("invoice_id", invoice.getId());
+        params.put("Total", invoice.getTotal());
+        params.put("Balance", invoice.getBalance());
+        
+        params.put("paid_amount", String.format("%.2f", invoice.getPaidAmount()));
+        params.put("cutomer_mobile", invoice.getCustomerMobile());
+
+        return JasperFillManager.fillReport(jasperReport, params, connection);
     }
 }
