@@ -28,6 +28,7 @@ public class RepositoryFactory {
             case USER:return (T) new UserRepositoryImpl();
             case INVOICE:return (T) new InvoiceRepositoryImpl();
             case INVOICE_ITEM:return (T) new InvoiceItemRepositoryImpl();
+            case DASHBOARD:return (T) new DashboardRepositoryImpl();
         }
         return null;
     }

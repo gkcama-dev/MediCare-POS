@@ -282,7 +282,7 @@ void btnAddOnAction(ActionEvent event) {
 
                 tblStock.refresh();
                 calculateNetTotal();
-                clearItemFields();
+                clear();
                 return;
             }
         }
@@ -304,12 +304,21 @@ void btnAddOnAction(ActionEvent event) {
         tblStock.setItems(stockDetailsList);
 
         calculateNetTotal();
-        clearItemFields();
+        clear();
 
     } catch (Exception e) {
         new Alert(Alert.AlertType.ERROR, "Please enter prices and quantities correctly.!").show();
     }
 }
+
+    private void clear() {
+        txtMedicine.clear();
+        txtBuyingPrice.clear();
+        txtSellingPrice.clear();
+        txtQty.clear();
+        dateEXP.setValue(null);
+        dateMFD.setValue(null);
+    }
 
 private void calculateNetTotal() {
     double netTotal = 0.0;
@@ -319,7 +328,7 @@ private void calculateNetTotal() {
     lblTotal.setText(String.format("%.2f", netTotal));
 }
 
-private void clearItemFields() {
+private void clearAllItemFields() {
     txtMedicine.clear();
     txtSupplier.clear();
     txtBuyingPrice.clear();
@@ -331,7 +340,7 @@ private void clearItemFields() {
 
 @FXML
 void btnClearOnAction(ActionEvent event) {
-
+    clearAllItemFields();
 }
 
 @FXML
@@ -395,6 +404,8 @@ void btnSaveGRNOnAction(ActionEvent event) {
             new Alert(Alert.AlertType.ERROR, "Failed to save GRN!").show();
         }
 
+        clearAllItemFields();
+
     } catch (Exception e) {
         e.printStackTrace();
         new Alert(Alert.AlertType.ERROR, "Error: " + e.getMessage()).show();
@@ -453,6 +464,7 @@ private void loadWindow(String fxmlPath, String title) {
         stage.setScene(new Scene(root));
         stage.initModality(Modality.APPLICATION_MODAL);
         stage.setTitle(title);
+        stage.setResizable(false);
         stage.centerOnScreen();
         stage.show();
 

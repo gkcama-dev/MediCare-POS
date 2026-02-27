@@ -76,12 +76,12 @@
                   <Font name="Arial" size="14.0" />
                </font>
             </TextField>
-            <JFXButton fx:id="btnAdd" layoutX="4.0" layoutY="286.0" onAction="#btnAddOnAction" prefHeight="27.0" prefWidth="244.0" styleClass="add-button" stylesheets="@../../css/components-style.css" text="Add Brand" textFill="#4b465c">
+            <JFXButton fx:id="btnAdd" layoutX="4.0" layoutY="300.0" onAction="#btnAddOnAction" prefHeight="27.0" prefWidth="244.0" styleClass="add-button" stylesheets="@../../css/components-style.css" text="Add Brand" textFill="#4b465c">
                <font>
                   <Font name="Arial Bold" size="14.0" />
                </font>
             </JFXButton>
-            <JFXButton layoutX="5.0" layoutY="335.0" onAction="#btnUpdateOnAction" prefHeight="27.0" prefWidth="120.0" styleClass="update-button" text="Update" textFill="#4b465c">
+            <JFXButton layoutX="5.0" layoutY="347.0" onAction="#btnUpdateOnAction" prefHeight="27.0" prefWidth="120.0" styleClass="update-button" text="Update" textFill="#4b465c">
                <font>
                   <Font name="Arial Bold" size="14.0" />
                </font>
@@ -90,7 +90,7 @@
                   <URL value="@../../css/components-style.css" />
                </stylesheets>
             </JFXButton>
-            <JFXButton layoutX="128.0" layoutY="335.0" onAction="#btnClearOnAction" prefHeight="27.0" prefWidth="120.0" styleClass="clear-button" text="Clear" textFill="#4b465c">
+            <JFXButton layoutX="128.0" layoutY="347.0" onAction="#btnClearOnAction" prefHeight="27.0" prefWidth="120.0" styleClass="clear-button" text="Clear" textFill="#4b465c">
                <font>
                   <Font name="Arial Bold" size="14.0" />
                </font>

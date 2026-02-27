@@ -78,7 +78,8 @@ public class ProductRepositoryImpl implements ProductRepository {
 
     @Override
     public String getLastProductCode() throws Exception {
-        ResultSet resultSet = CrudUtil.execute("SELECT * FROM product ORDER BY code DESC LIMIT 1");
+        String sql = "SELECT code FROM product ORDER BY LENGTH(code) DESC, code DESC LIMIT 1";
+        ResultSet resultSet = CrudUtil.execute(sql);
 
         if (resultSet.next()) {
             return resultSet.getString(1);

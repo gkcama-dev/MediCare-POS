@@ -32,8 +32,8 @@
         <columns>
           <TableColumn fx:id="colId" prefWidth="96.80002212524414" text="ID" />
           <TableColumn fx:id="colMedicine" prefWidth="212.80003356933594" text="Medicine" />
-            <TableColumn fx:id="colPrice" prefWidth="191.20001220703125" text="Price" />
-            <TableColumn fx:id="colQty" prefWidth="165.60003662109375" text="Stock Qty" />
+            <TableColumn fx:id="colPrice" prefWidth="189.60003662109375" text="Price" />
+            <TableColumn fx:id="colQty" minWidth="0.0" prefWidth="167.20001220703125" text="Stock Qty" />
         </columns>
          <styleClass>
             <String fx:value="table-row-cell" />

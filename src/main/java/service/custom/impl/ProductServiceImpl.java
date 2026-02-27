@@ -48,13 +48,18 @@ public class ProductServiceImpl implements ProductService {
         String lastId = productRepository.getLastProductCode();
 
         if (lastId != null) {
-            int id = Integer.parseInt(lastId.replace("#MP", ""));
-            id++;
 
-            return String.format("#MP%03d", id);
+            String numericPart = lastId.replaceAll("[^0-9]", "");
+
+            if (!numericPart.isEmpty()) {
+                int id = Integer.parseInt(numericPart);
+                id++;
+
+                return String.format("P%03d", id);
+            }
         }
 
-        return "#MP001";
+        return "P001";
     }
 
     @Override

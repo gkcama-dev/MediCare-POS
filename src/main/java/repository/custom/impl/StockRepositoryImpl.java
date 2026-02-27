@@ -59,14 +59,13 @@ public class StockRepositoryImpl implements StockRepository {
 
     @Override
     public List<Stock> getAllStock() throws Exception {
-        String query = "SELECT * FROM stock";
+        String query = "SELECT * FROM stock ORDER BY id ASC";
 
         PreparedStatement pstm = DbConnection.getInstance()
                 .getConnection()
                 .prepareStatement(query);
 
         ResultSet rs = pstm.executeQuery();
-
         List<Stock> stockList = new ArrayList<>();
 
         while (rs.next()) {
@@ -80,7 +79,6 @@ public class StockRepositoryImpl implements StockRepository {
                     rs.getInt("user_id")
             ));
         }
-
         return stockList;
     }
 
@@ -101,22 +99,23 @@ public class StockRepositoryImpl implements StockRepository {
     @Override
     public List<StockTM> getAllStockForStockView() throws Exception {
         String sql =
-                "SELECT g.id AS grn_id, " +
-                        "s.company AS supplier, " +
+                "SELECT " +
+                        "COALESCE(g.id, 0) AS grn_id, " +
+                        "COALESCE(s.company, 'N/A') AS supplier, " +
                         "p.name AS product, " +
                         "st.mfd, " +
                         "st.exp, " +
-                        "gi.buying_price, " +
+                        "COALESCE(gi.buying_price, 0.0) AS buying_price, " +
                         "st.selling_price, " +
                         "st.qty " +
                         "FROM stock st " +
-                        "JOIN grn_item gi ON st.id = gi.stock_id " +
-                        "JOIN grn g ON gi.grn_id = g.id " +
-                        "JOIN supplier s ON g.supplier_id = s.id " +
-                        "JOIN product p ON st.product_code = p.code";
+                        "LEFT JOIN product p ON st.product_code = p.code " +
+                        "LEFT JOIN grn_item gi ON st.id = gi.stock_id " +
+                        "LEFT JOIN grn g ON gi.grn_id = g.id " +
+                        "LEFT JOIN supplier s ON g.supplier_id = s.id " +
+                        "ORDER BY st.id DESC";
 
         ResultSet rs = CrudUtil.execute(sql);
-
         List<StockTM> list = new ArrayList<>();
 
         while (rs.next()) {
@@ -132,7 +131,6 @@ public class StockRepositoryImpl implements StockRepository {
                     rs.getDouble("buying_price") * rs.getDouble("qty")
             ));
         }
-
         return list;
     }
 }

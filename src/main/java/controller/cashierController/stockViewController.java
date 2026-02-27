@@ -3,6 +3,7 @@ package controller.cashierController;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.concurrent.Task;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
@@ -26,19 +27,19 @@ import java.util.ResourceBundle;
 public class stockViewController implements Initializable {
 
     @FXML
-    private TableColumn colId;
+    private TableColumn<StockViewTM, Integer> colId;
 
     @FXML
-    private TableColumn colMedicine;
+    private TableColumn<StockViewTM, String> colMedicine;
 
     @FXML
-    private TableColumn colPrice;
+    private TableColumn<StockViewTM, Double> colPrice;
 
     @FXML
-    private TableColumn colQty;
+    private TableColumn<StockViewTM, Double> colQty;
 
     @FXML
-    private TableView tblStock;
+    private TableView<StockViewTM> tblStock;
 
     @FXML
     private TextField txtSearch;
@@ -54,6 +55,7 @@ public class stockViewController implements Initializable {
         setCellValueForTable();
         loadTable();
         initTableClickEvent();
+        tblStock.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
     }
 
     private void setCellValueForTable() {
@@ -62,7 +64,6 @@ public class stockViewController implements Initializable {
         colPrice.setCellValueFactory(new PropertyValueFactory<>("price"));
         colQty.setCellValueFactory(new PropertyValueFactory<>("stockQty"));
 
-        tblStock.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
     }
 
     public void setListener(StockSelectListener listener) {
@@ -101,21 +102,45 @@ public class stockViewController implements Initializable {
     private void loadTable() {
 
         try {
-            List<Stock> stockList = stockViewService.getAllStock();
+            Task<ObservableList<StockViewTM>> loadTask = new Task<>() {
+                @Override
+                protected ObservableList<StockViewTM> call() throws Exception {
 
-            obList.clear();
+                    List<Stock> stockList = stockViewService.getAllStock();
+                    ObservableList<StockViewTM> tempData = FXCollections.observableArrayList();
 
-            for (Stock stock : stockList) {
+                    for (Stock stock : stockList) {
+                        tempData.add(new StockViewTM(
+                                stock.getId(),
+                                stock.getProductCode(),
+                                stock.getSellingPrice(),
+                                stock.getQty()
+                        ));
+                    }
+                    return tempData;
+                }
+            };
 
-                obList.add(new StockViewTM(
-                        stock.getId(),
-                        stock.getProductCode(),
-                        stock.getSellingPrice(),
-                        stock.getQty()
-                ));
-            }
 
-            tblStock.setItems(obList);
+            loadTask.setOnSucceeded(event -> {
+                obList.setAll(loadTask.getValue());
+                tblStock.setItems(obList);
+
+
+                tblStock.getSortOrder().clear();
+                colId.setSortType(TableColumn.SortType.ASCENDING);
+                tblStock.getSortOrder().add(colId);
+                tblStock.sort();
+            });
+
+
+            loadTask.setOnFailed(event -> {
+                Throwable e = loadTask.getException();
+                new Alert(Alert.AlertType.ERROR, "Load Failed: " + e.getMessage()).show();
+            });
+
+
+            new Thread(loadTask).start();
 
         } catch (Exception e) {
             new Alert(Alert.AlertType.ERROR, e.getMessage()).show();

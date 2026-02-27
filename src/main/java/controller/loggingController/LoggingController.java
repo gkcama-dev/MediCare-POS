@@ -31,7 +31,8 @@ public class LoggingController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
+        txtUsername.setOnAction(event -> txtPassword.requestFocus());
+        txtPassword.setOnAction(event -> btnLoginAddOnAction(new ActionEvent()));
     }
 
     @FXML

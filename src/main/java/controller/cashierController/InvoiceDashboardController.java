@@ -126,7 +126,7 @@ public class InvoiceDashboardController implements Initializable {
         allowOnlyNumbers(txtInvoicePayment);
         allowOnlyNumbers(txtCutomerMobile);
         txtInvoicePayment.textProperty().addListener((obs, oldVal, newVal) -> calculateFinalAmounts());
-
+        setTextFieldLimit(txtCutomerMobile, 10);
         if (Session.getUser() != null) {
             lblUser.setText(Session.getUser().getUsername());
         }
@@ -162,6 +162,19 @@ public class InvoiceDashboardController implements Initializable {
 
             // Allow only numbers with optional decimal point
             if (newText.matches("\\d*(\\.\\d*)?")) {
+                return change;
+            }
+
+            return null;
+        }));
+    }
+
+    private void setTextFieldLimit(TextField field, int limit) {
+        field.setTextFormatter(new TextFormatter<>(change -> {
+            String newText = change.getControlNewText();
+
+
+            if (newText.matches("\\d*") && newText.length() <= limit) {
                 return change;
             }
 
