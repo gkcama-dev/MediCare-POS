@@ -1,0 +1,159 @@
+<!-- Created with Jaspersoft Studio version 7.0.0.final using JasperReports Library version 7.0.0-b478feaa9aab4375eba71de77b4ca138ad2f62aa  -->
+<jasperReport name="MedicarePOS-All-Products-Report" language="java" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="2ef5225a-c2e7-4021-ac52-6c464edf579a">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Data Adapter"/>
+	<query language="SQL"><![CDATA[SELECT 
+    g.id,
+    g.date,
+    g.total,
+    g.paid_amount,
+    g.balance,
+    CONCAT(s.first_name, ' ', s.last_name) AS supplier,
+    COALESCE(SUM(gi.qty), 0) AS qty
+FROM grn g
+LEFT JOIN supplier s ON g.supplier_id = s.id
+LEFT JOIN grn_item gi ON g.id = gi.grn_id
+GROUP BY 
+    g.id,
+    g.date,
+    g.total,
+    g.paid_amount,
+    g.balance,
+    s.first_name,
+    s.last_name
+ORDER BY g.id DESC;]]></query>
+	<field name="id" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.name" value="id"/>
+		<property name="com.jaspersoft.studio.field.label" value="id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="grn"/>
+	</field>
+	<field name="date" class="java.sql.Date">
+		<property name="com.jaspersoft.studio.field.name" value="date"/>
+		<property name="com.jaspersoft.studio.field.label" value="date"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="grn"/>
+	</field>
+	<field name="total" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="total"/>
+		<property name="com.jaspersoft.studio.field.label" value="total"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="grn"/>
+	</field>
+	<field name="paid_amount" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="paid_amount"/>
+		<property name="com.jaspersoft.studio.field.label" value="paid_amount"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="grn"/>
+	</field>
+	<field name="balance" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="balance"/>
+		<property name="com.jaspersoft.studio.field.label" value="balance"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="grn"/>
+	</field>
+	<field name="supplier" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="supplier"/>
+		<property name="com.jaspersoft.studio.field.label" value="supplier"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="supplier"/>
+	</field>
+	<field name="qty" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="qty"/>
+		<property name="com.jaspersoft.studio.field.label" value="qty"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="stock"/>
+	</field>
+	<background splitType="Stretch"/>
+	<title height="72" splitType="Stretch">
+		<element kind="staticText" uuid="67399f67-dd6c-4c53-a7a2-0f8a6157e2fd" x="182" y="1" width="190" height="32" forecolor="#731EF0" fontName="Arial" fontSize="25.0" bold="true" hTextAlign="Center" vTextAlign="Middle">
+			<text><![CDATA[MediCare POS]]></text>
+		</element>
+		<element kind="staticText" uuid="beb8ddb6-18ad-4c4e-bdcb-aa4795ce0068" x="186" y="15" width="190" height="41" forecolor="#4B465C" fontName="Arial" fontSize="12.0" bold="false" hTextAlign="Center" vTextAlign="Middle">
+			<text><![CDATA[Smart Inventory, Better Care.]]></text>
+		</element>
+		<element kind="staticText" uuid="fa589714-3f18-4969-823e-8dc777d3dac1" x="186" y="40" width="190" height="20" forecolor="#4B465C" fontName="Arial" fontSize="8.0" bold="false" hTextAlign="Center" vTextAlign="Middle">
+			<text><![CDATA[Contact - 0112 23 23 565]]></text>
+		</element>
+		<element kind="image" uuid="e9fe2db0-fac8-4b59-88f2-5a98a892380a" x="10" y="-19" width="90" height="91">
+			<expression><![CDATA["D:/Project/MediCare_POS/src/main/resources/report image/all_product_seel.png"]]></expression>
+		</element>
+		<element kind="textField" uuid="27bd3018-e6e1-41d1-a68c-9bf1e09cd670" x="451" y="47" width="104" height="16" forecolor="#4B465C" fontName="Arial" fontSize="10.0" pattern="MMMMM dd, yyyy" bold="false" hTextAlign="Right" vTextAlign="Bottom">
+			<expression><![CDATA[new java.util.Date()]]></expression>
+		</element>
+		<element kind="staticText" uuid="1f94d8aa-d8f1-47d8-8c1b-208caafe166b" x="480" y="36" width="60" height="20" forecolor="#4B465C" fontName="Arial" fontSize="8.0" bold="false" hTextAlign="Right" vTextAlign="Middle">
+			<text><![CDATA[Generated On:]]></text>
+		</element>
+	</title>
+	<pageHeader height="48" splitType="Stretch">
+		<element kind="staticText" uuid="f5ac34fe-a0ff-4462-9d67-d9844549e333" mode="Opaque" x="0" y="0" width="555" height="41" forecolor="#FFFFFF" backcolor="#731EF0" fontName="Arial" fontSize="19.0" bold="true" hTextAlign="Center" vTextAlign="Middle">
+			<text><![CDATA[All GRN Report]]></text>
+			<box>
+				<pen lineWidth="0.0"/>
+			</box>
+		</element>
+	</pageHeader>
+	<columnHeader height="22" splitType="Stretch">
+		<element kind="staticText" uuid="2dbd4b01-da99-4713-826b-e8065f4cf6f0" mode="Opaque" x="0" y="0" width="81" height="22" backcolor="#CECDF9" fontName="Arial" fontSize="13.0" bold="true" hTextAlign="Center" vTextAlign="Middle">
+			<text><![CDATA[ID]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="a383b885-0bb6-4891-a54a-cef3c644b583"/>
+		</element>
+		<element kind="staticText" uuid="456db673-8d19-4a08-be11-e58a3678b77c" mode="Opaque" x="81" y="0" width="79" height="22" backcolor="#CECDF9" fontName="Arial" fontSize="13.0" bold="true" hTextAlign="Center" vTextAlign="Middle">
+			<text><![CDATA[Date]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="e0e0dfd7-a0bb-4069-ab87-c8dd554802d5"/>
+		</element>
+		<element kind="staticText" uuid="55f9298f-2c68-4d75-8350-8f4f98c2cbb6" mode="Opaque" x="160" y="0" width="79" height="22" backcolor="#CECDF9" fontName="Arial" fontSize="13.0" bold="true" hTextAlign="Center" vTextAlign="Middle">
+			<text><![CDATA[Total]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="7b50ca42-799f-40a8-b528-1a6ada238a40"/>
+		</element>
+		<element kind="staticText" uuid="91465d1c-9182-4eee-9212-3c714cb6454c" mode="Opaque" x="239" y="0" width="79" height="22" backcolor="#CECDF9" fontName="Arial" fontSize="13.0" bold="true" hTextAlign="Center" vTextAlign="Middle">
+			<text><![CDATA[Paid Amount]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="00c8daa3-8909-4b7f-8cb2-2e1e55ac1711"/>
+		</element>
+		<element kind="staticText" uuid="295873f0-5399-47c5-96fd-7f1e96440f4b" mode="Opaque" x="318" y="0" width="58" height="22" backcolor="#CECDF9" fontName="Arial" fontSize="13.0" bold="true" hTextAlign="Center" vTextAlign="Middle">
+			<text><![CDATA[Balance]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="71a633a5-755a-45aa-a92e-65b5fbd5f8d9"/>
+		</element>
+		<element kind="staticText" uuid="35bcb67b-4e0f-45a6-a691-a92274a4a64a" mode="Opaque" x="376" y="0" width="100" height="22" backcolor="#CECDF9" fontName="Arial" fontSize="13.0" bold="true" hTextAlign="Center" vTextAlign="Middle">
+			<text><![CDATA[Supplier]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="c5d1c541-35b6-49f7-ad89-3edf51f4d260"/>
+		</element>
+		<element kind="staticText" uuid="d4bba35c-c3e0-4ddd-8dec-64d059da0da7" mode="Opaque" x="476" y="0" width="79" height="22" backcolor="#CECDF9" fontSize="13.0" bold="true" hTextAlign="Center" vTextAlign="Middle">
+			<text><![CDATA[Qty]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="530a7cd4-b34c-4062-a2d8-8eab4c2511a7"/>
+		</element>
+	</columnHeader>
+	<detail>
+		<band height="30" splitType="Stretch">
+			<element kind="textField" uuid="7ae82331-fa61-4c8a-9777-b069709413d0" x="0" y="0" width="81" height="30" fontName="Arial" hTextAlign="Center" vTextAlign="Middle">
+				<expression><![CDATA[$F{id}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="a383b885-0bb6-4891-a54a-cef3c644b583"/>
+			</element>
+			<element kind="textField" uuid="47605c32-6aa3-4e9a-ad57-567351b98c04" x="81" y="0" width="79" height="30" fontName="Arial" pattern="yyyy-MM-dd" hTextAlign="Center" vTextAlign="Middle">
+				<expression><![CDATA[$F{date}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="e0e0dfd7-a0bb-4069-ab87-c8dd554802d5"/>
+			</element>
+			<element kind="textField" uuid="b4e5075d-f5a4-4335-af04-aa036dfc639c" x="160" y="0" width="79" height="30" fontName="Arial" pattern="#,##0.00" hTextAlign="Center" vTextAlign="Middle">
+				<expression><![CDATA[$F{total}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="7b50ca42-799f-40a8-b528-1a6ada238a40"/>
+			</element>
+			<element kind="textField" uuid="e646afb7-80cf-48e2-ae4a-feb0a55409dd" x="239" y="0" width="79" height="30" fontName="Arial" pattern="#,##0.00" hTextAlign="Center" vTextAlign="Middle">
+				<expression><![CDATA[$F{paid_amount}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="00c8daa3-8909-4b7f-8cb2-2e1e55ac1711"/>
+			</element>
+			<element kind="textField" uuid="76ef6348-c425-42fa-90b4-28d847ac12bc" x="318" y="0" width="58" height="30" fontName="Arial" pattern="#,##0.00" hTextAlign="Center" vTextAlign="Middle">
+				<expression><![CDATA[$F{balance}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="71a633a5-755a-45aa-a92e-65b5fbd5f8d9"/>
+			</element>
+			<element kind="textField" uuid="8165f021-7ed4-46f5-bad0-11a038727956" x="376" y="0" width="100" height="30" fontName="Arial" hTextAlign="Center" vTextAlign="Middle">
+				<expression><![CDATA[$F{supplier}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="c5d1c541-35b6-49f7-ad89-3edf51f4d260"/>
+			</element>
+			<element kind="textField" uuid="37db2390-1b97-4a5b-8ccc-595d02add95b" x="476" y="0" width="79" height="30" fontName="Arial" pattern="#,##0" hTextAlign="Center" vTextAlign="Middle">
+				<expression><![CDATA[$F{qty}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="530a7cd4-b34c-4062-a2d8-8eab4c2511a7"/>
+			</element>
+		</band>
+	</detail>
+	<pageFooter height="32" splitType="Stretch">
+		<element kind="staticText" uuid="78443bcf-00d7-464b-85c0-e612dae3e7ef" mode="Opaque" x="0" y="0" width="555" height="30" forecolor="#FFFFFF" backcolor="#731EF0" fontName="Arial" fontSize="9.0" bold="false" hTextAlign="Center" vTextAlign="Middle">
+			<text><![CDATA[MediCare POS – All GRN Report]]></text>
+			<box>
+				<pen lineWidth="0.0"/>
+			</box>
+		</element>
+	</pageFooter>
+</jasperReport>

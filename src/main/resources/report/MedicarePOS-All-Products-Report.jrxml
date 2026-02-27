@@ -1,0 +1,129 @@
+<!-- Created with Jaspersoft Studio version 7.0.0.final using JasperReports Library version 7.0.0-b478feaa9aab4375eba71de77b4ca138ad2f62aa  -->
+<jasperReport name="MedicarePOS-All-Products-Report" language="java" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="2ef5225a-c2e7-4021-ac52-6c464edf579a">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Data Adapter"/>
+	<query language="SQL"><![CDATA[SELECT p.code AS product_id, p.name AS product_name, b.name AS brand_name, c.name AS category_name, s.status AS product_status FROM product p INNER JOIN brand b ON p.brand_id = b.id INNER JOIN category c  ON p.category_id = c.id INNER JOIN status s    ON p.status_id = s.id ORDER BY p.code ASC;]]></query>
+	<field name="product_id" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="code"/>
+		<property name="com.jaspersoft.studio.field.label" value="product_id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="product"/>
+	</field>
+	<field name="product_name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="name"/>
+		<property name="com.jaspersoft.studio.field.label" value="product_name"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="product"/>
+	</field>
+	<field name="brand_name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="name"/>
+		<property name="com.jaspersoft.studio.field.label" value="brand_name"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="brand"/>
+	</field>
+	<field name="category_name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="name"/>
+		<property name="com.jaspersoft.studio.field.label" value="category_name"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="category"/>
+	</field>
+	<field name="product_status" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="status"/>
+		<property name="com.jaspersoft.studio.field.label" value="product_status"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="status"/>
+	</field>
+	<group name="product_id">
+		<expression><![CDATA[$F{product_id}]]></expression>
+	</group>
+	<group name="product_name">
+		<expression><![CDATA[$F{product_name}]]></expression>
+	</group>
+	<group name="brand_name">
+		<expression><![CDATA[$F{brand_name}]]></expression>
+	</group>
+	<group name="category_name">
+		<expression><![CDATA[$F{category_name}]]></expression>
+	</group>
+	<group name="product_status">
+		<expression><![CDATA[$F{product_status}]]></expression>
+	</group>
+	<background splitType="Stretch"/>
+	<title height="72" splitType="Stretch">
+		<element kind="staticText" uuid="67399f67-dd6c-4c53-a7a2-0f8a6157e2fd" x="182" y="1" width="190" height="32" forecolor="#731EF0" fontName="Arial" fontSize="25.0" bold="true" hTextAlign="Center" vTextAlign="Middle">
+			<text><![CDATA[MediCare POS]]></text>
+		</element>
+		<element kind="staticText" uuid="beb8ddb6-18ad-4c4e-bdcb-aa4795ce0068" x="186" y="15" width="190" height="41" forecolor="#4B465C" fontName="Arial" fontSize="12.0" bold="false" hTextAlign="Center" vTextAlign="Middle">
+			<text><![CDATA[Smart Inventory, Better Care.]]></text>
+		</element>
+		<element kind="staticText" uuid="fa589714-3f18-4969-823e-8dc777d3dac1" x="186" y="40" width="190" height="20" forecolor="#4B465C" fontName="Arial" fontSize="8.0" bold="false" hTextAlign="Center" vTextAlign="Middle">
+			<text><![CDATA[Contact - 0112 23 23 565]]></text>
+		</element>
+		<element kind="image" uuid="e9fe2db0-fac8-4b59-88f2-5a98a892380a" x="10" y="-19" width="90" height="91">
+			<expression><![CDATA["D:/Project/MediCare_POS/src/main/resources/report image/all_product_seel.png"]]></expression>
+		</element>
+		<element kind="textField" uuid="27bd3018-e6e1-41d1-a68c-9bf1e09cd670" x="451" y="47" width="104" height="16" forecolor="#4B465C" fontName="Arial" fontSize="10.0" pattern="MMMMM dd, yyyy" bold="false" hTextAlign="Right" vTextAlign="Bottom">
+			<expression><![CDATA[new java.util.Date()]]></expression>
+		</element>
+		<element kind="staticText" uuid="1f94d8aa-d8f1-47d8-8c1b-208caafe166b" x="480" y="36" width="60" height="20" forecolor="#4B465C" fontName="Arial" fontSize="8.0" bold="false" hTextAlign="Right" vTextAlign="Middle">
+			<text><![CDATA[Generated On:]]></text>
+		</element>
+	</title>
+	<pageHeader height="48" splitType="Stretch">
+		<element kind="staticText" uuid="f5ac34fe-a0ff-4462-9d67-d9844549e333" mode="Opaque" x="0" y="0" width="555" height="41" forecolor="#FFFFFF" backcolor="#731EF0" fontName="Arial" fontSize="19.0" bold="true" hTextAlign="Center" vTextAlign="Middle">
+			<text><![CDATA[All Products Report]]></text>
+			<box>
+				<pen lineWidth="0.0"/>
+			</box>
+		</element>
+	</pageHeader>
+	<columnHeader height="22" splitType="Stretch">
+		<element kind="staticText" uuid="903fc8d1-f2a3-46aa-8a68-d0de2f0ca06b" mode="Opaque" x="0" y="0" width="111" height="20" backcolor="#CECDF9" fontName="Arial" fontSize="13.0" bold="true" hTextAlign="Center" vTextAlign="Middle">
+			<text><![CDATA[ID]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="e551d6dd-59cd-4f20-8bd8-4b3ea13eb973"/>
+		</element>
+		<element kind="staticText" uuid="1915a2f9-cf66-4f8d-a9bf-c3d89a04397e" mode="Opaque" x="111" y="0" width="111" height="20" backcolor="#CECDF9" fontName="Arial" fontSize="13.0" bold="true" hTextAlign="Center" vTextAlign="Middle">
+			<text><![CDATA[Name]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="e8c61d19-c2c5-4b9a-9f4c-ae446688526e"/>
+		</element>
+		<element kind="staticText" uuid="18e0bbc0-db56-4794-9a50-a4f3526280dc" mode="Opaque" x="222" y="0" width="111" height="20" backcolor="#CECDF9" fontName="Arial" fontSize="13.0" bold="true" hTextAlign="Center" vTextAlign="Middle">
+			<text><![CDATA[Brand]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="b9823170-666b-437d-9a57-9e60bbdb377d"/>
+		</element>
+		<element kind="staticText" uuid="2b87720c-a6e1-4aa3-8962-6eb6f326c6f4" mode="Opaque" x="333" y="0" width="111" height="20" backcolor="#CECDF9" fontName="Arial" fontSize="13.0" bold="true" hTextAlign="Center" vTextAlign="Middle">
+			<text><![CDATA[Category]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="ce5a25a4-dc17-4199-8625-b370db10f6f5"/>
+		</element>
+		<element kind="staticText" uuid="98f065e7-14f9-4011-8ccf-51501a8aa22c" mode="Opaque" x="444" y="0" width="111" height="20" backcolor="#CECDF9" fontName="Arial" fontSize="13.0" bold="true" hTextAlign="Center" vTextAlign="Middle">
+			<text><![CDATA[Status]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="cd554a3b-0889-456d-a16c-ae4a5ed758a0"/>
+		</element>
+	</columnHeader>
+	<detail>
+		<band height="22" splitType="Stretch">
+			<element kind="textField" uuid="296dd808-6674-4d0c-ac4c-ff5d03d28bf4" x="0" y="0" width="111" height="20" fontName="Arial" fontSize="11.0" hTextAlign="Center" vTextAlign="Middle">
+				<expression><![CDATA[$F{product_id}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="e551d6dd-59cd-4f20-8bd8-4b3ea13eb973"/>
+			</element>
+			<element kind="textField" uuid="3bd851a9-ee88-476c-8220-5ac0b1b06199" x="111" y="0" width="111" height="20" fontName="Arial" fontSize="11.0" hTextAlign="Center" vTextAlign="Middle">
+				<expression><![CDATA[$F{product_name}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="e8c61d19-c2c5-4b9a-9f4c-ae446688526e"/>
+			</element>
+			<element kind="textField" uuid="6ea9b172-0491-4669-9891-5f33a90afcd2" x="222" y="0" width="111" height="20" fontName="Arial" fontSize="11.0" hTextAlign="Center" vTextAlign="Middle">
+				<expression><![CDATA[$F{brand_name}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="b9823170-666b-437d-9a57-9e60bbdb377d"/>
+			</element>
+			<element kind="textField" uuid="af929b26-1fc3-4030-bf3b-69ef55f8a5f6" x="333" y="0" width="111" height="20" fontName="Arial" fontSize="11.0" hTextAlign="Center" vTextAlign="Middle">
+				<expression><![CDATA[$F{category_name}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="ce5a25a4-dc17-4199-8625-b370db10f6f5"/>
+			</element>
+			<element kind="textField" uuid="9c34a5f4-19ec-4284-8a2a-5ec772e55816" x="444" y="0" width="111" height="20" fontName="Arial" fontSize="11.0" hTextAlign="Center" vTextAlign="Middle">
+				<expression><![CDATA[$F{product_status}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="cd554a3b-0889-456d-a16c-ae4a5ed758a0"/>
+			</element>
+		</band>
+	</detail>
+	<pageFooter height="32" splitType="Stretch">
+		<element kind="staticText" uuid="78443bcf-00d7-464b-85c0-e612dae3e7ef" mode="Opaque" x="0" y="0" width="555" height="30" forecolor="#FFFFFF" backcolor="#731EF0" fontName="Arial" fontSize="9.0" bold="false" hTextAlign="Center" vTextAlign="Middle">
+			<text><![CDATA[MediCare POS – All Product Report]]></text>
+			<box>
+				<pen lineWidth="0.0"/>
+			</box>
+		</element>
+	</pageFooter>
+</jasperReport>
