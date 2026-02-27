@@ -531,6 +531,7 @@ public class InvoiceDashboardController implements Initializable {
 
                 long invoiceId = Long.parseLong(txtInvoiceID.getText());
 
+                System.out.println("Invoice ID Sent To Report: " + invoiceId);
 
                 // Generate Invoice Bill
                 JasperPrint jasperPrint =
