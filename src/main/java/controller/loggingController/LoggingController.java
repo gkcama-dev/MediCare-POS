@@ -74,21 +74,26 @@ public class LoggingController implements Initializable {
     private void loadDashboard(String fxmlPath) {
 
         try {
-
             FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlPath));
             Parent root = loader.load();
 
+            root.setOpacity(0);
+
             Stage stage = (Stage) txtUsername.getScene().getWindow();
-            stage.setScene(new Scene(root));
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
             stage.centerOnScreen();
 
-        } catch (Exception e) {
+            javafx.animation.FadeTransition fadeIn = new javafx.animation.FadeTransition(javafx.util.Duration.millis(800), root);
+            fadeIn.setFromValue(0);
+            fadeIn.setToValue(1);
+            fadeIn.play();
 
+        } catch (Exception e) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setHeaderText("Navigation Error");
             alert.setContentText("Unable to load dashboard.");
             alert.showAndWait();
-
             e.printStackTrace();
         }
     }

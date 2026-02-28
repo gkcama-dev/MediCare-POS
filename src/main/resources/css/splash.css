@@ -1,0 +1,26 @@
+
+.splash-container {
+    -fx-background-color: linear-gradient(to bottom right, #1e3c72, #2a5298);
+    -fx-background-radius: 20;
+    -fx-border-radius: 20;
+    /* Window එක වටේට පොඩි Shadow එකක් */
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.5), 20, 0, 0, 0);
+}
+
+
+.progress-bar {
+    -fx-background-radius: 10;
+}
+
+.progress-bar .track {
+    -fx-background-color: rgba(255, 255, 255, 0.1);
+    -fx-background-radius: 10;
+}
+
+.progress-bar .bar {
+    -fx-background-color: #731EF0;
+    -fx-background-radius: 10;
+    /* මෙන්න Glow effect එක */
+    -fx-effect: dropshadow(three-pass-box, rgba(115, 30, 240, 0.8), 15, 0.5, 0, 0);
+}
+
