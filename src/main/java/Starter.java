@@ -17,7 +17,7 @@ public class Starter extends Application {
         Scene scene = new Scene(root);
 
         stage.setScene(scene);
-        stage.setTitle("MediCare POS - Dashboard");
+        stage.setTitle("MediCare POS - Splash");
         stage.getIcons().add(new Image(getClass().getResourceAsStream("/img/logo.png")));
         stage.setResizable(false);
         stage.show();

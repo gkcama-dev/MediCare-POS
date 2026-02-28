@@ -81,6 +81,7 @@ public class LoggingController implements Initializable {
 
             Stage stage = (Stage) txtUsername.getScene().getWindow();
             Scene scene = new Scene(root);
+            stage.setTitle("MediCare POS - Dashboard");
             stage.setScene(scene);
             stage.centerOnScreen();
 

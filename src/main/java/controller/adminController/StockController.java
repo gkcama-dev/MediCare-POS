@@ -318,6 +318,7 @@ void btnAddOnAction(ActionEvent event) {
         txtQty.clear();
         dateEXP.setValue(null);
         dateMFD.setValue(null);
+        btnSupplier.setDisable(true);
     }
 
 private void calculateNetTotal() {
@@ -336,6 +337,7 @@ private void clearAllItemFields() {
     txtQty.clear();
     dateEXP.setValue(null);
     dateMFD.setValue(null);
+    btnSupplier.setDisable(false);
 }
 
 @FXML

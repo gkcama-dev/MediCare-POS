@@ -69,14 +69,14 @@ public class SplashController implements Initializable {
                 for (int i = 0; i <= 100; i++) {
                     updateProgress(i, 100);
 
-                    // Progress එක අනුව Message එක මාරු කිරීම
+
                     if (i < 20) updateMessage(messages[0]);
                     else if (i < 40) updateMessage(messages[1]);
                     else if (i < 60) updateMessage(messages[2]);
                     else if (i < 80) updateMessage(messages[3]);
                     else updateMessage(messages[4]);
 
-                    Thread.sleep(40);
+                    Thread.sleep(50);
                 }
                 return null;
             }
@@ -86,7 +86,7 @@ public class SplashController implements Initializable {
         txtLoading.textProperty().bind(task.messageProperty());
 
         task.setOnSucceeded(event -> {
-            // Smooth Fade Out එකකින් පසු Login එකට යාම
+
             FadeTransition fadeOut = new FadeTransition(Duration.millis(800), mainContainer);
             fadeOut.setFromValue(1);
             fadeOut.setToValue(0);
@@ -102,6 +102,7 @@ public class SplashController implements Initializable {
             Parent root = FXMLLoader.load(getClass().getResource("/view/loginView/login.fxml"));
             Stage stage = (Stage) splashBar.getScene().getWindow();
             stage.setScene(new Scene(root));
+            stage.setTitle("MediCare POS - Login");
             stage.centerOnScreen();
         } catch (Exception e) { e.printStackTrace(); }
     }
