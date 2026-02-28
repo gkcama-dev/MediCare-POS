@@ -119,16 +119,34 @@ The project follows a **Layered Architecture Pattern** with clear separation of 
 
 ---
 
+## Screenshots
+
+### System Overview
+
+![Screenshot 1](image/1.png)
+*Splash Window*
+
+![Screenshot 2](image/2.png)
+*User Login*
+
+![Screenshot 3](image/3.png)
+*Main Dashboard*
+
+![Screenshot 4](image/11.png)
+*Invoice Dashboard*
+
+---
+
 ## Prerequisites
 
 Before setting up the project, ensure you have the following installed:
 
 - **Java Development Kit (JDK)** 11 or higher
-  - Verify: `java -version`
+    - Verify: `java -version`
 - **Maven** 3.6.0 or higher
-  - Verify: `mvn -version`
+    - Verify: `mvn -version`
 - **MySQL Server** 5.7 or higher
-  - Verify: `mysql -u root -p`
+    - Verify: `mysql -u root -p`
 - **Git** (optional, for version control)
 
 ### System Requirements
@@ -197,9 +215,9 @@ Update the database connection details in `DbConnection.java`:
 
 private DbConnection() throws SQLException {
     connection = DriverManager.getConnection(
-        "jdbc:mysql://localhost:3306/medicare_pos",  // Change host/database name
-        "root",                                         // Change username
-        "Geeth@200104"                                 // Change password
+            "jdbc:mysql://localhost:3306/medicare_pos",  // Change host/database name
+            "root",                                         // Change username
+            "Geeth@200104"                                 // Change password
     );
 }
 ```
@@ -354,16 +372,16 @@ USE medicare_pos;
 2. **Login Screen**: Enter credentials (default or admin setup required)
 
 3. **Admin Dashboard**:
-   - Manage products, categories, and brands
-   - Track stock levels
-   - Create GRNs for new inventory
-   - View comprehensive reports
-   - Manage user accounts
+    - Manage products, categories, and brands
+    - Track stock levels
+    - Create GRNs for new inventory
+    - View comprehensive reports
+    - Manage user accounts
 
 4. **Cashier Dashboard**:
-   - Process customer sales (invoices)
-   - Manage point-of-sale transactions
-   - View inventory availability
+    - Process customer sales (invoices)
+    - Manage point-of-sale transactions
+    - View inventory availability
 
 ### Main Features Usage
 
