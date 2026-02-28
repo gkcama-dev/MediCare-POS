@@ -9,7 +9,7 @@ A comprehensive, enterprise-grade Pharmacy Point of Sale (POS) system built with
 
 ---
 
-## 📋 Table of Contents
+## Table of Contents
 
 - [Overview](#-overview)
 - [Features](#-features)
@@ -27,7 +27,7 @@ A comprehensive, enterprise-grade Pharmacy Point of Sale (POS) system built with
 
 ---
 
-## 🎯 Overview
+## Overview
 
 MediCare-POS is a modern pharmacy management system designed to streamline operations for pharmacy chains and independent pharmacies. It provides a user-friendly interface for managing inventory, processing sales, tracking suppliers, and generating detailed business reports. The system follows best practices in software architecture with layered architecture and proven design patterns (Factory Pattern, Singleton Pattern, CRUD operations).
 
@@ -40,9 +40,9 @@ MediCare-POS is a modern pharmacy management system designed to streamline opera
 
 ---
 
-## ✨ Features
+## Features
 
-### 📦 Inventory Management
+### Inventory Management
 - **Product Management**: Add, update, and manage pharmaceutical products
 - **Stock Control**: Real-time stock tracking and low-stock alerts
 - **Category & Brand Management**: Organize products by categories and brands
@@ -53,19 +53,19 @@ MediCare-POS is a modern pharmacy management system designed to streamline opera
 - **Point of Sale**: Fast and intuitive checkout system
 - **Item Management**: Add/remove items from carts with quantity adjustments
 
-### 👥 User Management
+### User Management
 - **Role-Based Access Control**: Separate admin and cashier dashboards
 - **User Authentication**: Secure login system
 - **User Profiles**: Manage user accounts and permissions
 
-### 📊 Reporting
+### Reporting
 - **GRN Reports**: Complete goods receipt records
 - **Sales Reports**: Detailed invoice and sales analytics
 - **Product Reports**: Inventory and product performance metrics
 - **Stock Reports**: Current stock levels and availability
 - **PDF Generation**: Export reports to PDF format
 
-### 📈 Dashboard
+### Dashboard
 - **Real-time Analytics**: Key business metrics at a glance
 - **Quick Actions**: Rapid access to frequent operations
 - **System Overview**: Complete operational visibility
@@ -87,7 +87,7 @@ MediCare-POS is a modern pharmacy management system designed to streamline opera
 
 ---
 
-## 🏗 Architecture
+## Architecture
 
 The project follows a **Layered Architecture Pattern** with clear separation of concerns:
 
@@ -119,7 +119,7 @@ The project follows a **Layered Architecture Pattern** with clear separation of 
 
 ---
 
-## 📦 Prerequisites
+## Prerequisites
 
 Before setting up the project, ensure you have the following installed:
 
@@ -139,7 +139,7 @@ Before setting up the project, ensure you have the following installed:
 
 ---
 
-## 🚀 Installation
+## Installation
 
 ### Step 1: Clone or Download the Project
 
@@ -186,7 +186,7 @@ java -cp target/classes:$(mvn dependency:build-classpath -q -Dmdep.outputFile=/d
 
 ---
 
-## ⚙️ Configuration
+## Configuration
 
 ### Database Configuration
 
@@ -204,7 +204,7 @@ private DbConnection() throws SQLException {
 }
 ```
 
-**⚠️ Security Note**: Never commit plain-text passwords. Consider using:
+**Security Note**: Never commit plain-text passwords. Consider using:
 - Environment variables
 - Configuration files (git-ignored)
 - Properties files for production
@@ -223,7 +223,7 @@ Maven properties in `pom.xml`:
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 MediCare_POS/
@@ -308,7 +308,7 @@ MediCare_POS/
 
 ---
 
-## 🗄️ Database Setup
+## Database Setup
 
 ### Create Database
 
@@ -342,7 +342,7 @@ USE medicare_pos;
 
 ---
 
-## 💻 Usage
+## Usage
 
 ### Starting the Application
 
@@ -395,7 +395,7 @@ USE medicare_pos;
 
 ---
 
-## 📊 Reporting
+## Reporting
 
 ### Available Reports
 
@@ -419,7 +419,7 @@ MedicarePOS-Invoice-Bill.jrxml
 
 ---
 
-## 🔧 Development
+## Development
 
 ### Compile Project
 ```bash
@@ -448,7 +448,7 @@ mvn dependency:tree
 
 ---
 
-## 🐛 Troubleshooting
+## Troubleshooting
 
 ### Common Issues
 
@@ -486,7 +486,7 @@ Error: Getters/Setters not found
 
 ---
 
-## 📝 Development Guidelines
+## Development Guidelines
 
 ### Code Standards
 
@@ -505,14 +505,14 @@ Error: Getters/Setters not found
 
 ---
 
-## 🤝 Contributors
+## Contributors
 
 - **Geeth Kalhara** - Lead Developer
 - ICET Development Team
 
 ---
 
-## 📄 License
+## License
 
 This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
 
@@ -534,7 +534,7 @@ copies or substantial portions of the Software.
 
 ---
 
-## 🙏 Support
+##  Support
 
 For issues, questions, or suggestions:
 - Review existing documentation
@@ -543,7 +543,7 @@ For issues, questions, or suggestions:
 
 ---
 
-## 📚 Additional Resources
+## Additional Resources
 
 - [JavaFX Documentation](https://openjfx.io/)
 - [MySQL Documentation](https://dev.mysql.com/doc/)
